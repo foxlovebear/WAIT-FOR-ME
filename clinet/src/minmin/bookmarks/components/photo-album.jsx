@@ -6,7 +6,10 @@ import Food from './icon/food.png';
 
 import './user.css';
 
-
+const position1 ={
+   width:'250px',
+ 
+}
 
 class Photo  extends React.Component {
     render() { 
@@ -14,26 +17,27 @@ class Photo  extends React.Component {
             &nbsp; 
           <Container >   
 
-         <Row  >
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
+         <Row>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
          </Row>
          &nbsp; 
          <Row>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
          </Row>
          &nbsp; 
          <Row>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
-            <Col xs={6} xl={3} > <img src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
+            <Col xs={6} xl={3} > <img style={position1} src={ Food } alt="Camera" /> </Col>
          </Row>
+      
 
 
            
