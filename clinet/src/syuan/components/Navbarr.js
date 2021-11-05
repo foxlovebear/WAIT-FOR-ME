@@ -38,15 +38,14 @@ function Navbarr() {
                                 style={{ maxHeight: '100px' }}
                                 navbarScroll
                             >
-                                {/* <Nav.Link as={Link} to={"/home"} className="navlink">home</Nav.Link> */}
                                 <Link to='/page2' className="navbar-brand navlink navtype">
-                                    類型篩選
+                                    類型篩選1
                                 </Link>
-                                <Nav.Link as={Link} to={"/page2"} className="navlink">縣市篩選</Nav.Link>
-
+                                <Nav.Link as={Link} to={"/page2"} className="navlink">
+                                    縣市篩選1
+                                </Nav.Link>
 
                                 <NavDropdown title="類型篩選" id="navbarScrollingDropdown">
-
                                     <NavDropdown.Item as={Link} to={"/page2"} className="dropitems">
                                         <div>料理類型</div>
                                         <button onClick={a}>小吃</button>
@@ -124,15 +123,15 @@ function Navbarr() {
                                 </NavDropdown>
 
 
-                                <NavDropdown title="會員" as={Link} to={"/page2"} id="navbarScrollingDropdown">
-                                    <NavDropdown.Item as={Link} to={"/page3"} className="dropitems">
-                                        <button>臺北</button>
+                                <NavDropdown title="會員功能" id="navbarScrollingDropdown">
+                                    <NavDropdown.Item as={Link} to={"/page1"} className="dropitems">
+                                        <button>會員登入</button>
                                     </NavDropdown.Item>
                                 </NavDropdown>
 
 
 
-                                <Nav.Link as={Link} to={"/page1"} className="navlink">會員功能
+                                <Nav.Link as={Link} to={"/page1"} className="navlink">會員功能1
                                 </Nav.Link>
 
 

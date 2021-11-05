@@ -26,6 +26,11 @@
     background-color: white;
 }
 
-#navbarScrollingDropdown:hover > .dropitems{
-    display:block !important;
+#navbarScrollingDropdown{
+    font-weight: bold;
+    color: rgb(122, 100, 87) ;
+}
+
+#navbarScrollingDropdown:hover{
+    color: white;
 }
