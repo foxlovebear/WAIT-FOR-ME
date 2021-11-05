@@ -75,7 +75,7 @@ class Picture extends React.Component {
                   </Card.Title>
                   <Card.Text className="text-dark" >
                     營業時間:<br />
-                    午: AM:11:00~PM:2:00 晚: PM:5:30 ~ PM:10:00
+                    午: AM:12:00~PM:2:00 晚: PM:5:30 ~ PM:10:00
                   </Card.Text>
 
                 </Card.Body>
