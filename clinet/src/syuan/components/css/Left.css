@@ -1,0 +1,34 @@
+#indexleft {
+    position: fixed;
+    /* background-color: rgb(206, 252, 236); */
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    /* z-index: 999; */
+  }
+
+  .up{
+      position: relative;
+      top: 100px;
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 999px)   {
+    
+    #indexleft {
+        /* 可以固定住navbar */
+        position: relative;
+        /* background-color: rgb(206, 252, 236); */
+        width: 50%;
+        /* height: 100%; */
+        text-align: center;
+      }
+       
+  }
+
+  @media only screen and (min-width: 999px) and (max-width: 1499px)   {
+    .btn-outline-warning{
+        /* background-color: rgba(178, 32, 56, 0.171); */
+        width: 100%;
+        /* top: 200px; */
+          }   
+  }

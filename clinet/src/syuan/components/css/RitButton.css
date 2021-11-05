@@ -1,0 +1,179 @@
+.citytype_btn,
+.eastspace {
+  width: 200px;
+  font-size: 20px;
+  /* position: relative; */
+}
+
+.Citytype_section,
+.Citytype_east {
+  /* position: absolute; */
+  writing-mode: vertical-lr;
+}
+
+.CitytypeGrid > div {
+  /* border: 1px solid black; */
+  position: relative;
+  top: 100px;
+  line-height: 1.6em;
+}
+
+.btn-outline-success {
+  width: 200px;
+  font-size: 20px;
+  z-index: 5;
+  color: rgb(255, 136, 68);
+  border: 1px solid rgb(255, 136, 68);
+  position: relative;
+  top: -35px;
+  left: -10px;
+  
+}
+
+.btn-outline-success:hover{
+  /* color: rgb(255, 136, 68); */
+  border: rgb(255, 136, 68);
+  background-color: rgb(255, 136, 68);
+  /* background-color: #EFBB24;
+  border: #EFBB24; */
+
+}
+
+.btn-outline-success:not(:disabled):not(.disabled):active,
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.show > .btn-outline-success.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(255, 136, 68);
+  border-color: rgb(255, 136, 68);
+}
+
+.CitytypeGrid {
+  /* background-color: lightblue; */
+  display: grid;
+  padding: 5px;
+  gap: 5px;
+  font-size: 30px;
+  /* justify-content: center; */
+  text-align: center;
+  grid-template-areas:
+    "north . . . "
+    "north . . . ";
+}
+
+.Citytype_section {
+  grid-area: north;
+  position: relative;
+  top: 10px;
+}
+
+/* 縣市－東部 */
+.CitytypeGrid_east {
+  display: grid;
+  padding: 5px;
+  gap: 5px;
+  font-size: 30px;
+  /* justify-content: center; */
+  text-align: center;
+  grid-template-areas:
+  "east . . . "
+  "east . . . ";
+}
+
+.Citytype_east {
+  grid-area: east;
+  /* padding: 10px; */
+  /* position: relative; */
+  /* top: -10px; */
+  /* background-color: lightseagreen; */
+}
+
+.CitytypeGrid_east > div {
+  /* border: 1px solid black; */
+  position: relative;
+  top: 100px;
+  line-height: 1.6em;
+  /* margin: auto; */
+}
+
+.eastspace{
+  /* border: 1px solid black; */
+  width: 100px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 999px)   {
+  .citytype_btn {
+      /* background-color: rgba(107, 32, 178, 0.171); */
+      width: 130px;
+      /* top: 50px; */
+
+      /* 只有按鈕會上移，標題不會 */
+      position: relative;
+      /* top: -530px; */
+      /* top: -30px; */
+        }   
+
+        .btn-outline-success {
+          /* background-color: rgba(32, 178, 171, 0.322); */
+          width: 130px;
+          /* font-size: 20px; */
+          z-index: 5;
+          position: relative;
+          top: -50px;
+          left: 0px;
+          
+      }
+
+/* 標題只能有背景色，可是沒辦法上移位子 */
+        .Citytype_section, .Citytype_east{
+          /* background-color: rgba(4, 136, 37, 0.171); */
+          position: relative;
+          top: 50px;
+          left: -3px;
+        }
+}
+
+
+
+
+@media only screen and (min-width: 999px) and (max-width: 1499px)   {
+  .citytype_btn, .eastspace{
+      /* background-color: rgba(178, 32, 56, 0.171); */
+      width: 130px;
+      /* top: 200px; */
+    }   
+    
+    .Citytype_section, .Citytype_east{
+    /* background-color: rgba(178, 139, 32, 0.171); */
+    font-size: 1em;
+  }
+
+  .Citytype{
+    width: 100%;
+  }
+
+  .btn-outline-success{
+    /* background-color: rgba(178, 32, 56, 0.171); */
+    width: 130px;
+    position: relative;
+    left: 0%;
+    z-index: 5;
+    /* top: 200px; */
+      }   
+ 
+}
+
+@media only screen and (min-width: 1500px)   {
+  .citytype_btn, .eastspace{
+      /* background-color: rgba(178, 32, 56, 0.171); */
+      width: 200px;
+      /* top: 200px; */
+    }   
+    
+    .Citytype_section, .Citytype_east{
+    /* background-color: rgba(178, 139, 32, 0.171); */
+    font-size: 1em;
+    /* position: relative; */
+    /* top: 100px; */
+  }
+ 
+}

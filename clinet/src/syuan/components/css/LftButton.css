@@ -1,0 +1,100 @@
+/* 類型區塊上半部 */
+.Foodtype {
+  /* position: relative; */
+  /* height: 30%; */
+  /* z-index: 5; */
+}
+
+/* 類型區塊下半部 */
+.restauranttype {
+  /* z-index: 5; */
+  /* position: relative; */
+}
+
+/* 料理類型區塊 */
+.btn-outline-warning {
+  width: 200px;
+  font-size: 20px;
+  z-index: 5;
+  color: #EFBB24;
+  border: 1px solid #EFBB24;
+  position: relative;
+  left: -10px;
+}
+
+.btn-outline-warning:hover{
+  background-color: #EFBB24;
+  color: white;
+}
+
+
+.FoodtypeGrid > div {
+  /* border: 1px solid black; */
+  /* background-color: burlywood; */
+  /* text-align: center; */
+  /* z-index: 5; */
+}
+
+.FoodtypeGrid {
+  /* background-color: lightblue; */
+  display: grid;
+  /* z-index: 5; */
+  padding: 5px;
+  gap: 5px;
+  font-size: 30px;
+  /* justify-content: center; */
+  text-align: center;
+  grid-template-areas:
+    "foodtype . . . "
+    "foodtype . . ."
+    "foodtype . . ."
+    "foodtype . . ."
+    "restauranttype . . ."
+    "restauranttype . . ."
+    "restauranttype . . ."
+    "restauranttype . . .";
+}
+
+.FoodtypeGrid > .FoodtypeGrid_title {
+  grid-area: foodtype;
+  /* z-index: 5; */
+}
+
+/* 分類標題 */
+.FoodtypeGrid_title {
+  writing-mode: vertical-lr;
+  position: relative;
+  left: 10px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 999px)   {
+  .btn-outline-warning {
+      /* background-color: rgba(32, 178, 171, 0.322); */
+      width: 130px;
+      top: -50px;
+      /* font-size: 20px; */
+      z-index: 5;
+      position: relative;
+      left: 2px;
+  }
+
+  .FoodtypeGrid_title{
+    position: relative;
+    top: -50px;
+    left: 0px;
+  }
+     
+}
+
+@media only screen and (min-width: 999px) and (max-width: 1499px)   {
+  .btn-outline-warning{
+      /* background-color: rgba(178, 32, 56, 0.171); */
+      width: 130px;
+      position: relative;
+      left: 0%;
+      z-index: 5;
+      /* top: 200px; */
+        }   
+
+        
+}

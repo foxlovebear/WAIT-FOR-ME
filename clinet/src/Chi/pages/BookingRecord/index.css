@@ -1,0 +1,15 @@
+會員圖片 .bigHead {
+}
+
+/* 線 */
+.iAmLine {
+  border-bottom: 1.5px solid rgb(122, 100, 87);
+}
+
+/* 訂單資料 */
+.userBookingDiv {
+  /* 框框 */
+  border: rgb(255, 136, 68) 1.5px solid;
+  border-radius: 1rem;
+  padding: 1rem;
+}

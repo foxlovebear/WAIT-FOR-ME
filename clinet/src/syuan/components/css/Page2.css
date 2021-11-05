@@ -1,0 +1,144 @@
+body {
+  padding: 0!important;
+    text-align: center;
+    position: relative;
+    top: 0px;
+  }
+  
+  /* 左半部設定 */
+  #restaurantLeft {
+    position: fixed;
+    background-color: rgb(243, 243, 243);
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    top: 70px;
+  }
+  
+  /* 右半部設定 */
+  #restaurantRight {
+    position: relative;
+    width: 90%;
+    left: 10%;
+    text-align: center;
+    top: -20px;
+  }
+  
+  /*------------ 1-1 navbar ------------*/
+  .bg-light {
+    background-color: rgb(255, 228, 138) !important;
+  }
+  
+  .storeSection{
+    /* border: 1px solid black; */
+    /* background-color: rgb(197, 238, 240); */
+    margin: 20px;
+    
+}
+
+.row > div{
+    border: 1px solid rgb(185, 185, 185);
+    /* background-color: rgba(137, 43, 226, 0.281); */
+    position: relative;
+    /* left: 5%; */
+    height: 250px;
+
+}
+
+/*------------ 5-2 店家照片 ------------*/
+.storepic{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/*------------ 5-3 店家資訊 ------------*/
+.storeinfor{
+    text-align: left;
+    line-height: 1.8em;
+}
+
+/* 店家地址、店家標籤換行 */
+.storeaddress,.storetag{
+    word-wrap:break-word;
+}
+
+.topage3{
+  color: black;
+  text-decoration: none;
+}
+
+.situtationChoose{
+  position: relative;
+  top: 50px;
+  left: 20px;
+  text-align: left;
+  /* padding: 20px; */
+  /* border: 1px solid black; */
+}
+
+.situtationBtn{
+  /* border: 1px solid black; */
+  padding: 5px;
+  
+  /* left: 20px; */
+
+}
+/* 返回最上面快捷鈕----------------------- */
+.backtop{
+  /* border: 1px solid black; */
+  background-color: rgb(255, 136, 68);
+  color: white;
+  width: 50px;
+  position: fixed;
+  bottom: 30px;
+  /* left: 94.4%; */
+  left: 96.4%;
+  padding: 10px;
+  /* height: 120px; */
+  height: 50px;
+  z-index: 1;
+}
+
+.backtop p{
+  font-size: 14px;
+  /* border: 1px solid black; */
+}
+
+.backtop .backtopimg{
+  /* border: 1px solid red; */
+  width: 30px;
+}
+
+.backtop a:hover{
+  color: #17a2b8;
+}
+  
+  /*------------ 1-11 footer ------------*/
+  footer {
+    /* border: 1px solid black; */
+    background-color: rgba(209, 208, 208, 0.829);
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    color: gray;
+    /* padding: 20px; */
+    /* background-color: blue; */
+  }
+ 
+
+
+  /* RWD */
+  @media only screen and (min-width: 300px) and (max-width: 999px)   {
+    .page2mdstyle{
+      position: relative;
+      top: 0px;
+    }
+
+    #restaurantRight {     
+      top: -20px;
+    }
+  }
+  
+ 

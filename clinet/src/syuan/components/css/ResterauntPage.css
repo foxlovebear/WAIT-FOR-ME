@@ -1,0 +1,10 @@
+.restpage{
+    background-color: aqua;
+}
+
+body {
+    padding: 0!important;
+      text-align: center;
+      position: relative;
+      top: 70px;
+    }

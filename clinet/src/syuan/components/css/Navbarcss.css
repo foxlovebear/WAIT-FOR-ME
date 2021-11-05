@@ -1,0 +1,36 @@
+.navLogo{
+    position: relative;
+    left: 20px;
+}
+
+.navitems{
+    position: relative;
+    left: 20px;
+
+}
+
+.navbarbackcolor{
+    background-color:rgb(255, 136, 68) !important;
+    z-index: 999;
+}
+
+.navtype{
+    position: relative;
+    left: 8px;
+    top: 3px;
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 999px)   {
+    
+    .containerr{        
+        /* position: fixed; */
+        /* top: 0px !important; */
+        /* z-index: 999;    */
+        /* background-color: #EFBB24 !important;  */
+    }
+
+    
+       
+  }
+

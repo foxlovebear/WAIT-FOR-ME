@@ -1,0 +1,35 @@
+.carouselcontrol {
+  /* border: 1px solid black; */
+  width: 80%;
+  /* position: relative; */
+  top: 80px;
+  left: 100px;
+  z-index: -2;
+}
+
+/* 1-8、1-9、1-10 input選擇 */
+.carouselInput {
+z-index: -2;
+  /* border: 1px solid black; */
+  /* background-color: burlywood; */
+  position: relative;
+  top: 12%;
+  left: 640px;
+  font-size: 20px;
+  /* width: 60%; */
+  
+}
+
+@media only screen and (min-width: 300px) and (max-width: 999px)   {
+  .carouselcontrol {
+    /* border: 1px solid black; */
+    width: 120%;
+    /* position: relative; */
+    top: 20px;
+    left: 70px;
+    z-index: -2;
+  }
+}
+
+  
+     

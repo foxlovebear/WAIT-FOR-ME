@@ -1,0 +1,109 @@
+.containerr{
+    padding: 0!important;
+    max-width: 100% !important;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    color: rgb(122, 88, 68);
+}
+
+.navbgc{
+    /* background-color: lawngreen !important; */
+    background-color: rgb(255, 136, 68) !important;
+    padding: 5px;
+
+}
+
+.navheight{
+    /* position: sticky; */
+    font-size: 20px;
+    height: 55px;
+
+}
+
+.navdropsearch{
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+}
+
+
+.navlink{
+    position: relative;
+    z-index: 999;
+    color: rgb(122, 100, 87) !important;
+    font-weight: bold;
+}
+
+.navlink:hover{
+    color: white !important;
+}
+
+.logoname{
+    font-weight: bold;
+    position: relative;
+    left: 5px;
+    /* background-color: rgb(122, 100, 87);     */
+    color: rgb(122, 100, 87) !important;
+}
+
+.logoname:hover{
+    color: white !important;
+}
+
+
+
+@media only screen and (min-width: 300px) and (max-width: 999px)   {
+    
+    .containerr{        
+        position: fixed;
+        top: 0px;
+        z-index: 999;    
+    }
+       
+    /* .navsearch{
+        z-index: 999;
+        background-color: #EFBB24;
+    } */
+
+    .navtype{
+        position: relative;
+        left: 0px;
+    }
+    
+    .navdropDown{
+        background-color: rgb(255, 136, 68);
+        position: relative;
+        top: -1px !important;
+        
+    }
+
+    .navdropsearch{
+        position: relative;
+        top: 0 !important;
+    }
+
+    .navbgc{
+        position: relative;
+        top: -8px !important;
+        padding: 8px;
+    }
+
+
+  }
+
+  @media only screen and (min-width: 999px) and (max-width: 1599px)   {
+    
+    .containerr{        
+        position: fixed;
+        top: 0px;
+        z-index: 999;    
+    }
+
+    .navdropsearch{
+        position: relative;
+        top: 0 !important;
+        left: 2px !important;
+    }
+       
+  }

@@ -1,0 +1,36 @@
+* {
+  font-family: 微軟正黑體;
+  color: rgb(122, 100, 87);
+}
+/* 外框 */
+/* FORM外框+上方留空+對內PADDING */
+.frame {
+  border: 3px solid rgb(122, 100, 87);
+  border-top: 6px solid rgb(255, 136, 68);
+  border-radius: 7px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20;
+  margin-right: 20;
+}
+
+/* 線 */
+.line {
+  border-bottom: 3px solid rgb(255, 136, 68);
+}
+
+/* 標題 */
+#loginTitle {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* Button */
+.buttonStyle {
+  background-color: rgb(122, 100, 87);
+  color: rgb(250, 250, 250);
+}
+.buttonStyle:hover {
+  background-color: rgb(255, 136, 68);
+  color: rgb(250, 250, 250);
+}

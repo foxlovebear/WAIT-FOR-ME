@@ -1,0 +1,46 @@
+/* 右半部設定 */
+#indexright {
+    position: relative;
+    width: 50%;
+    left: 50%;
+    text-align: center;
+  }
+
+  
+
+  @media only screen and (min-width: 300px) and (max-width: 700px)   {
+        
+    /* #indexright {
+      position: relative;
+      width: 50%;
+      left: 50%;
+      text-align: center;
+    } */
+
+    .CitytypeGrid , .testttt{
+      /* background-color: rgba(168, 178, 32, 0.219);         */
+        position:relative;
+        left: -100%;
+        /* top: 530px; */
+        text-align: center;
+        width: 50px;
+    }
+   
+  }
+
+  @media only screen and (min-width: 999px) and (max-width: 1499px)   {
+        
+    
+
+    .CitytypeGrid , .testttt{
+      
+      /* background-color: lightseagreen; */
+        
+        position:relative;
+        /* left: -100%; */
+        /* top: 530px; */
+        text-align: center;
+        /* width: 50px;s */
+    }
+   
+  }
