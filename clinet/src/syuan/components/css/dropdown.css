@@ -1,0 +1,31 @@
+/* 個別縣市鈕 */
+.dropitems > button{
+    border: none;
+    background-color: white;
+    /* font-weight: bold; */
+    padding: 4px;
+    color: rgb(122, 100, 87) ;
+}
+
+/* 縣市標題hover */
+.dropitems > button:hover{
+    color: rgb(255, 136, 68);
+    /* border: 1px solid black; */
+}
+
+/* 縣市標題 */
+.dropitems > div{
+    text-align: center;
+    background-color: rgb(255, 136, 68);
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.dropitems:hover{
+    background-color: white;
+}
+
+#navbarScrollingDropdown:hover > .dropitems{
+    display:block !important;
+}
