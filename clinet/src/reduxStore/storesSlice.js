@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+// import db from "../MOCK_DATA.json";
 
 const initialState = {
   data: [],
@@ -19,7 +20,7 @@ export const storesFetch = createAsyncThunk("stores/storesFetch", async () => {
 });
 // export const storesFetch = createAsyncThunk("stores/storesFetch", async () => {
 //   const rep = await axios.get("http://localhost:3001/");
-//   return rep?.data; //如果a是null，return null，不然就是rep裏面的data(取代if語句)
+//   return rep?.data; //如果rep是null，return null，不然就是rep裏面的data(取代if語句)
 // });
 
 const storesSlice = createSlice({
@@ -47,8 +48,22 @@ const storesSlice = createSlice({
           v.tag3 === action.payload
         );
       });
-      // localStorage.setItem("newData", JSON.stringify(state.newData));
-      console.log(state.newData);
+    },
+    search: (state, action) => {
+      state.newData = state.data.filter((v) => {
+        return (
+          v.name?.toLowerCase().includes(action.payload.toLowerCase()) ||
+          v.city?.toLowerCase().includes(action.payload.toLowerCase()) ||
+          v.address?.toLowerCase().includes(action.payload.toLowerCase()) ||
+          v.foodtype?.toLowerCase().includes(action.payload.toLowerCase()) ||
+          v.tag1?.toLowerCase().includes(action.payload.toLowerCase()) ||
+          v.tag2?.toLowerCase().includes(action.payload.toLowerCase()) ||
+          v.tag3?.toLowerCase().includes(action.payload.toLowerCase()) ||
+          v.content?.toLowerCase().includes(action.payload.toLowerCase())
+          // v.content?(有沒有值如果沒值 這段就null)
+        );
+      });
+      localStorage.setItem("newData", JSON.stringify(state.newData));
     },
   },
   extraReducers: {
@@ -67,63 +82,7 @@ const storesSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { filterCity, filterType, filterTag } = storesSlice.actions;
+export const { filterCity, filterType, filterTag, search } =
+  storesSlice.actions;
 
 export default storesSlice.reducer;
-
-// ==========================================================
-
-// import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// import axios from "axios";
-// import db from "../MOCK_DATA.json";
-
-// export const storesFetch = createAsyncThunk("stores/storesFetch", async () => {
-//   const rep = await axios.get("/page2");
-//   return rep?.data; //如果a是null，return null，不然就是rep裏面的data(取代if語句)
-// });
-
-// const initialState = {
-//   data: db,
-//   status: "",
-//   newData: localStorage.getItem("newData")
-//     ? JSON.parse(localStorage.getItem("newData"))
-//     : db,
-// };
-// export const storesSlice = createSlice({
-//   name: "stores",
-//   initialState,
-//   reducers: {
-//     filterCity: (state, action) => {
-//       if (action.payload == "") {
-//         state.newData = db;
-//       } else {
-//         state.newData = db.filter((v) => v.city === action.payload);
-//       }
-//       // 清除測試完復原state.data = data.filter((v) => v.city === action.payload);
-//       localStorage.setItem("newData", JSON.stringify(state.newData));
-//     },
-//     filterType: (state, action) => {
-//       state.data = db.filter((v) => v.foodtype === action.payload);
-//     },
-//     filterTag: (state, action) => {
-//       state.data = db.filter((v) => v.city === action.payload);
-//     },
-//   },
-//   extraReducers: {
-//     [storesFetch.padding]: (state, action) => {
-//       state.status = "padding";
-//     },
-//     [storesFetch.fulfilled]: (state, action) => {
-//       state.status = "success";
-//       state.data = action.payload;
-//     },
-//     [storesFetch.rejected]: (state, action) => {
-//       state.status = "rejected";
-//     },
-//   },
-// });
-
-// // Action creators are generated for each case reducer function
-// export const { filterCity, filterType, filterTag } = storesSlice.actions;
-
-// export default storesSlice.reducer;
