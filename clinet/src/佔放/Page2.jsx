@@ -1,12 +1,10 @@
 import React from "react";
-import List from "./StoreList/List";
-import Tag from "./Tag";
+import StoreIndex from "../YIXUAN/stores/StoreIndex";
 
 function Page2() {
   return (
     <div>
-      <Tag />
-      <List />
+      <StoreIndex />
     </div>
   );
 }
