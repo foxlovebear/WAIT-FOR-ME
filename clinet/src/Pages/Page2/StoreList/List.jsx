@@ -10,23 +10,23 @@ function List() {
       {data.map((v, i) => {
         return (
           <Container>
-            {/* <Link to={`/page3/${v.id}`}> */}
-            <Card>
-              <Row>
-                <Col>
-                  <Card.Img src={v.img} />
-                </Col>
-                <Col>
-                  <h1>{v.name}</h1>
-                  <span>{v.city}</span>
-                  <span>{v.foodtype}</span>
-                  <span>{v.tag1}</span>
-                  <span>{v.tag2}</span>
-                  <span>{v.tag3}</span>
-                </Col>
-              </Row>
-            </Card>
-            {/* </Link> */}
+            <Link to={`/page3/${v.id}`}>
+              <Card>
+                <Row>
+                  <Col>
+                    <Card.Img src={v.img} />
+                  </Col>
+                  <Col>
+                    <h1>{v.name}</h1>
+                    <span>{v.city}</span>
+                    <span>{v.foodtype}</span>
+                    <span>{v.tag1}</span>
+                    <span>{v.tag2}</span>
+                    <span>{v.tag3}</span>
+                  </Col>
+                </Row>
+              </Card>
+            </Link>
           </Container>
         );
       })}
