@@ -1,5 +1,5 @@
 import React from "react";
-import StoreIndex from "../YIXUAN/stores/StoreIndex";
+import StoreIndex from "../../YIXUAN/stores/StoreIndex";
 
 function Page2() {
   return (

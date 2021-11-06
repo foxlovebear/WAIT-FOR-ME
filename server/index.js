@@ -14,11 +14,17 @@ app.listen(port, () => {
 const mysql = require("mysql");
 const conn = mysql.createConnection({
   user: "root",
-  password: "",
+  password: "root",
   host: "localhost",
   database: "foodie",
 });
 
+app.get("/", (req, rep) => {
+  // console.log(rep);
+  conn.query("select * from stores", (err, result) => {
+    err ? console.log(err) : rep.send(JSON.stringify(result));
+  });
+});
 app.get("/page2", (req, rep) => {
   // console.log(rep);
   conn.query("select * from stores", (err, result) => {

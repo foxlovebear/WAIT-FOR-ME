@@ -1,5 +1,5 @@
 import React from "react";
-import ChiApp from "../Chi/ChiApp";
+import ChiApp from "../../Chi/ChiApp";
 
 function Page1() {
   return (

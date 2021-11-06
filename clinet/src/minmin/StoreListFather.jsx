@@ -15,7 +15,7 @@ function FakeDetail({ match }) {
       `http://localhost:3001/page3?id=${match.params.id}`
     );
     //得到rep物件
-    const data = await rep.json(); //默認rep物件裡的data去轉
+    const data = await rep.json(); //默認rep物件裡的data去轉//axios不用轉
     setData(data);
   };
   // console.log(data); //先空再有陣列

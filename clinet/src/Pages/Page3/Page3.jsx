@@ -1,5 +1,5 @@
 import React from "react";
-import StoreListFather from "../minmin/StoreListFather";
+import StoreListFather from "../../minmin/StoreListFather";
 
 function Page3({ match }) {
   console.log(match);
