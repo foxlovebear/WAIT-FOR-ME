@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { search } from "../../reduxStore/storesSlice";
+import { search } from "../../redux/storesSlice";
 import { Link } from "react-router-dom";
 
 // 本標籤管理

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { filterType } from "../../../reduxStore/storesSlice";
+import { filterType } from "../../../redux/storesSlice";
 
 import { Link } from "react-router-dom";
 

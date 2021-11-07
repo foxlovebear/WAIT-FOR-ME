@@ -2,14 +2,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // import db from "../MOCK_DATA.json";
 
-const initialState = {
-  data: [],
-  status: null,
-  newData: localStorage.getItem("newData")
-    ? JSON.parse(localStorage.getItem("newData"))
-    : [],
-};
+//本slice掌管數據
+//data:axios 從資料庫
+//newData:初值從localData，city&foodtype 篩選器會直接改變，並存入localData
+//tagArray:篩選器形成陣列
 
+const localData = JSON.parse(localStorage.getItem("newData"));
+const initialState = {
+  status: null, //for axios
+  data: [],
+  newData: localData ? localData : [],
+  tagArray: [],
+};
+//fetch data
 export const storesFetch = createAsyncThunk("stores/storesFetch", async () => {
   try {
     const rep = await axios.get("http://localhost:3001/");
@@ -40,14 +45,39 @@ const storesSlice = createSlice({
       state.newData = state.data.filter((v) => v.foodtype === action.payload);
       localStorage.setItem("newData", JSON.stringify(state.newData));
     },
+    //11/7 filterTag目前有BUG(高雄->寵物友善->無低消)(高雄->有wifi->無服務費)(解決)
     filterTag: (state, action) => {
-      state.newData = state.newData.filter((v) => {
-        return (
-          v.tag1 === action.payload ||
-          v.tag2 === action.payload ||
-          v.tag3 === action.payload
-        );
-      });
+      if (state.tagArray.includes(action.payload)) {
+        state.tagArray = state.tagArray.filter((v) => v != action.payload);
+        //有包含就扣掉
+      } else {
+        state.tagArray.push(action.payload);
+        //沒包含就新增
+      }
+      //第一次拿tempA[0]篩選(localdata)
+      //第二次tempA[1](tempA[0]filter回傳的新陣列.push變成陣列的第二項(也是陣列))
+      //tempB為暫時的結果陣列，到最後一次迴圈即為目標陣列，放進newData
+
+      let tempA = [localData]; //tempA = [localdata,第1次篩選結果,第2次篩選結果...]
+      for (let i = 0; i < state.tagArray.length; i++) {
+        let tempB = tempA[i].filter((v) => {
+          return (
+            v.tag1 === state.tagArray[i] ||
+            v.tag2 === state.tagArray[i] ||
+            v.tag3 === state.tagArray[i] //tag1,2,3有沒有其中一個===
+          );
+        });
+        tempA.push(tempB);
+        state.newData = tempB;
+      }
+      if (state.tagArray.length == 0) {
+        state.newData = localData;
+      } //如果tagArray.length==0，直接設為localdata
+      //11.7新增這行，因為為0 for迴圈不會執行
+    },
+    tagClean: (state, action) => {
+      state.tagArray = [];
+      state.newData = localData;
     },
     search: (state, action) => {
       state.newData = state.data.filter((v) => {
@@ -64,6 +94,11 @@ const storesSlice = createSlice({
         );
       });
       localStorage.setItem("newData", JSON.stringify(state.newData));
+    },
+    //在第二頁重新整理<Page2>，清空tagArray newData=local
+    load: (state, action) => {
+      state.tagArray = [];
+      state.newData = localData;
     },
   },
   extraReducers: {
@@ -82,7 +117,7 @@ const storesSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { filterCity, filterType, filterTag, search } =
+export const { filterCity, filterType, filterTag, tagClean, search, load } =
   storesSlice.actions;
 
 export default storesSlice.reducer;

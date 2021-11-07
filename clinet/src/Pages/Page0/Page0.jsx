@@ -1,8 +1,8 @@
 import React from "react";
 import App from "../../syuan/App";
 import Search from "../components/Search";
-import Cbutton from "./CityButton/Cbutton";
-import FTbutton from "./FoodTypeButton/FTbutton";
+import Cbutton from "./components/Cbutton";
+import FTbutton from "./components/FTbutton";
 
 function Page0() {
   return (
