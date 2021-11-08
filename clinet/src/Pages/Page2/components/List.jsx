@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function List() {
   const data = useSelector((state) => state.stores.newData);
+
   return (
     <div id="restaurantRight">
 
@@ -29,14 +30,7 @@ function List() {
                     <p>{v.tag1}</p>
                     <p>{v.tag2}</p>
                     <p>{v.tag3}</p>
-                    <p>{v.foodtype}</p> */}
-                  {/* <p>{v.comment}</p> */}
-                </Col>
-                <Col className="col-2 page2comment">食客評論1：<br /><br /><p>{v.comment}</p></Col>
-                <Col className="col-2 page2comment">食客評論2：<br /><br /><p>{v.comment}</p></Col>
-                <Col className="col-2 page2comment">食客評論3：<br /><br /><p>{v.comment}</p></Col>
-              </Row>
-              <hr className="hrstyle" />
+
             </Link>
           </Container>
         );
