@@ -7,11 +7,11 @@ import FTbutton from "./components/FTbutton";
 function Page0() {
   return (
     <div>
-      <p>調整版面</p>
-      <p>調整版面</p>
-      <Search />
-      <Cbutton />
-      <FTbutton />
+      {/* <p>調整版面</p>
+      <p>調整版面</p> */}
+      {/* <Search /> */}
+      {/* <Cbutton /> */}
+      {/* <FTbutton /> */}
       <App />
     </div>
   );
