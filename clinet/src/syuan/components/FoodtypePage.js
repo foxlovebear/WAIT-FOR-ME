@@ -13,9 +13,9 @@ function FoodtypePage() {
     return (
         <div className="page2mdstyle">
 
+            {/* 左側篩選器 */}
             <div id="restaurantLeft">
 
-                {/* 左側篩選器 */}
                 <div>
                     <form action="" className="situtationChoose">
                         <input type="checkbox" id="wifi" name="wifi" />
@@ -42,7 +42,7 @@ function FoodtypePage() {
             <section>
                 <div id="restaurantRight">
                     <section className="storeSection">
-                        <div className="row ">
+                        <div className="row page2row">
                             <div className="col-3 ">
                                 <Link to="/ResterauntPage">
                                     <img className="storepic" src="/images/syuan/carouselIMG11.jpg" alt="" />

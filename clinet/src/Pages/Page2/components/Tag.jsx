@@ -31,25 +31,42 @@ function Tag({ }) {
 
   return (
     <div>
-      <button
+      {/* <button
         onClick={() => {
           dispatch(tagClean());
         }}
       >
         重設
-      </button>
+      </button><br /> */}
+
+
+
       {tag.map((v, i) => {
-        return [
-          <button
-            style={{ padding: "0" }}
-            className="btn"
-            id={"btn" + i}
-            key={i}
-            onClick={() => dispatch(filterTag(v))}
-          >
-            <span onClick={() => f("btn" + i, v)}>{v}</span>
-          </button>,
-        ];
+        return (
+          <div id="restaurantLeft" className="situtationChoose">
+            {/* <button
+              style={{ padding: "0" }}
+              className="btn situtationChoose"
+              id={"btn" + i}
+              key={i}
+              onClick={() => dispatch(filterTag(v))}
+            >
+              <span onClick={() => f("btn" + i, v)}>{v}</span>
+            </button> */}
+
+            <form action="" className="situtationChoose">
+              <input type="checkbox" className="situtationinput"
+                id={"btn" + i}
+                name={"btn" + i}
+                key={i}
+                onClick={() => dispatch(filterTag(v))} />
+              <label for={"btn" + i} className="situtationBtn btn situtationChoose" onClick={() => f("btn" + i, v)}>
+                {v}
+              </label>
+            </form>
+
+          </div>
+        );
       })}
     </div>
   );

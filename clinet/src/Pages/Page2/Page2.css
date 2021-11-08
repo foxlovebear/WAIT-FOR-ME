@@ -8,6 +8,71 @@
 }
 
 .activet {
-  background-color: #666;
+  /* background-color: #666; */
   color: white;
+}
+
+
+/* 芷萱加的 */
+/* 左半部設定 */
+#restaurantLeft {
+  /* position: fixed; */
+  position: relative;
+  background-color: rgb(243, 243, 243);
+  width: 10%;
+  /* top: 450px; */
+  margin: 5px;
+  height: 100%;
+  text-align:left;
+  /* text-align: center; */
+  /* border: 1px solid black; */
+}
+
+.situtationinput {
+  /* border: 1px solid black; */
+  /* left: 20px; */
+  position: relative;
+}
+.situtationBtn{
+  position: relative;
+  left: -5px;
+  
+}
+
+/* 右半部設定 */
+#restaurantRight {
+  padding-left: 25px;
+  /* margin-left: 4.5px; */
+  /* border: 1px solid black; */
+  position: relative;
+  width: 90%;
+  left: 9%;
+  top: -385px;
+  /* text-align: center; */
+  /* background-color: blue; */
+}
+
+.pagecolmodle{
+  background-color: rgb(211, 211, 211);
+}
+
+.topage3{
+  color: black;
+  text-align: left;
+  /* border: 1px solid rgb(255, 136, 68); */
+}
+
+.hrstyle{
+  border: 2px solid rgb(255, 136, 68);
+
+}
+
+.page2list{
+  text-decoration: none;
+
+}
+
+.page2comment{
+  /* border: 1px solid rgb(255, 136, 68); */
+  padding: 25px;
 }
