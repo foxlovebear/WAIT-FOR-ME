@@ -1,0 +1,34 @@
+* {
+  font-family: 微軟正黑體;
+  color: rgb(122, 100, 87);
+}
+
+/* ----------------封面圖片------------------- */
+.coverImg {
+  border-radius: 10px;
+}
+/* ----------------個人資料整區------------------ */
+
+.PersonalInfo {
+  padding: 2rem 0;
+  border-bottom: 1.5px solid rgb(122, 100, 87);
+}
+
+/* ----------------個人資料的文字區- */
+
+.userInfoTable {
+  font-size: 22px;
+  text-align: center;
+  border-spacing: 1.2rem;
+  border-collapse: separate;
+}
+
+.userInfoContent {
+  border-bottom: 1.5px solid rgb(122, 100, 87);
+}
+
+/* ----------------評論資料----------------------- */
+
+.CommentStoreInfo {
+  border-bottom: 1.5px solid rgb(122, 100, 87);
+}
