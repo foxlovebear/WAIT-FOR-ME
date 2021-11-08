@@ -18,11 +18,14 @@ function List() {
                   </Col>
                   <Col>
                     <h1>{v.name}</h1>
-                    <span>{v.city}</span>
-                    <span>{v.foodtype}</span>
-                    <span>{v.tag1}</span>
-                    <span>{v.tag2}</span>
-                    <span>{v.tag3}</span>
+                    <p>{v.city}</p>
+                    <p>{v.foodtype}</p>
+                    <p>{v.tag1}</p>
+                    <p>{v.tag2}</p>
+                    <p>{v.tag3}</p>
+                    <p>{v.phone}</p>
+                    <p>{v.address}</p>
+                    <p>{v.comment}</p>
                   </Col>
                 </Row>
               </Card>

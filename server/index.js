@@ -19,31 +19,47 @@ const conn = mysql.createConnection({
   database: "foodie",
 });
 
+//首頁取得資料，這邊會放進storesSlice狀態庫
 app.get("/", (req, rep) => {
-  // console.log(rep);
-  conn.query("select * from stores", (err, result) => {
-    err ? console.log(err) : rep.send(JSON.stringify(result));
-  });
-});
-app.get("/page2", (req, rep) => {
-  // console.log(rep);
-  conn.query("select * from stores", (err, result) => {
-    err ? console.log(err) : rep.send(JSON.stringify(result));
-  });
-});
-
-app.get("/page3", function (req, rep) {
-  id = req.query.id;
   conn.query(
-    id ? "select * from stores where id = ? ;" : "select * from stores", //11/1優化成功
-    [id], //待優化(<StoreIndex>要拿全部，<Detail>只要id=?的資料，兩個get(url)無法並存)
-    function (err, result) {
-      // if(err){console.log(err);}else{rep.send(result);console.log(req);}
+    "SELECT * FROM stores as s left JOIN comment as c ON s.id = c.sid group by s.id;",
+    (err, result) => {
       err ? console.log(err) : rep.send(JSON.stringify(result));
-      // err?console.log(err):rep.send(result);
     }
   );
 });
+//放進<StoreListFather>
+app.get("/page3", function (req, rep) {
+  id = req.query.id;
+  conn.query(
+    "select * from stores where id = ? ;",
+    [id],
+    function (err, result) {
+      err ? console.log(err) : rep.send(JSON.stringify(result));
+    }
+  );
+});
+
+//目前page2的資料是從page1就存下來的
+// app.get("/page2", (req, rep) => {
+//   conn.query("select * from stores", (err, result) => {
+//     err ? console.log(err) : rep.send(JSON.stringify(result));
+//   });
+// });
+
+//專題歷史紀錄(本來page2,3，都是從StoreIndex取得狀態)(<StoreIndex>要拿全部，<Detail>只要id=?的資料，兩個get(url)無法並存)
+// app.get("/page3", function (req, rep) {
+//   id = req.query.id;
+//   conn.query(
+//     id ? "select * from stores where id = ? ;" : "select * from stores", //11/1優化成功
+//     [id], //待優化
+//     function (err, result) {
+//       // if(err){console.log(err);}else{rep.send(result);console.log(req);}
+//       err ? console.log(err) : rep.send(JSON.stringify(result));
+//       // err?console.log(err):rep.send(result);
+//     }
+//   );
+// });
 
 //沒有JSON.stringify
 // [

@@ -1,10 +1,10 @@
 import React from "react";
-import ChiApp from "../../Chi/ChiApp";
+import App from "../../Chi/App";
 
 function Page1() {
   return (
     <div>
-      <ChiApp />
+      <App />
     </div>
   );
 }
