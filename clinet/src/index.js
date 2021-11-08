@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./Route.jsx";
 import { Provider } from "react-redux";
-import store from "./reduxStore/store";
-import { storesFetch } from "./reduxStore/storesSlice";
+import store from "./redux/store";
+import { storesFetch } from "./redux/storesSlice";
 
 store.dispatch(storesFetch());
 

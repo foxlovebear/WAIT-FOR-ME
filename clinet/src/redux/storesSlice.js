@@ -55,7 +55,7 @@ const storesSlice = createSlice({
         //沒包含就新增
       }
       //第一次拿tempA[0]篩選(localdata)
-      //第二次tempA[1](tempA[0]filter回傳的新陣列.push變成陣列的第二項(也是陣列))
+      //第二次tempA[1](tempA[0]filter回傳的新陣列.push變成陣列的第一項(也是陣列))
       //tempB為暫時的結果陣列，到最後一次迴圈即為目標陣列，放進newData
 
       let tempA = [localData]; //tempA = [localdata,第1次篩選結果,第2次篩選結果...]

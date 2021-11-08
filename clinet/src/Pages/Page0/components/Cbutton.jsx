@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { filterCity } from "../../../reduxStore/storesSlice";
+import { filterCity } from "../../../redux/storesSlice";
 
 import { Link } from "react-router-dom";
 
