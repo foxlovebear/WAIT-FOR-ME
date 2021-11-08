@@ -1,8 +1,8 @@
 body {
-  padding: 0!important;
+  /* padding: 0!important;
     text-align: center;
     position: relative;
-    top: 0px;
+    top: 0px; */
   }
   
   /* 左半部設定 */
@@ -36,7 +36,7 @@ body {
     
 }
 
-.row > div{
+.page2row > div{
     border: 1px solid rgb(185, 185, 185);
     /* background-color: rgba(137, 43, 226, 0.281); */
     position: relative;
