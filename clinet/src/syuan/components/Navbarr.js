@@ -195,13 +195,12 @@ function Navbarr() {
                                         <button to="/page2" onClick={() => dispatch(filterCity("蘭嶼"))}>
                                             蘭嶼
                                         </button>
-                                        <button to="/page2" onClick={() => dispatch(filterCity("連江"))}>
-                                            連江
-                                        </button>
                                         <button to="/page2" onClick={() => dispatch(filterCity("馬祖"))}>
                                             馬祖
                                         </button>
-                                        <button>小琉球</button>
+                                        <button to="/page2" onClick={() => dispatch(filterCity("小琉球"))}>
+                                            小琉球
+                                        </button>
                                     </NavDropdown.Item>
 
                                     {/* 範本：易軒用這個邏輯去寫，我改樣式 */}

@@ -14,10 +14,10 @@ function Page2() {
   });
   return (
     <div>
-      <p>調整版面</p>
-      <p>調整版面</p>
+      {/* <p>調整版面</p>
+      <p>調整版面</p> */}
       <Tag />
-      <Search />
+      {/* <Search /> */}
       <List />
     </div>
   );
