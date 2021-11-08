@@ -140,9 +140,11 @@ function RitButton() {
                     </div>
                     <div className="Citytype_section"></div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">屏東</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("屏東"))}>
+                            屏東
+                        </Button>
                     </div>
                 </div>
             </section><br></br>
@@ -154,14 +156,18 @@ function RitButton() {
                 <div className="CitytypeGrid_east ">
                     <div className="Citytype_east " style={{ top: '50px' }}>東部</div>
                     <div className="citytype_btnnn">
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn ">花蓮</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("花蓮"))}>
+                            花蓮
+                        </Button>
                     </div>
                     <div className="citytype_btnnn">
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">臺東</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("臺東"))}>
+                            臺東
+                        </Button>
                     </div>
                     <div className="eastspace">
 
@@ -173,25 +179,47 @@ function RitButton() {
                 <div className="CitytypeGrid">
                     <div className="Citytype_section" style={{ top: '50px' }}>離島</div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">澎湖</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("澎湖"))}>
+                            澎湖
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">金門</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("綠島"))}>
+                            綠島
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">連江</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("金門"))}>
+                            金門
+                        </Button>
                     </div>
                     <div className="Citytype_section"></div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">小琉球</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("蘭嶼"))}>
+                            蘭嶼
+                        </Button>
+                    </div>
+                    <div>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("馬祖"))}>
+                            馬祖
+                        </Button>
+                    </div>
+                    <div>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("小琉球"))}>
+                            小琉球
+                        </Button>
                     </div>
                 </div>
             </section>

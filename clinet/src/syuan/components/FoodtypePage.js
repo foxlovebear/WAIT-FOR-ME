@@ -1,6 +1,6 @@
 // 測試接後端
 import React, { useState, useEffect } from 'react';
-import '../components/css/Page2.css';
+import '../components/css/Page2Syuan.css';
 import {
     BrowserRouter as Router,
     Switch,
