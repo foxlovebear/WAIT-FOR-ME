@@ -2,12 +2,13 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { filterTag, tagClean } from "../../../redux/storesSlice";
 import "../Page2.css";
+// import "../Page2Syuan.css";
 
 //待優化
 //1.button onclick 兩個function
 //2.重設不會改顏色(要重新整理)
 
-function Tag({}) {
+function Tag({ }) {
   //取得資料
   const data = useSelector((state) => state.stores.data);
   const tagArray = useSelector((state) => state.stores.tagArray);
