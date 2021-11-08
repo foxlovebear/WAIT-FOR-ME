@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function List() {
   const data = useSelector((state) => state.stores.newData);
+
   return (
     <div>
       {data.map((v, i) => {
@@ -25,7 +26,7 @@ function List() {
                     <p>{v.tag3}</p>
                     <p>{v.phone}</p>
                     <p>{v.address}</p>
-                    <p>{v.comment}</p>
+                    <p>{v.comment && v.comment.substr(0, 60) + "..."}</p>
                   </Col>
                 </Row>
               </Card>
