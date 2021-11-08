@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Row, Col, Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// import "../../../../public/images/syuan/upbacktop.png";
 
 function List() {
   const data = useSelector((state) => state.stores.newData);
@@ -38,28 +39,16 @@ function List() {
               <hr className="hrstyle" />
             </Link>
           </Container>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         );
       })}
+
+
+      {/* 返回最上層按鈕BACKTOP */}
+      <section className="backtop">
+        <a href="#" className="backtopa">TOP
+          <img src="/images/syuan/upbacktop.png" className="backtopimg" alt="" />
+        </a>
+      </section>
     </div>
   );
 }

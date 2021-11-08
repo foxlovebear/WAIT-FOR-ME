@@ -76,3 +76,44 @@
   /* border: 1px solid rgb(255, 136, 68); */
   padding: 25px;
 }
+
+
+/* 返回最上面快捷鈕----------------------- */
+.backtop{
+  /* border: 1px solid black; */
+  background-color: rgb(255, 136, 68);
+  /* color: white; */
+  width: 50px;
+  position: fixed;
+  bottom: 30px;
+  /* left: 94.4%; */
+  left: 96.4%;
+  padding-left: 7px;
+  padding-top: 10px;
+  /* height: 120px; */
+  height: 50px;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.backtopa{
+  text-decoration: none;
+  font-size: 20px;
+  /* position: relative; */
+  /* text-align: center;/ */
+  color: rgb(122, 100, 87) ;
+}
+
+.backtop p{
+  font-size: 14px;
+  /* border: 1px solid black; */
+}
+
+.backtop .backtopimg{
+  /* border: 1px solid red; */
+  width: 30px;
+}
+
+.backtop a:hover{
+  color: white;
+}
