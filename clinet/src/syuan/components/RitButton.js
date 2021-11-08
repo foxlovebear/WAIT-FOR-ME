@@ -13,7 +13,12 @@ import {
     Link
 } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { filterCity } from "../../redux/storesSlice";
+
 function RitButton() {
+
+    const dispatch = useDispatch();
 
     return (
         <React.Fragment>
@@ -21,33 +26,47 @@ function RitButton() {
                 <div className="CitytypeGrid">
                     <div className="Citytype_section" style={{ top: '50px' }}>北部</div>
                     <div>
-                        <Button as={Link} to={"/citytypepage"} variant="outline-success">台北</Button>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("臺北"))}>
+                            臺北
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <Button as={Link} to={"/citytypepage"} variant="outline-success">新北</Button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("新北"))}>
+                            新北
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">基隆</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("基隆"))}>
+                            基隆
+                        </Button>
                     </div>
                     <div className="Citytype_section"></div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">桃園</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("桃園"))}>
+                            桃園
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">新竹</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("新竹"))}>
+                            新竹
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">宜蘭</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("宜蘭"))}>
+                            宜蘭
+                        </Button>
                     </div>
                 </div>
             </section><br />
@@ -56,30 +75,40 @@ function RitButton() {
                 <div className="CitytypeGrid">
                     <div className="Citytype_section" style={{ top: '50px' }}>中部</div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">苗栗</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("苗栗"))}>
+                            苗栗
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">臺中</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("臺中"))}>
+                            臺中
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">彰化</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("彰化"))}>
+                            彰化
+                        </Button>
                     </div>
                     <div className="Citytype_section"></div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">南投</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("南投"))}>
+                            南投
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">雲林</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("雲林"))}>
+                            雲林
+                        </Button>
                     </div>
 
                 </div>
@@ -89,19 +118,25 @@ function RitButton() {
                 <div className="CitytypeGrid">
                     <div className="Citytype_section" style={{ top: '50px' }}>南部</div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">嘉義</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("嘉義"))}>
+                            嘉義
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">臺南</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("臺南"))}>
+                            臺南
+                        </Button>
                     </div>
                     <div>
-                        <a href="">
-                            <button type="button" className="btn btn-outline-success citytype_btn">高雄</button>
-                        </a>
+                        <Button variant="outline-success"
+                            as={Link}
+                            to="/page2" onClick={() => dispatch(filterCity("高雄"))}>
+                            高雄
+                        </Button>
                     </div>
                     <div className="Citytype_section"></div>
                     <div>
