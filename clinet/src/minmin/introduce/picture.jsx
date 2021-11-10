@@ -75,7 +75,7 @@ class Picture extends React.Component {
                   </Card.Title>
                   <Card.Text className="text-dark" >
                     營業時間:<br />
-                    午: AM:12:00~PM:2:00 晚: PM:5:30 ~ PM:10:00
+                    {data[0].time}
                   </Card.Text>
 
                 </Card.Body>
@@ -86,19 +86,14 @@ class Picture extends React.Component {
             </Col>
             <Col xs={12} xl={6} >
               <div style={text1}  >
-                今天的主餐海鮮部分是選用石老魚，
-                是老饕就知道～石老魚產量稀少，是宴客的上等食材，
-                且含有豐富的膠質，吃起來肉質細緻又新鮮，
-                主廚先將石老魚的表皮用烘烤的方式處理過，
-                搭配的醬汁則是以百里香、白酒、蝦膏調製而成，
-                成為這道獨一無二的美味！
+                {data[0].article}
               </div>
 
               <Row>
                 <Col xs={12} xl={12}>
                   <div style={text2} >
-                    餐廳名稱:Makotozushi
-                    定位電話:04-87878787
+                    餐廳名稱:{data[0].name}
+                    定位電話:{data[0].phone}
 
                   </div>
 
