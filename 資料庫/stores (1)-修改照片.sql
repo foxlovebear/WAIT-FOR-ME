@@ -38,8 +38,8 @@ CREATE TABLE `stores` (
   `tag2` varchar(10)  DEFAULT NULL,
   `tag3` varchar(10)  DEFAULT NULL,
   `img` varchar(225)  DEFAULT NULL,
-  `time` varchar(50)  NOT NULL,
-  `article` varchar(225)  NOT NULL
+  `time` varchar(50)  DEFAULT NULL,
+  `article` varchar(225)  DEFAULT NULL
 );
 
 --
