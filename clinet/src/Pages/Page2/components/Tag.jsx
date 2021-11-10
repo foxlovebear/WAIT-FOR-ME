@@ -54,7 +54,20 @@ function Tag({ }) {
               <span onClick={() => f("btn" + i, v)}>{v}</span>
             </button> */}
 
-            <form action="" className="situtationChoose">
+            <form action="" className="situtationChoose rwd999tag">
+              <input type="checkbox" className="situtationinput"
+                id={"btn" + i}
+                name={"btn" + i}
+                key={i}
+                onClick={() => dispatch(filterTag(v))} />
+              <label for={"btn" + i} className="situtationBtn btn situtationChoose" onClick={() => f("btn" + i, v)}>
+                {v}
+              </label>
+            </form>
+
+            {/*---------------------- RWD版本 --------------------*/}
+
+            <form action="" className="situtationChoose rwd300tag">
               <input type="checkbox" className="situtationinput"
                 id={"btn" + i}
                 name={"btn" + i}

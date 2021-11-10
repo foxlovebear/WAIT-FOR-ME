@@ -20,10 +20,6 @@ function Page2() {
       {/* <Search /> */}
       <List />
 
-
-
-
-
     </div>
   );
 }
