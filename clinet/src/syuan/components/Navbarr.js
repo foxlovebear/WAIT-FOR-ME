@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { filterCity } from "../../redux/storesSlice";
 import { filterType } from "../../redux/storesSlice";
 import { search } from "../../redux/storesSlice";
+import Axios from 'axios'; //處理POST
 
 import {
     BrowserRouter as Router,
@@ -23,6 +24,22 @@ import {
 function Navbarr() {
 
     const dispatch = useDispatch();
+    // 期翔會員驗證
+    const userAuthenticated=()=>{
+    Axios.get('http://localhost:3001/authYN',{
+       headers:{"x-access-token":localStorage.getItem("token"),
+      },
+      // memberId:memberId,
+    }).then((response)=>{
+      if(response.data.auth == false){
+        document.location.href="http://localhost:3000/page1";
+      }
+      console.log(response);
+      console.log(response.data.message);
+      console.log(response.data.auth);
+    })
+  }
+    // 期翔會員驗證END
 
     return (
         <div>
@@ -218,16 +235,23 @@ function Navbarr() {
                                     </NavDropdown.Item> */}
                                 </NavDropdown>
 
+{/* --------------------------------------CHI期翔------------------------------------------ */}
 
                                 <NavDropdown title="會員功能" id="navbarScrollingDropdown">
                                     <NavDropdown.Item as={Link} to={"/page1"} className="dropitems">
                                         <button>會員登入</button>
                                     </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={"/memberpage"} onClick={userAuthenticated} className="dropitems">
+                                        <button>會員頁</button>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={"/page1"} onClick={()=>{localStorage.clear();}} className="dropitems">
+                                        <button>登出</button>
+                                    </NavDropdown.Item>
                                 </NavDropdown>
                                 {/* <Nav.Link as={Link} to={"/page1"} className="navlink">會員功能1
                                 </Nav.Link> */}
 
-
+{/* --------------------------------------CHI期翔END------------------------------------------ */}
                             </Nav>
 
                             {/* 搜尋按鈕 */}

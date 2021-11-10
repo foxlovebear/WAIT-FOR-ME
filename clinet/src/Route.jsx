@@ -12,6 +12,9 @@ import Navbar from "./syuan/components/Navbar";
 import Navbar1 from "./syuan/components/Navbarr";
 import Footer from "./syuan/components/Footer";
 
+import FMemberPage from './Chi/pages/MemberPage';
+
+
 function App() {
   return (
     <>
@@ -23,6 +26,7 @@ function App() {
           <Route exact path="/Page1" component={Page1} />
           <Route exact path="/Page2" component={Page2} />
           <Route path="/Page3/:id" component={Page3} />
+          <Route path="/memberpage" component={FMemberPage} />
         </Switch>
         <Footer></Footer>
       </Router>
