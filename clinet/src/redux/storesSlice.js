@@ -45,6 +45,17 @@ const storesSlice = createSlice({
       state.newData = state.data.filter((v) => v.foodtype === action.payload);
       localStorage.setItem("newData", JSON.stringify(state.newData));
     },
+    filterAllFromTag: (state, action) => {
+      //從第三頁選去標籤時，不需要複數篩選
+      state.newData = state.data.filter((v) => {
+        return (
+          v.tag1 === action.payload ||
+          v.tag2 === action.payload ||
+          v.tag3 === action.payload
+        );
+      });
+      localStorage.setItem("newData", JSON.stringify(state.newData));
+    },
     //11/7 filterTag目前有BUG(高雄->寵物友善->無低消)(高雄->有wifi->無服務費)(解決)
     filterTag: (state, action) => {
       if (state.tagArray.includes(action.payload)) {
@@ -117,7 +128,14 @@ const storesSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { filterCity, filterType, filterTag, tagClean, search, load } =
-  storesSlice.actions;
+export const {
+  filterCity,
+  filterType,
+  filterAllFromTag,
+  filterTag,
+  tagClean,
+  search,
+  load,
+} = storesSlice.actions;
 
 export default storesSlice.reducer;
