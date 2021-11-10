@@ -32,7 +32,8 @@ function FRegisterPage(){
         userPasswordReg:userPasswordReg,
       }).then(()=>{
         console.log("Registered!!!");
-        alert("註冊成功!!");
+        alert("註冊成功!!跳轉登入頁登入。");
+        document.location.href="http://localhost:3000/page1";
       });
   };
   return (
@@ -87,9 +88,11 @@ function FRegisterPage(){
                 返回登入
                </Button>
             </Link>
-            <Button variant="" type="" className=" buttonStyle">
-              關閉
+            <Link to="/" >
+            <Button variant="" type="" className="w-100 buttonStyle">
+              回首頁
             </Button>
+            </Link>
             </Stack>
           </Form>
       </Col>

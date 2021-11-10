@@ -37,7 +37,7 @@ function FLoginPage(){
       localStorage.setItem("email",response.data.result[0].email);
       localStorage.setItem("phone",response.data.result[0].phone);
         setLoginStatus(true);
-        
+        document.location.href="/memberpage";
       }
       console.log(response);
       });
@@ -88,9 +88,11 @@ function FLoginPage(){
                 註冊帳號
                </Button>
             </Link>
-            <Button variant="" type="" className=" buttonStyle">
+            <Link to="/" >
+            <Button variant="" type="" className="w-100 buttonStyle">
               回首頁
             </Button>
+            </Link>
             {/* <h1>{loginStatus}</h1> */}
             {loginStatus &&(
               <button

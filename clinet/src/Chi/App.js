@@ -10,14 +10,16 @@ import FMemberPage from './pages/MemberPage';
 import FBookingRecordPage from './pages/BookingRecord';
 import FStarPage from './pages/star';
 import FRegisterPage from './pages/Register';
-
+import Page0 from "../Pages/Page0/Page0";
+import Home from "../syuan/components/Home";
 
 const App = () =>{
     return(
         <BrowserRouter>
             {/* <TemporaryNavBar/> */}
             <Switch>
-                <Route exact path="/page1" component={FLoginPage} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={FLoginPage} />
                 {/* <Route path="/login" component={FLoginPage} /> */}
                 <Route path="/registerpage" component={FRegisterPage} />
                 <Route path="/memberpage" component={FMemberPage} />
