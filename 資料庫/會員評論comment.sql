@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comment` (
-  `id` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
   `comment` text NOT NULL
