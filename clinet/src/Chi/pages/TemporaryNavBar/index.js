@@ -1,17 +1,36 @@
 import React,{Component} from "react";
+import {useState} from 'react';
+import './index.css';
 import { Navbar,
  Form,
  Button, } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
-
+import Axios from 'axios'; //處理POST
 const TemporaryNavBar = () =>{
+  // const [memberId,setMemberId]= useState('');
+
+  const userAuthenticated=()=>{
+
+    Axios.get('http://localhost:3001/authYN',{
+       headers:{"x-access-token":localStorage.getItem("token"),
+      },
+      // memberId:memberId,
+    }).then((response)=>{
+      if(response.data.auth == false){
+        document.location.href="http://localhost:3000/page1";
+      }
+      console.log(response);
+      console.log(response.data.message);
+      console.log(response.data.auth);
+    })
+  }
+
+
  return (//BUTTONS
 
        <Form inline>
-         <Link to="/">
-             <Button variant="outline-success" >首頁</Button>
-         </Link>
+         <div className="tempNavForm">
          <Link to="/login">
          <Button variant="outline-success">登入</Button>
          </Link>
@@ -19,14 +38,13 @@ const TemporaryNavBar = () =>{
          <Button variant="outline-success">註冊</Button>
          </Link>
          <Link to="/memberpage">
-         <Button variant="outline-success">會員頁</Button>
+         <Button variant="outline-success" onClick={userAuthenticated}>會員頁</Button>
          </Link>
-         <Link to="/bookingrecord">
-         <Button variant="outline-success">我的訂單</Button>
-         </Link>
-         <Link to="/starpage">
+         {/* <Link to="/starpage">
          <Button variant="outline-success">star</Button>
-         </Link>
+         </Link> */}
+         <Button onClick = {()=>{localStorage.clear();}}  variant="outline-success">登出</Button>
+        </div>
        </Form>
 
  );

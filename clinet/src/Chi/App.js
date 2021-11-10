@@ -15,10 +15,10 @@ import FRegisterPage from './pages/Register';
 const App = () =>{
     return(
         <BrowserRouter>
-            <TemporaryNavBar/>
+            {/* <TemporaryNavBar/> */}
             <Switch>
-                <Route exact path="/" component={TemporaryNavBar} />
-                <Route path="/login" component={FLoginPage} />
+                <Route exact path="/page1" component={FLoginPage} />
+                {/* <Route path="/login" component={FLoginPage} /> */}
                 <Route path="/registerpage" component={FRegisterPage} />
                 <Route path="/memberpage" component={FMemberPage} />
                 <Route path="/bookingrecord" component={FBookingRecordPage} />
