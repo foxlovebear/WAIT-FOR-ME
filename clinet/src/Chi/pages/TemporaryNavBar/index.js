@@ -18,7 +18,7 @@ const TemporaryNavBar = () =>{
       // memberId:memberId,
     }).then((response)=>{
       if(response.data.auth == false){
-        document.location.href="http://localhost:3000/page1";
+        document.location.href="/login";
       }
       console.log(response);
       console.log(response.data.message);

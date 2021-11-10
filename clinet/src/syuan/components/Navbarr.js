@@ -32,7 +32,7 @@ function Navbarr() {
       // memberId:memberId,
     }).then((response)=>{
       if(response.data.auth == false){
-        document.location.href="http://localhost:3000/page1";
+        document.location.href="/login";
       }
       console.log(response);
       console.log(response.data.message);
@@ -238,13 +238,13 @@ function Navbarr() {
 {/* --------------------------------------CHI期翔------------------------------------------ */}
 
                                 <NavDropdown title="會員功能" id="navbarScrollingDropdown">
-                                    <NavDropdown.Item as={Link} to={"/page1"} className="dropitems">
+                                    <NavDropdown.Item as={Link} to={"/login"} className="dropitems">
                                         <button>會員登入</button>
                                     </NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to={"/memberpage"} onClick={userAuthenticated} className="dropitems">
                                         <button>會員頁</button>
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to={"/page1"} onClick={()=>{localStorage.clear();}} className="dropitems">
+                                    <NavDropdown.Item as={Link} to={"/"} onClick= {()=>{localStorage.clear();}} className="dropitems">
                                         <button>登出</button>
                                     </NavDropdown.Item>
                                 </NavDropdown>
