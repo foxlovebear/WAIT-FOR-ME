@@ -33,7 +33,7 @@ function FRegisterPage(){
       }).then(()=>{
         console.log("Registered!!!");
         alert("註冊成功!!跳轉登入頁登入。");
-        document.location.href="http://localhost:3000/page1";
+        document.location.href="/login";
       });
   };
   return (
