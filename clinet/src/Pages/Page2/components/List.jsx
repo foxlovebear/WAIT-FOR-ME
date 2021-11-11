@@ -47,8 +47,8 @@ function List() {
                   <br />
                   <p className="resterauntlist">
                     {temp.length != 0 &&
-                      (temp[0].comment.length > 30
-                        ? temp[0].comment.substr(0, 30) + "..."
+                      (temp[0].comment.length > 35
+                        ? temp[0].comment.substr(0, 35) + "..."
                         : temp[0].comment)}
                   </p>
                 </Col>
@@ -58,8 +58,8 @@ function List() {
                   <br />
                   <p className="resterauntlist">
                     {temp.length > 1 &&
-                      (temp[1].comment.length > 30
-                        ? temp[1].comment.substr(0, 30) + "..."
+                      (temp[1].comment.length > 35
+                        ? temp[1].comment.substr(0, 35) + "..."
                         : temp[1].comment)}
                   </p>
                 </Col>
@@ -69,8 +69,8 @@ function List() {
                   <br />
                   <p className="resterauntlist">
                     {temp.length > 2 &&
-                      (temp[2].comment.length > 30
-                        ? temp[2].comment.substr(0, 30) + "..."
+                      (temp[2].comment.length > 35
+                        ? temp[2].comment.substr(0, 35) + "..."
                         : temp[2].comment)}
                   </p>
                 </Col>
