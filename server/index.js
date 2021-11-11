@@ -14,10 +14,12 @@ app.listen(port, () => {
 const mysql = require("mysql");
 const conn = mysql.createConnection({
   user: "root",
-  password: "root",
+  password: "",
   host: "localhost",
   database: "foodie",
 });
+
+// ----------------------------易軒-------------------------------
 
 //首頁取得資料，這邊會放進storesSlice狀態庫
 app.get("/", (req, rep) => {
@@ -70,24 +72,6 @@ app.get("/comment", (req, res) => {
 //     }
 //   );
 // });
-
-//沒有JSON.stringify
-// [
-//   {
-//       "id": 3,
-//       "name": "春宅 台中中華店",
-//       "city": "台中市",
-//       "category": "合菜",
-//       "content": "因為喝太多次，最推薦茶凍跟芝士系列\r\n茶凍甜而不膩，口感滑順\r\n芝士濃醇香甜，茶韻回甘\r\n買太多次跟老闆聊起來\r\n發現老闆每一杯茶都很用心調整比例跟口味\r\n嚴選茶葉跟食材\r\n以至於每一種茶都很順口\r\n很用心做飲料的店家，每個品項都很有特色\r\n喝完就回不去了～\r\n每次公司訂大量都要前一天來預訂",
-//       "img": "./images/春宅 台中中華店.jpeg",
-//       "hashtag1": ""
-//   }
-// ]
-
-//有JSON.stringify
-// [{"id":3,"name":"春宅
-// 台中中華店","city":"台中市","category":"合菜","content":"因為喝太多次，最推薦茶凍跟芝士系列\r\n茶凍甜而不膩，口感滑順\r\n芝士濃醇香甜，茶韻回甘\r\n買太多次跟老闆聊起來\r\n發現老闆每一杯茶都很用心調整比例跟口味\r\n嚴選茶葉跟食材\r\n以至於每一種茶都很順口\r\n很用心做飲料的店家，每個品項都很有特色\r\n喝完就回不去了～\r\n每次公司訂大量都要前一天來預訂","img":"./images/春宅
-// 台中中華店.jpeg","hashtag1":""}]
 
 // ----------------------------期翔Chi-------------------------------
 
