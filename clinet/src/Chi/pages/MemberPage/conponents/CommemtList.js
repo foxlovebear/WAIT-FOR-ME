@@ -16,9 +16,10 @@ function FCommemtList(){
             <Container className="userCommentContainer mb-5 ">
             {/* 個人資訊+店家 */}
             <Row id="commentUserInfo" >
-              <Col lg={4} >
+              {/* 用戶小標+用戶名 */}
+              <Col lg={4} > 
                 <Col lg={5} className="userIcon w-100"><FMemberIcon/></Col>
-                <Col className="commenterName"><h6>大狐狸</h6></Col>
+                <Col className="commenterName"><h6>{localStorage.getItem('name')}</h6></Col>
               </Col>  
               <Col lg={8} className="CommentStoreInfo">
                   <Stack>

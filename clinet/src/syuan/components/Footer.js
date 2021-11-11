@@ -11,7 +11,7 @@ function Footer() {
             </span>
 
             <span>
-                <Link to='/page1' className="footerright footerlogin">
+                <Link to='/login' className="footerright footerlogin">
                     會員登入/註冊
                 </Link>
             </span>
