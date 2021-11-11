@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021 年 11 月 10 日 07:53
+-- 產生時間： 2021 年 11 月 11 日 11:29
 -- 伺服器版本： 10.4.21-MariaDB
 -- PHP 版本： 8.0.10
 
@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `stores` (
   `id` int(255) NOT NULL,
-  `name` varchar(255)  DEFAULT NULL,
-  `city` varchar(5)  DEFAULT NULL,
-  `address` varchar(255)  DEFAULT NULL,
-  `phone` varchar(30)  DEFAULT NULL,
-  `foodtype` varchar(10)  DEFAULT NULL,
-  `tag1` varchar(10)  DEFAULT NULL,
-  `tag2` varchar(10)  DEFAULT NULL,
-  `tag3` varchar(10)  DEFAULT NULL,
-  `img` varchar(225)  DEFAULT NULL,
-  `time` varchar(50)  DEFAULT NULL,
-  `article` varchar(225)  DEFAULT NULL
-);
+  `name` varchar(255) DEFAULT NULL,
+  `city` varchar(5) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `phone` varchar(30) DEFAULT NULL,
+  `foodtype` varchar(10) DEFAULT NULL,
+  `tag1` varchar(10) DEFAULT NULL,
+  `tag2` varchar(10) DEFAULT NULL,
+  `tag3` varchar(10) DEFAULT NULL,
+  `img` varchar(225) DEFAULT NULL,
+  `time` varchar(50) DEFAULT NULL,
+  `article` varchar(225) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `stores`
@@ -48,7 +48,7 @@ CREATE TABLE `stores` (
 
 INSERT INTO `stores` (`id`, `name`, `city`, `address`, `phone`, `foodtype`, `tag1`, `tag2`, `tag3`, `img`, `time`, `article`) VALUES
 (1, '小葛廚房', '臺中', '台中市北屯區四平路409號', '04 2422 6289', '甜點', '有WIFI', '有插座', '無服務費', './images/storeImg/小葛1.jpg', '午: AM:11:00~PM:2:00 晚: PM:5:30 ~ PM:10:00', '首先【必須大推他們家的檸檬塔！】\r\n【喜歡吃檸檬塔的人，請一定要收藏此篇！】\r\n\r\n雖然他們家的【檸檬塔真的超！酸！】\r\n但是是會酸到會很過癮的那種酸🤤\r\n讓我終於找到快逼近我心目中完美的檸檬塔'),
-(2, '一笈壽司', '臺中', '台中市南屯區公益路二段25號', '04 2320 6368', '日式', '無服務費', '無低消', '有冷氣', './images/storeImg/一笈.jpg', '午: AM:9:00~PM:1:00 晚: PM:4:30 ~ PM:9:00', '好吃到，一個月內我們家來吃了兩次\r\n點的食物有點太多，所以會拆成兩篇介紹\r\n但是【兩篇介紹的食物會全都不一樣！】\r\n也都會有我各自推薦的絕對必點的餐點！'),
+(2, '一笈壽司', '臺中', '台中市南屯區公益路二段25號', '04 2320 6368', '日式', '無服務費', '無低消', '有冷氣', './images/storeImg/一笈.jpg', '午: AM:9:00~PM:1:00 晚: PM:4:30 ~ PM:9:00', '一笈壽司為輕井澤集團旗下的壽司品牌，2018年在台中公益路上開幕。餐廳外觀是清水模設計，內部裝潢則是以暖色系為主，位置寬敞且舒適。餐點部分以壽司來說，算是中低價位，但卻保有極高的品質、CP值極高，受到許多壽司控的喜愛。'),
 (3, '莓塔咖啡館', '高雄', '高雄市前鎮區林森三路193巷25號', '07 338 8190', '義式', '無服務費', '無時間限制', '親子友善', './images/storeImg/莓塔.jpg', '午: AM:10:00~PM:2:00 晚: PM:8:30 ~ PM:10:00', '清炒蒜香松阪豬義大利麵\r\n這道真的超好吃！麵體吸滿了醬汁，超入味！\r\n尤其是它的松阪豬！邊邊煎到赤赤的，很脆彈\r\n松阪豬的量也給得很大方！我真的超愛🤤🤤🤤'),
 (4, 'Mabao嬤寶', '新竹', '新竹巨城B1', NULL, '甜點', '無時間限制', '無低消', '無服務費', './images/storeImg/嬤寶.jpg', '午: AM:11:00~PM:2:00 晚: PM:5:30 ~ PM:10:00', '嬤寶是網紅濃濃創立的食品品牌～\r\n從最初的雪Q餅，到現在的新品—【姐夫布朗尼】\r\n每每才剛一上架，真的堪比在搶演唱會門票一樣！\r\n大家都是直接用秒速在搶的，真的很誇張！😂'),
 (5, '佳吉飲料店 烤饅頭', '屏東', '屏東縣東港鎮中正路128號', '08 832 0371', '麵包', '無服務費', '無低消', '無時間限制', './images/storeImg/烤饅頭.jpg', '午: AM:08:00~PM:2:00 晚: PM:8:30 ~ PM:12:00', '使用【碳火】燒烤的饅頭，讓饅頭充滿了碳火的香氣～\r\n烤到微焦脆的表層，更是增添了饅頭的口感。\r\n\r\n而饅頭本人則是非常的～鬆～軟～\r\n在撕扯過程中可以說是非常的「ㄉㄨㄞ 一ㄠ」\r\n再加上煉乳的甜蜜滋味，讓人完全欲罷不能。'),
