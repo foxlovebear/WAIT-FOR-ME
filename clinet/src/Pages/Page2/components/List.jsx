@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 
 function List() {
   const data = useSelector((state) => state.stores.newData);
+  const comment = useSelector((state) => state.comment.data);
 
   return (
     <div id="restaurantRight">
       {data.map((v, i) => {
+        let temp = comment.filter((v2) => {
+          return v2.sid == v.id;
+        });
+        console.log(temp);
+
         return (
           <Container>
             <Link to={`/page3/${v.id}`} className="page2list rwd999list">
@@ -39,25 +45,34 @@ function List() {
                   食客評論1：
                   <br />
                   <br />
-                  <p className="resterauntlist">{v.comment && v.comment.length > 30
-                    ? v.comment.substr(0, 30) + "..."
-                    : v.comment}</p>
+                  <p className="resterauntlist">
+                    {temp.length != 0 &&
+                      (temp[0].comment.length > 30
+                        ? temp[0].comment.substr(0, 30) + "..."
+                        : temp[0].comment)}
+                  </p>
                 </Col>
                 <Col className="col-2 page2comment">
                   食客評論2：
                   <br />
                   <br />
-                  <p className="resterauntlist">{v.comment && v.comment.length > 30
-                    ? v.comment.substr(0, 30) + "..."
-                    : v.comment}</p>
+                  <p className="resterauntlist">
+                    {temp.length > 1 &&
+                      (temp[1].comment.length > 30
+                        ? temp[1].comment.substr(0, 30) + "..."
+                        : temp[1].comment)}
+                  </p>
                 </Col>
                 <Col className="col-2 page2comment">
                   食客評論3：
                   <br />
                   <br />
-                  <p className="resterauntlist">{v.comment && v.comment.length > 30
-                    ? v.comment.substr(0, 30) + "..."
-                    : v.comment}</p>
+                  <p className="resterauntlist">
+                    {temp.length > 2 &&
+                      (temp[2].comment.length > 30
+                        ? temp[2].comment.substr(0, 30) + "..."
+                        : temp[2].comment)}
+                  </p>
                 </Col>
               </Row>
               <hr className="hrstyle" />
@@ -69,7 +84,6 @@ function List() {
                   : v.comment}
               </p> */}
             </Link>
-
 
             {/*---------------------- RWD版本 --------------------*/}
             <section className="rwdlistver">
@@ -86,7 +100,8 @@ function List() {
                     <br />
                     <div className="resterauntlist">
                       標籤：
-                      {v.city}&nbsp;{v.foodtype}&nbsp;{v.tag1}&nbsp;{v.tag2}&nbsp;
+                      {v.city}&nbsp;{v.foodtype}&nbsp;{v.tag1}&nbsp;{v.tag2}
+                      &nbsp;
                       {v.tag3}
                     </div>
                   </Col>
@@ -95,25 +110,34 @@ function List() {
                       食客評論1：
                       <br />
                       <br />
-                      <p className="resterauntlist">{v.comment && v.comment.length > 30
-                        ? v.comment.substr(0, 30) + "..."
-                        : v.comment}</p>
+                      <p className="resterauntlist">
+                        {temp.length != 0 &&
+                          (temp[0].comment.length > 30
+                            ? temp[0].comment.substr(0, 30) + "..."
+                            : temp[0].comment)}
+                      </p>
                     </Col>
                     <Col className="col-4 page2comment">
                       食客評論2：
                       <br />
                       <br />
-                      <p className="resterauntlist">{v.comment && v.comment.length > 30
-                        ? v.comment.substr(0, 30) + "..."
-                        : v.comment}</p>
+                      <p className="resterauntlist">
+                        {temp.length > 1 &&
+                          (temp[1].comment.length > 30
+                            ? temp[1].comment.substr(0, 30) + "..."
+                            : temp[1].comment)}
+                      </p>
                     </Col>
                     <Col className="col-4 page2comment">
                       食客評論3：
                       <br />
                       <br />
-                      <p className="resterauntlist">{v.comment && v.comment.length > 30
-                        ? v.comment.substr(0, 30) + "..."
-                        : v.comment}</p>
+                      <p className="resterauntlist">
+                        {temp.length > 2 &&
+                          (temp[2].comment.length > 30
+                            ? temp[2].comment.substr(0, 30) + "..."
+                            : temp[2].comment)}
+                      </p>
                     </Col>
                   </Row>
                 </Row>

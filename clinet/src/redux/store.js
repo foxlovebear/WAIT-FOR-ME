@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import storseReducer from "./storesSlice";
+import commentReducer from "./commentSlice";
 
 export default configureStore({
   reducer: {
     stores: storseReducer,
+    comment: commentReducer,
   },
 });

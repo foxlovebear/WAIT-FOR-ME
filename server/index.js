@@ -14,7 +14,7 @@ app.listen(port, () => {
 const mysql = require("mysql");
 const conn = mysql.createConnection({
   user: "root",
-  password: "",
+  password: "root",
   host: "localhost",
   database: "foodie",
 });
@@ -36,6 +36,16 @@ app.get("/page3", function (req, rep) {
     [id],
     function (err, result) {
       err ? console.log(err) : rep.send(JSON.stringify(result));
+    }
+  );
+});
+//取得資料，這邊會放進commentSlice狀態庫，讓comment id 大到小排列
+app.get("/comment", (req, res) => {
+  conn.query(
+    // "select * from stores",
+    "SELECT * FROM comment ORDER BY comment.cid DESC",
+    (err, result) => {
+      err ? console.log(err) : res.send(JSON.stringify(result));
     }
   );
 });
