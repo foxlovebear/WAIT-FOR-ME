@@ -13,6 +13,7 @@ import { filterCity } from "../../redux/storesSlice";
 import { filterType } from "../../redux/storesSlice";
 import { search } from "../../redux/storesSlice";
 import Axios from 'axios'; //處理POST
+import React,{useState} from 'react';
 
 import {
     BrowserRouter as Router,
@@ -25,11 +26,13 @@ function Navbarr() {
 
     const dispatch = useDispatch();
     // 期翔會員驗證
+    const id = localStorage.getItem("id");
     const userAuthenticated=()=>{
-    Axios.get('http://localhost:3001/authYN',{
-       headers:{"x-access-token":localStorage.getItem("token"),
-      },
+    console.log(id);
+    Axios.post('http://localhost:3001/authYN',{
+       headers:{"x-access-token":localStorage.getItem("token"),},
       // memberId:memberId,
+      id:id,
     }).then((response)=>{
       if(response.data.auth == false){
         document.location.href="/login";

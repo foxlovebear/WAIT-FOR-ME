@@ -15,6 +15,7 @@ import Footer from "./syuan/components/Footer";
 import FMemberPage from './Chi/pages/MemberPage';
 import FLoginPage from './Chi/pages/Login';
 import FRegisterpage from './Chi/pages/Register';
+import FRevisePage from './Chi/pages/Revise';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/Page2" component={Page2} />
           <Route path="/Page3/:id" component={Page3} />
           <Route path="/memberpage" component={FMemberPage} />
+          <Route path="/revisepage" component={FRevisePage} />
           <Route exact path="/login" component={FLoginPage} />
           <Route exact path="/registerpage" component={FRegisterpage} />
         </Switch>

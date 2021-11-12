@@ -7,6 +7,7 @@ import { BrowserRouter , Route, Link, Switch } from "react-router-dom";
 import TemporaryNavBar from './pages/TemporaryNavBar';
 import FLoginPage from './pages/Login';
 import FMemberPage from './pages/MemberPage';
+import FRevisePage from './pages/Revise';
 import FBookingRecordPage from './pages/BookingRecord';
 import FStarPage from './pages/star';
 import FRegisterPage from './pages/Register';
@@ -23,6 +24,7 @@ const App = () =>{
                 {/* <Route path="/login" component={FLoginPage} /> */}
                 <Route path="/registerpage" component={FRegisterPage} />
                 <Route path="/memberpage" component={FMemberPage} />
+                <Route path="/revisepage" component={FRevisePage} />
                 <Route path="/bookingrecord" component={FBookingRecordPage} />
                 <Route path="/starpage" component={FStarPage} />
             </Switch>

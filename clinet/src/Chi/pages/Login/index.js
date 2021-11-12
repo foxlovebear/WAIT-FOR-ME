@@ -33,11 +33,12 @@ function FLoginPage(){
         alert(response.data.result[0].name+"，歡迎回來");
         localStorage.setItem("token",response.data.token);
         // localStorage.setItem("result",response.data.result[0].name);
+      localStorage.setItem("id",response.data.result[0].user_id);
       localStorage.setItem("name",response.data.result[0].name);
       localStorage.setItem("email",response.data.result[0].email);
       localStorage.setItem("phone",response.data.result[0].phone);
         setLoginStatus(true);
-        document.location.href="/memberpage";
+        // document.location.href="/memberpage";
       }
       console.log(response);
       });
