@@ -14,6 +14,9 @@ const initialState = {
     ? JSON.parse(localStorage.getItem("newData"))
     : [],
   tagArray: [],
+  now:
+    new Date().toString().substr(16, 2) + new Date().toString().substr(19, 2), //目前時間不會隨著元件改變而更新(除非重新整理)
+  // now: "2130", //測試用，高雄->營業中->剩梅塔
 };
 //fetch data
 export const storesFetch = createAsyncThunk("stores/storesFetch", async () => {
@@ -49,8 +52,8 @@ const storesSlice = createSlice({
       state.data2 = state.data.filter((v) => v.foodtype === action.payload);
       localStorage.setItem("newData", JSON.stringify(state.newData));
     },
+    //從第三頁選去標籤時，不需要複數篩選
     filterAllFromTag: (state, action) => {
-      //從第三頁選去標籤時，不需要複數篩選
       state.newData = state.data.filter((v) => {
         return (
           v.tag1 === action.payload ||
@@ -75,15 +78,32 @@ const storesSlice = createSlice({
 
       let tempA = [state.data2]; //tempA = [data2,第1次篩選結果,第2次篩選結果...]
       for (let i = 0; i < state.tagArray.length; i++) {
-        let tempB = tempA[i].filter((v) => {
-          return (
-            v.tag1 === state.tagArray[i] ||
-            v.tag2 === state.tagArray[i] ||
-            v.tag3 === state.tagArray[i] //tag1,2,3有沒有其中一個===
-          );
-        });
-        tempA.push(tempB);
-        state.newData = tempB;
+        if (state.tagArray[i] == "營業中") {
+          let tempB = tempA[i].filter((v) => {
+            const f = v.time1;
+            const f1 = f.substr(0, 2) + f.substr(2, 2);
+            const f2 = f.substr(5, 2) + f.substr(7, 2);
+            const s = v.time2;
+            const s1 = s.substr(0, 2) + s.substr(2, 2);
+            const s2 = s.substr(5, 2) + s.substr(7, 2);
+            return (
+              (state.now > f1 && state.now < f2) ||
+              (state.now > s1 && state.now < s2)
+            );
+          });
+          tempA.push(tempB);
+          state.newData = tempB;
+        } else {
+          let tempB = tempA[i].filter((v) => {
+            return (
+              v.tag1 === state.tagArray[i] ||
+              v.tag2 === state.tagArray[i] ||
+              v.tag3 === state.tagArray[i] //tag1,2,3有沒有其中一個===
+            );
+          });
+          tempA.push(tempB);
+          state.newData = tempB;
+        }
       }
       if (state.tagArray.length == 0) {
         state.newData = state.data2;
