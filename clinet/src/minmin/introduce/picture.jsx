@@ -49,10 +49,11 @@ const info1 = {
 
 function Picture({ data }) {
   const dispatch = useDispatch();
-  const { city, foodtype, tag1, tag2, tag3 } = data[0];
-
-  let temp = data[0].img;
-  let imgString = temp.substr(1, temp.length);
+  const { city, foodtype, tag1, tag2, tag3, img } = data[0];
+  //11/15註解
+  // let temp = data[0].img;
+  // let imgString = temp.substr(1, temp.length);
+  //11/15註解
   return (
     <>
       <Row>
@@ -61,7 +62,7 @@ function Picture({ data }) {
             <Col xs={12} xl={6}>
               <Card style={pic2} className="mb-3">
                 {/* <img src={Foodpic} style={pic1} alt="Camera" /> */}
-                <Card.Img src={imgString} style={pic1} />
+                <Card.Img src={"http://localhost:3001/" + img} style={pic1} />
                 <Card.Body>
                   <Card.Title className="text-info">
                     TAGS :

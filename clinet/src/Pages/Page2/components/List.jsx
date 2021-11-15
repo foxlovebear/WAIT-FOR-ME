@@ -21,7 +21,10 @@ function List() {
             <Link to={`/page3/${v.id}`} className="page2list rwd999list">
               <Row className="topage3">
                 <Col className="col-3">
-                  <Card.Img src={v.img} className="resterauntimg" />
+                  <Card.Img
+                    src={"http://localhost:3001/" + v.img}
+                    className="resterauntimg"
+                  />
                 </Col>
                 <Col className="col-3" className="resterauntlist">
                   <br />
