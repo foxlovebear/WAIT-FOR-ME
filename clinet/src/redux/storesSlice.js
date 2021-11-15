@@ -82,11 +82,11 @@
 //         if (state.tagArray[i] == "營業中") {
 //           let tempB = tempA[i].filter((v) => {
 //             const f = v.time1;
-//             const f1 = f.substr(0, 2) + f.substr(2, 2);
-//             const f2 = f.substr(5, 2) + f.substr(7, 2);
-//             const s = v.time2;
-//             const s1 = s.substr(0, 2) + s.substr(2, 2);
-//             const s2 = s.substr(5, 2) + s.substr(7, 2);
+//            const f1 = f.substr(0, 2) + f.substr(3, 2);
+// const f2 = f.substr(6, 2) + f.substr(9, 2);
+// const s = v.time2;
+// const s1 = s.substr(0, 2) + s.substr(3, 2);
+// const s2 = s.substr(6, 2) + s.substr(9, 2);
 //             return (
 //               (state.now > f1 && state.now < f2) ||
 //               (state.now > s1 && state.now < s2)
@@ -283,11 +283,11 @@ const storesSlice = createSlice({
           case "營業中":
             let tempB = tempA[i].filter((v) => {
               const f = v.time1;
-              const f1 = f.substr(0, 2) + f.substr(2, 2);
-              const f2 = f.substr(5, 2) + f.substr(7, 2);
+              const f1 = f.substr(0, 2) + f.substr(3, 2);
+              const f2 = f.substr(6, 2) + f.substr(9, 2);
               const s = v.time2;
-              const s1 = s.substr(0, 2) + s.substr(2, 2);
-              const s2 = s.substr(5, 2) + s.substr(7, 2);
+              const s1 = s.substr(0, 2) + s.substr(3, 2);
+              const s2 = s.substr(6, 2) + s.substr(9, 2);
               return (
                 (state.now > f1 && state.now < f2) ||
                 (state.now > s1 && state.now < s2)
