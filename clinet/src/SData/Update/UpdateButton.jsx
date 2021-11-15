@@ -10,6 +10,10 @@ export const UpdateButton = ({
   phone,
   city,
   foodtype,
+  f1,
+  f2,
+  s1,
+  s2,
   tag1,
   tag2,
   tag3,
@@ -26,9 +30,12 @@ export const UpdateButton = ({
         <td>{phone}</td>
         <td>{city}</td>
         <td>{foodtype}</td>
+
         <td>{tag1}</td>
         <td>{tag2}</td>
         <td>{tag3}</td>
+        <td>{f1 + "-" + f2}</td>
+        <td>{s1 + "-" + s2}</td>
       </tr>
       {editingShow && (
         <Update
@@ -38,6 +45,10 @@ export const UpdateButton = ({
           phone={phone}
           city={city}
           foodtype={foodtype}
+          f1={f1}
+          f2={f2}
+          s1={s1}
+          s2={s2}
           tag1={tag1}
           tag2={tag2}
           tag3={tag3}

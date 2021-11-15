@@ -305,6 +305,8 @@ app.post("/sdata/create", (req, res) => {
     phone,
     city,
     ft,
+    time1,
+    time2,
     tag1,
     tag2,
     tag3,
@@ -312,8 +314,22 @@ app.post("/sdata/create", (req, res) => {
     img,
   } = req.body;
   conn.query(
-    "INSERT INTO `stores` (`name`,`status`, `address`, `phone`, `city`, `foodtype`, `tag1`, `tag2`, `tag3`,`article`, `img`) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?);",
-    [name, status, address, phone, city, ft, tag1, tag2, tag3, article, img],
+    "INSERT INTO `stores` (`name`,`status`, `address`, `phone`, `city`, `foodtype`,`time1`,`time2`, `tag1`, `tag2`, `tag3`,`article`, `img`) VALUES (?,?, ?, ?, ?, ?,?,?, ?, ?, ?, ?,?);",
+    [
+      name,
+      status,
+      address,
+      phone,
+      city,
+      ft,
+      time1,
+      time2,
+      tag1,
+      tag2,
+      tag3,
+      article,
+      img,
+    ],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -334,6 +350,8 @@ app.put("/sdata/update", (req, res) => {
     phone,
     city,
     ft,
+    time1,
+    time2,
     tag1,
     tag2,
     tag3,
@@ -343,7 +361,7 @@ app.put("/sdata/update", (req, res) => {
   } = req.body;
 
   conn.query(
-    "UPDATE `stores` SET `status` = ?,`name` = ?, `address` = ?, `phone` = ?, `city` = ?, `foodtype` = ?, `tag1` = ?, `tag2` = ?, `tag3` = ?, `article`=?,`img` = ? WHERE `stores`.`id` =?",
+    "UPDATE `stores` SET `status` = ?,`name` = ?, `address` = ?, `phone` = ?, `city` = ?, `foodtype` = ?, `time1` = ?, `time2` = ?, `tag1` = ?, `tag2` = ?, `tag3` = ?, `article`=?,`img` = ? WHERE `stores`.`id` =?",
     [
       status,
       name,
@@ -351,6 +369,8 @@ app.put("/sdata/update", (req, res) => {
       phone,
       city,
       ft,
+      time1,
+      time2,
       tag1,
       tag2,
       tag3,

@@ -13,6 +13,9 @@ import "react-toastify/dist/ReactToastify.css";
 store.dispatch(storesFetch());
 store.dispatch(commentFetch());
 store.dispatch(dataFetch());
+window.addEventListener("load", () => {
+  store.dispatch(dataFetch()); //crud完從最外層重整才會重新fetch
+});
 
 ReactDOM.render(
   <Provider store={store}>

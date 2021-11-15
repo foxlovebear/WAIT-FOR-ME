@@ -18,6 +18,10 @@ function Update({
   phone,
   city,
   foodtype,
+  f1,
+  f2,
+  s1,
+  s2,
   tag1,
   tag2,
   tag3,
@@ -31,6 +35,11 @@ function Update({
   const [ophone, setphone] = useState(phone);
   const [ocity, setcity] = useState(city);
   const [oft, setft] = useState(foodtype);
+  const [of1, setf1] = useState(f1);
+  const [of2, setf2] = useState(f2);
+  const [os1, sets1] = useState(s1);
+  const [os2, sets2] = useState(s2);
+
   const [otag1, settag1] = useState(tag1);
   const [otag2, settag2] = useState(tag2);
   const [otag3, settag3] = useState(tag3);
@@ -58,6 +67,8 @@ function Update({
         phone: ophone,
         city: ocity,
         ft: oft,
+        time1: of1 + "-" + of2,
+        time2: os1 + "-" + os2,
         tag1: otag1,
         tag2: otag2,
         tag3: otag3,
@@ -68,7 +79,7 @@ function Update({
       })
       .then((res) => {
         toast.success("更新成功");
-        document.location.href = "/sdata";
+        window.location.reload();
       })
       .catch((error) => {
         console.error(error);
@@ -103,7 +114,7 @@ function Update({
         .delete(`http://localhost:3001/sdata/delete/${id}`)
         .then(() => {
           toast.success("刪除成功");
-          document.location.href = "/sdata";
+          window.location.reload();
         })
         .catch((err) => {
           alert(err);
@@ -278,6 +289,44 @@ function Update({
             <option value="墨西哥">墨西哥</option>
             <option value="越南">越南</option>
           </Form.Select>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>時段1</Form.Label>
+          <FormControl
+            style={{ marginBottom: "5px" }}
+            type="time"
+            value={of1}
+            onChange={(e) => {
+              setf1(e.target.value);
+            }}
+          />
+          <FormControl
+            type="time"
+            value={of2}
+            onChange={(e) => {
+              setf2(e.target.value);
+            }}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>時段2</Form.Label>
+          <FormControl
+            style={{ marginBottom: "5px" }}
+            type="time"
+            value={os1}
+            onChange={(e) => {
+              sets1(e.target.value);
+            }}
+          />
+          <FormControl
+            type="time"
+            value={os2}
+            onChange={(e) => {
+              sets2(e.target.value);
+            }}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3">

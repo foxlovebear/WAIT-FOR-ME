@@ -23,6 +23,8 @@ function List({}) {
             <th>標籤1</th>
             <th>標籤2</th>
             <th>標籤3</th>
+            <th>時段1</th>
+            <th>時段2</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +37,10 @@ function List({}) {
                 phone={v.phone}
                 city={v.city}
                 foodtype={v.foodtype}
+                f1={v.time1.substr(0, 2) + ":" + v.time1.substr(3, 2)}
+                f2={v.time1.substr(6, 2) + ":" + v.time1.substr(9, 2)}
+                s1={v.time2.substr(0, 2) + ":" + v.time2.substr(3, 2)}
+                s2={v.time2.substr(6, 2) + ":" + v.time2.substr(9, 2)}
                 tag1={v.tag1}
                 tag2={v.tag2}
                 tag3={v.tag3}

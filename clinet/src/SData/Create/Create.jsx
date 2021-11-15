@@ -16,6 +16,10 @@ function Create({ onHide, show }) {
   const [phone, setphone] = useState("");
   const [city, setcity] = useState("臺北");
   const [ft, setft] = useState("小吃");
+  const [f1, setf1] = useState("11:00");
+  const [f2, setf2] = useState("14:00");
+  const [s1, sets1] = useState("17:00");
+  const [s2, sets2] = useState("21:00");
   const [tag1, settag1] = useState("");
   const [tag2, settag2] = useState("");
   const [tag3, settag3] = useState("");
@@ -48,11 +52,14 @@ function Create({ onHide, show }) {
         tag2: tag2,
         tag3: tag3,
         img: img,
+        time1: f1 + "-" + f2,
+        time2: s1 + "-" + s2,
         article: article,
       })
       .then((res) => {
         toast.success("新增成功");
-        document.location.href = "/sdata";
+
+        window.location.reload();
       })
       .catch((error) => {
         console.error(error);
@@ -242,6 +249,43 @@ function Create({ onHide, show }) {
             <option value="墨西哥">墨西哥</option>
             <option value="越南">越南</option>
           </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>時段1</Form.Label>
+          <FormControl
+            style={{ marginBottom: "5px" }}
+            type="time"
+            value={f1}
+            onChange={(e) => {
+              setf1(e.target.value);
+            }}
+          />
+          <FormControl
+            type="time"
+            value={f2}
+            onChange={(e) => {
+              setf2(e.target.value);
+            }}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>時段2</Form.Label>
+          <FormControl
+            style={{ marginBottom: "5px" }}
+            type="time"
+            value={s1}
+            onChange={(e) => {
+              sets1(e.target.value);
+            }}
+          />
+          <FormControl
+            type="time"
+            value={s2}
+            onChange={(e) => {
+              sets2(e.target.value);
+            }}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3">
