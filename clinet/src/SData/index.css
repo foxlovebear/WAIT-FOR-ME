@@ -1,0 +1,168 @@
+* {
+  font-family: 微軟正黑體;
+  color: rgb(122, 100, 87);
+}
+/* list */
+table {
+  width: 100%;
+}
+td img {
+  /* max-width: 30%; */
+}
+
+.data-input {
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+  /* border: 1px solid #f9f9f9; */
+  padding: 10px 0;
+  font-size: larger;
+}
+.data-input:focus {
+  outline: none;
+  border: 1px solid #999999;
+}
+
+/* 叉叉按鈕 */
+/* .btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNiAxNicgZmlsbD0nIzAwMCc+PHBhdGggZD0nTS4yOTMuMjkzYTEgMSAwIDAxMS40MTQgMEw4IDYuNTg2IDE0LjI5My4yOTNhMSAxIDAgMTExLjQxNCAxLjQxNEw5LjQxNCA4bDYuMjkzIDYuMjkzYTEgMSAwIDAxLTEuNDE0IDEuNDE0TDggOS40MTRsLTYuMjkzIDYuMjkzYTEgMSAwIDAxLTEuNDE0LTEuNDE0TDYuNTg2IDggLjI5MyAxLjcwN2ExIDEgMCAwMTAtMS40MTR6Jy8+PC9zdmc+);
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: transparent;
+  color: #000;
+  border: 0;
+  border-radius: 0.25rem;
+  opacity: 0.5;
+} */
+.content-table {
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  text-align: left;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.content-table th {
+  color: #ffffff;
+  background-color: rgb(255, 136, 68);
+  font-weight: bold;
+}
+/* 為什麼不能下在.content-table thead tr */
+.content-table thead tr {
+}
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  min-width: 50px;
+}
+.content-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f7f7f7;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(255, 136, 68);
+}
+.content-table tbody tr:hover {
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.underline {
+  width: 5rem;
+  height: 0.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 136, 68);
+}
+
+/* 新增按鈕 */
+.btn-outline-success {
+  width: 200px;
+  font-size: 20px;
+  z-index: 5;
+  color: rgb(255, 136, 68);
+  border: 1px solid rgb(255, 136, 68);
+}
+
+.btn-outline-success:hover {
+  border: rgb(255, 136, 68);
+  background-color: rgb(255, 136, 68);
+}
+
+.btn-check:checked + .btn-outline-success:focus,
+.btn-check:active + .btn-outline-success:focus,
+.btn-outline-success.active:focus,
+.btn-outline-success.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem rgb(255, 136, 68);
+}
+
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.show > .btn-outline-success.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(255, 136, 68);
+  border-color: rgb(255, 136, 68);
+}
+
+/* 外框 */
+/* FORM外框+上方留空+對內PADDING */
+.frame {
+  border: 3px solid rgb(122, 100, 87);
+  border-top: 6px solid rgb(255, 136, 68);
+  border-radius: 7px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20;
+  margin-right: 20;
+  background-color: white;
+}
+
+/* 線 */
+.line {
+  border-bottom: 3px solid rgb(255, 136, 68);
+}
+
+/* 標題 */
+#loginTitle {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* Button */
+.buttonStyle {
+  background-color: rgb(122, 100, 87);
+  color: rgb(250, 250, 250);
+  border: 0;
+}
+.buttonStyle:hover {
+  background-color: rgb(255, 136, 68);
+  color: rgb(250, 250, 250);
+}
+
+/* updatewin model裡的白色畫布改透明*/
+.modal-content {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.creatButton {
+  width: 30%;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 20px;
+  float: right;
+  border-radius: 3px;
+}

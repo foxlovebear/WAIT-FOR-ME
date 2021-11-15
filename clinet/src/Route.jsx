@@ -12,9 +12,11 @@ import Navbar from "./syuan/components/Navbar";
 import Navbar1 from "./syuan/components/Navbarr";
 import Footer from "./syuan/components/Footer";
 
-import FMemberPage from './Chi/pages/MemberPage';
-import FLoginPage from './Chi/pages/Login';
-import FRegisterpage from './Chi/pages/Register';
+import FMemberPage from "./Chi/pages/MemberPage";
+import FLoginPage from "./Chi/pages/Login";
+import FRegisterpage from "./Chi/pages/Register";
+
+import SData from "./SData"; //後台
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path="/memberpage" component={FMemberPage} />
           <Route exact path="/login" component={FLoginPage} />
           <Route exact path="/registerpage" component={FRegisterpage} />
+          <Route exact path="/sdata" component={SData} />
         </Switch>
         <Footer></Footer>
       </Router>

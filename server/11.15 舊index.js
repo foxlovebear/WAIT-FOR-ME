@@ -5,7 +5,6 @@ const cors = require("cors");
 app.use(cors());
 
 app.use(express.json());
-app.use(express.static("public")); //設定存餐廳照片的目錄
 
 const port = 3001;
 app.listen(port, () => {
@@ -22,11 +21,10 @@ const conn = mysql.createConnection({
 
 // ----------------------------易軒-------------------------------
 
-//對應到storeSlice取得上架中的資料
+//首頁取得資料，這邊會放進storesSlice狀態庫
 app.get("/", (req, rep) => {
   conn.query(
-    "SELECT * FROM stores where status = 1",
-    // "SELECT * FROM stores as s left JOIN comment as c ON s.id = c.sid group by s.id;",
+    "SELECT * FROM stores as s left JOIN comment as c ON s.id = c.sid group by s.id;",
     (err, result) => {
       err ? console.log(err) : rep.send(JSON.stringify(result));
     }
@@ -53,16 +51,7 @@ app.get("/comment", (req, res) => {
     }
   );
 });
-//對應到dataSlice取得全部的資料(包含下架中)
-app.get("/data", (req, res) => {
-  // console.log(res);
-  conn.query(
-    "SELECT * FROM `stores` ORDER BY `stores`.`id` DESC",
-    (err, result) => {
-      err ? console.log(err) : res.send(JSON.stringify(result));
-    }
-  );
-});
+
 //目前page2的資料是從page1就存下來的
 // app.get("/page2", (req, rep) => {
 //   conn.query("select * from stores", (err, result) => {
@@ -173,99 +162,6 @@ app.post("/login", (req, res) => {
           message: "Wrong username/password combination~~~",
         });
       }
-    }
-  );
-});
-
-//======================後台ＣＲＵＤ==================
-// 設定儲存庫;//研究如何存到db(X)
-const multer = require("multer");
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "public");
-    //要存的資料夾
-  },
-  filename: (req, file, cb) => {
-    // id = req.query.id(檔名前面加id)?
-    cb(null, Date.now() + "-" + file.originalname);
-    //把檔名加上時間做區分
-  },
-});
-
-const upload = multer({ storage }).array("file"); //多檔
-// const upload = multer({ storage }).single("file");
-
-app.post("/sdata/picupdate", (req, res) => {
-  //圖片上傳
-  upload(req, res, (err) => {
-    if (err) {
-      return res.status(500).json(err);
-    }
-    return res.status(200).send(req.files);
-  });
-});
-
-//read改為dataSlice做，這行不用了
-// app.get("/sdata/read", (req, res) => {
-//   conn.query("select * from stores where id = 1", (err, result) => {
-//     err ? console.log(err) : res.send(JSON.stringify(result));
-//   });
-// });
-
-app.post("/sdata/create", (req, res) => {
-  const { name, status, address, phone, city, ft, tag1, tag2, tag3, img } =
-    req.body;
-  conn.query(
-    "INSERT INTO `stores` (`name`,`status`, `address`, `phone`, `city`, `foodtype`, `tag1`, `tag2`, `tag3`, `img`) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?);",
-    [name, status, address, phone, city, ft, tag1, tag2, tag3, img],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("create success");
-        console.log(name);
-        res.send(JSON.stringify(result));
-      }
-    }
-  );
-});
-
-app.put("/sdata/update", (req, res) => {
-  const { name, address, phone, city, ft, tag1, tag2, tag3, img, id } =
-    req.body;
-
-  conn.query(
-    "UPDATE `stores` SET `name` = ?, `address` = ?, `phone` = ?, `city` = ?, `foodtype` = ?, `tag1` = ?, `tag2` = ?, `tag3` = ?, `img` = ? WHERE `stores`.`id` =?",
-    [name, address, phone, city, ft, tag1, tag2, tag3, img, id],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("update success");
-        console.log(name);
-        console.log(id);
-        res.send(JSON.stringify(result));
-      }
-      // err ? console.log(err) : res.send(JSON.stringify(result));
-    }
-  );
-});
-
-app.delete("/sdata/delete/:id", (req, res) => {
-  const id = req.params.id;
-  console.log(req.params);
-  conn.query(
-    "DELETE FROM `stores` WHERE `stores`.`id` = ?",
-    id,
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("delete success");
-        // console.log(id);
-        res.send(JSON.stringify(result));
-      }
-      // err ? console.log(err) : res.send(JSON.stringify(result));
     }
   );
 });
