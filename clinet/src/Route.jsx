@@ -13,14 +13,10 @@ import Navbar1 from "./syuan/components/Navbarr";
 import Footer from "./syuan/components/Footer";
 
 // <<<<<<< main
-import FMemberPage from './Chi/pages/MemberPage';
-import FLoginPage from './Chi/pages/Login';
-import FRegisterpage from './Chi/pages/Register';
-import FRevisePage from './Chi/pages/Revise';
-
 import FMemberPage from "./Chi/pages/MemberPage";
 import FLoginPage from "./Chi/pages/Login";
 import FRegisterpage from "./Chi/pages/Register";
+import FRevisePage from "./Chi/pages/Revise";
 
 import SData from "./SData"; //後台
 // >>>>>>> main

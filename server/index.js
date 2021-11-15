@@ -15,7 +15,7 @@ app.listen(port, () => {
 const mysql = require("mysql");
 const conn = mysql.createConnection({
   user: "root",
-  password: "",
+  password: "root",
   host: "localhost",
   database: "foodie",
   multipleStatements: true,
@@ -109,12 +109,10 @@ app.post("/create", (req, res) => {
   );
 });
 
-
-
 //驗證功能authentication
 const verifyJWT = (req, res, next) => {
   const token = req.body.headers["x-access-token"];
-  const id=req.body.id;
+  const id = req.body.id;
   // console.log(token);
   if (!token) {
     res.send("Yo, we need a token, plz give it to FOX!");
@@ -126,36 +124,40 @@ const verifyJWT = (req, res, next) => {
       } else {
         req.userId = decoded.id; //userId自行命名的參數
         conn.query(
-             "SELECT * FROM users WHERE user_id=? ",
-             [id],
-             (err, result) => {
-               if (err) {
-                 console.log(err);
-               } else {
-                 res.json({result:result, auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
-                //  res.send(result);
-               }
-             }
-           );
+          "SELECT * FROM users WHERE user_id=? ",
+          [id],
+          (err, result) => {
+            if (err) {
+              console.log(err);
+            } else {
+              res.json({
+                result: result,
+                auth: true,
+                message: "YA! U authenticated",
+                id: id,
+                decoded: decoded,
+              });
+              //  res.send(result);
+            }
+          }
+        );
         // res.json({ auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
-        console.log("窩喔喔喔喔"+token);
-        console.log("窩喔喔喔喔"+id);
+        console.log("窩喔喔喔喔" + token);
+        console.log("窩喔喔喔喔" + id);
         next();
-       }
+      }
     });
   }
 };
 app.post("/authYN", verifyJWT, (req, res) => {
   //verifyJWT:middleware 中介軟體
   // res.send("Yo, u r authenticated!!");
-
 });
-
 
 // 接修改前端資料
 const verifyRevise = (req, res, next) => {
   const token = req.body.headers["x-access-token"];
-  const id=req.body.id;
+  const id = req.body.id;
   const name = req.body.userNameRev;
   const phone = req.body.userPhoneRev;
   const password = req.body.userPasswordRev;
@@ -173,29 +175,27 @@ const verifyRevise = (req, res, next) => {
           [name, password, phone, id],
           (err, result) => {
             if (err) {
-             console.log(err);
+              console.log(err);
             } else {
               res.send(result);
             }
           }
         );
         // res.json({ auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
-        console.log("窩喔喔喔喔"+token);
-        console.log("窩喔喔喔喔"+id);
+        console.log("窩喔喔喔喔" + token);
+        console.log("窩喔喔喔喔" + id);
         next();
-       }
+      }
     });
   }
 };
 
-app.put("/revise", verifyRevise,(req, res) => {
-});
-
+app.put("/revise", verifyRevise, (req, res) => {});
 
 // 驗證+查詢評論資料
 const verifyShowComment = (req, res, next) => {
   const token = req.body.headers["x-access-token"];
-  const id=req.body.id;
+  const id = req.body.id;
   // console.log(token);
   if (!token) {
     res.send("Yo, we need a token, plz give it to FOX!");
@@ -210,24 +210,22 @@ const verifyShowComment = (req, res, next) => {
           [id],
           (err, result) => {
             if (err) {
-             console.log(err);
+              console.log(err);
             } else {
               res.send(result);
             }
           }
         );
         // res.json({ auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
-        console.log("窩喔喔喔喔"+token);
-        console.log("窩喔喔喔喔評論論論"+id);
+        console.log("窩喔喔喔喔" + token);
+        console.log("窩喔喔喔喔評論論論" + id);
         next();
-       }
+      }
     });
   }
 };
 
-app.post("/showUserComment", verifyShowComment,(req, res) => {
-
-});
+app.post("/showUserComment", verifyShowComment, (req, res) => {});
 
 // 接登入前端資料
 app.post("/login", (req, res) => {

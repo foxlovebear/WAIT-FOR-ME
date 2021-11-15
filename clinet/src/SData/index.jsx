@@ -6,31 +6,39 @@ import { useDispatch } from "react-redux";
 import { search } from "../redux/dataSlice";
 
 function SData() {
-  // const [searchTerm, setsearchTerm] = useState("");
+  const [role, setrole] = useState(localStorage.getItem("name"));
   const dispatch = useDispatch();
 
-  return (
-    <>
-      <h1 className="line" style={{ textAlign: "left", fontSize: "50px" }}>
-        後台系統
-        <CreateButton />
-      </h1>
-      <div>
-        <input
-          className="w-100 data-input"
-          type="text"
-          // value={searchTerm}
-          onChange={(e) => {
-            // setsearchTerm(e.target.value);
-            dispatch(search(e.target.value));
-          }}
-          placeholder="  Search..."
-        />
-      </div>
+  if (role == "admin") {
+    return (
+      <>
+        <h1 className="line" style={{ textAlign: "left", fontSize: "50px" }}>
+          後台系統
+          <CreateButton />
+        </h1>
+        <div>
+          <input
+            className="w-100 data-input"
+            type="text"
+            // value={searchTerm}
+            onChange={(e) => {
+              // setsearchTerm(e.target.value);
+              dispatch(search(e.target.value));
+            }}
+            placeholder="  Search..."
+          />
+        </div>
 
-      <List />
-    </>
-  );
+        <List />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h1>THIS PAGE FOR ADMIN ONLY</h1>
+      </>
+    );
+  }
 }
 
 export default SData;
