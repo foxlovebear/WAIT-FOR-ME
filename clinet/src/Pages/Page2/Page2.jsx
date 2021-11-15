@@ -19,7 +19,6 @@ function Page2() {
       <Tag />
       {/* <Search /> */}
       <List />
-
     </div>
   );
 }

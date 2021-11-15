@@ -28,11 +28,10 @@ function List() {
                 </Col>
                 <Col className="col-3" className="resterauntlist">
                   <br />
-                  <div className="resterauntlist">
-                    {v.cost}店名：{v.name}
-                  </div>
+                  <div className="resterauntlist">店名：{v.name}</div>
                   <div className="resterauntlist">電話：{v.phone}</div>
                   <div className="resterauntlist">地址：{v.address}</div>
+                  <div className="resterauntlist">平均消費：{v.cost}元</div>
                   <br />
                   <div className="resterauntlist">
                     標籤：
