@@ -38,6 +38,7 @@ function List({}) {
                 tag1={v.tag1}
                 tag2={v.tag2}
                 tag3={v.tag3}
+                article={v.article}
                 img={v.img}
                 id={v.id}
                 status={v.status}

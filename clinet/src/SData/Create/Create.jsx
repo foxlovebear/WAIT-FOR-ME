@@ -19,6 +19,7 @@ function Create({ onHide, show }) {
   const [tag1, settag1] = useState("");
   const [tag2, settag2] = useState("");
   const [tag3, settag3] = useState("");
+  const [article, setarticle] = useState("");
   const [files, setFiles] = useState([]); //FileList {0: File, length: 1}//拿來1.post2.拿來預覽
 
   //選取照片，預覽照片
@@ -47,6 +48,7 @@ function Create({ onHide, show }) {
         tag2: tag2,
         tag3: tag3,
         img: img,
+        article: article,
       })
       .then((res) => {
         toast.success("新增成功");
@@ -276,6 +278,19 @@ function Create({ onHide, show }) {
             value={tag3}
             onChange={(e) => {
               settag3(e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>餐廳介紹</Form.Label>
+          <FormControl
+            as="textarea"
+            id="article"
+            type="text"
+            placeholder=""
+            value={article}
+            onChange={(e) => {
+              setarticle(e.target.value);
             }}
           />
         </Form.Group>

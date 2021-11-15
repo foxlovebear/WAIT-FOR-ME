@@ -13,6 +13,7 @@ export const UpdateButton = ({
   tag1,
   tag2,
   tag3,
+  article,
   img,
 }) => {
   const [editingShow, setEditingShow] = useState(false);
@@ -40,6 +41,7 @@ export const UpdateButton = ({
           tag1={tag1}
           tag2={tag2}
           tag3={tag3}
+          article={article}
           img={img}
           id={id}
           show={editingShow}

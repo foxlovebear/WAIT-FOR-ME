@@ -21,6 +21,7 @@ function Update({
   tag1,
   tag2,
   tag3,
+  article,
   img,
   status,
 }) {
@@ -33,6 +34,7 @@ function Update({
   const [otag1, settag1] = useState(tag1);
   const [otag2, settag2] = useState(tag2);
   const [otag3, settag3] = useState(tag3);
+  const [oarticle, setarticle] = useState(article);
   const [files, setFiles] = useState([]); //FileList {0: File, length: 1}//拿來1.post2.拿來預覽
 
   //選取照片，預覽照片
@@ -59,6 +61,7 @@ function Update({
         tag1: otag1,
         tag2: otag2,
         tag3: otag3,
+        article: oarticle,
         img: newImg,
         id: id,
         status: ostatus,
@@ -176,8 +179,7 @@ function Update({
         {/* </div> */}
         <Image
           id="blah"
-          src={`http://localhost:3001/${img}`}
-          alt="your image"
+          src={img && `http://localhost:3001/${img}`}
           thumbnail
         />
 
@@ -312,6 +314,19 @@ function Update({
             value={otag3}
             onChange={(e) => {
               settag3(e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>餐廳介紹</Form.Label>
+          <FormControl
+            as="textarea"
+            id="article"
+            type="text"
+            placeholder="請輸入餐廳介紹"
+            value={oarticle}
+            onChange={(e) => {
+              setarticle(e.target.value);
             }}
           />
         </Form.Group>

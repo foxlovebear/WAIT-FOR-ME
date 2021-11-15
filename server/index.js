@@ -15,7 +15,7 @@ app.listen(port, () => {
 const mysql = require("mysql");
 const conn = mysql.createConnection({
   user: "root",
-  password: "",
+  password: "root",
   host: "localhost",
   database: "foodie",
   multipleStatements: true,
@@ -298,11 +298,22 @@ app.post("/sdata/picupdate", (req, res) => {
 // });
 
 app.post("/sdata/create", (req, res) => {
-  const { name, status, address, phone, city, ft, tag1, tag2, tag3, img } =
-    req.body;
+  const {
+    name,
+    status,
+    address,
+    phone,
+    city,
+    ft,
+    tag1,
+    tag2,
+    tag3,
+    article,
+    img,
+  } = req.body;
   conn.query(
-    "INSERT INTO `stores` (`name`,`status`, `address`, `phone`, `city`, `foodtype`, `tag1`, `tag2`, `tag3`, `img`) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?);",
-    [name, status, address, phone, city, ft, tag1, tag2, tag3, img],
+    "INSERT INTO `stores` (`name`,`status`, `address`, `phone`, `city`, `foodtype`, `tag1`, `tag2`, `tag3`,`article`, `img`) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?);",
+    [name, status, address, phone, city, ft, tag1, tag2, tag3, article, img],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -316,12 +327,37 @@ app.post("/sdata/create", (req, res) => {
 });
 
 app.put("/sdata/update", (req, res) => {
-  const { status, name, address, phone, city, ft, tag1, tag2, tag3, img, id } =
-    req.body;
+  const {
+    status,
+    name,
+    address,
+    phone,
+    city,
+    ft,
+    tag1,
+    tag2,
+    tag3,
+    article,
+    img,
+    id,
+  } = req.body;
 
   conn.query(
-    "UPDATE `stores` SET `status` = ?,`name` = ?, `address` = ?, `phone` = ?, `city` = ?, `foodtype` = ?, `tag1` = ?, `tag2` = ?, `tag3` = ?, `img` = ? WHERE `stores`.`id` =?",
-    [status, name, address, phone, city, ft, tag1, tag2, tag3, img, id],
+    "UPDATE `stores` SET `status` = ?,`name` = ?, `address` = ?, `phone` = ?, `city` = ?, `foodtype` = ?, `tag1` = ?, `tag2` = ?, `tag3` = ?, `article`=?,`img` = ? WHERE `stores`.`id` =?",
+    [
+      status,
+      name,
+      address,
+      phone,
+      city,
+      ft,
+      tag1,
+      tag2,
+      tag3,
+      article,
+      img,
+      id,
+    ],
     (err, result) => {
       if (err) {
         console.log(err);
