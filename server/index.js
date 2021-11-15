@@ -231,12 +231,12 @@ app.post("/sdata/create", (req, res) => {
 });
 
 app.put("/sdata/update", (req, res) => {
-  const { name, address, phone, city, ft, tag1, tag2, tag3, img, id } =
+  const { status, name, address, phone, city, ft, tag1, tag2, tag3, img, id } =
     req.body;
 
   conn.query(
-    "UPDATE `stores` SET `name` = ?, `address` = ?, `phone` = ?, `city` = ?, `foodtype` = ?, `tag1` = ?, `tag2` = ?, `tag3` = ?, `img` = ? WHERE `stores`.`id` =?",
-    [name, address, phone, city, ft, tag1, tag2, tag3, img, id],
+    "UPDATE `stores` SET `status` = ?,`name` = ?, `address` = ?, `phone` = ?, `city` = ?, `foodtype` = ?, `tag1` = ?, `tag2` = ?, `tag3` = ?, `img` = ? WHERE `stores`.`id` =?",
+    [status, name, address, phone, city, ft, tag1, tag2, tag3, img, id],
     (err, result) => {
       if (err) {
         console.log(err);
