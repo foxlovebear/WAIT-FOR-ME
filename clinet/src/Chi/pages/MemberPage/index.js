@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
+import Axios from 'axios';//處理POST
 
 // 使用react-bootstrap 和CSS
 import './index.css';
@@ -20,6 +21,7 @@ import FCommemtList from './conponents/CommemtList.js';
 
 
 function FMemberPage(){
+
   return(
   <Container>
     {/* grid >>9 */}

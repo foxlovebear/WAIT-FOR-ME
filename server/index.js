@@ -18,6 +18,7 @@ const conn = mysql.createConnection({
   password: "",
   host: "localhost",
   database: "foodie",
+  multipleStatements: true,
 });
 
 // ----------------------------易軒-------------------------------
@@ -108,9 +109,13 @@ app.post("/create", (req, res) => {
   );
 });
 
+
+
 //驗證功能authentication
 const verifyJWT = (req, res, next) => {
-  const token = req.headers["x-access-token"];
+  const token = req.body.headers["x-access-token"];
+  const id=req.body.id;
+  // console.log(token);
   if (!token) {
     res.send("Yo, we need a token, plz give it to FOX!");
   } else {
@@ -120,26 +125,108 @@ const verifyJWT = (req, res, next) => {
         //  return res.redirect('http://localhost:3000/login');   //ERR:ccess to XMLHttpRequest at 'http://localhost:3000/login' (redirected from 'http://localhost:7000/authYN') from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
       } else {
         req.userId = decoded.id; //userId自行命名的參數
+        conn.query(
+             "SELECT * FROM users WHERE user_id=? ",
+             [id],
+             (err, result) => {
+               if (err) {
+                 console.log(err);
+               } else {
+                 res.json({result:result, auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
+                //  res.send(result);
+               }
+             }
+           );
+        // res.json({ auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
+        console.log("窩喔喔喔喔"+token);
+        console.log("窩喔喔喔喔"+id);
         next();
-      }
+       }
     });
   }
 };
-app.get("/authYN", verifyJWT, (req, res) => {
+app.post("/authYN", verifyJWT, (req, res) => {
   //verifyJWT:middleware 中介軟體
   // res.send("Yo, u r authenticated!!");
-  // const memberId = req.body.memberId;
-  conn.query(
-    "SELECT * FROM users WHERE user_id=? ",
-    [req.userId],
-    (err, result) => {
+
+});
+
+
+// 接修改前端資料
+const verifyRevise = (req, res, next) => {
+  const token = req.body.headers["x-access-token"];
+  const id=req.body.id;
+  const name = req.body.userNameRev;
+  const phone = req.body.userPhoneRev;
+  const password = req.body.userPasswordRev;
+  // console.log(token);
+  if (!token) {
+    res.send("Yo, we need a token, plz give it to FOX!");
+  } else {
+    jwt.verify(token, "jwtSecret", (err, decoded) => {
       if (err) {
-        console.log(err);
+        res.json({ auth: false, message: "U failed to authenticate" });
+        //  return res.redirect('http://localhost:3000/login');   //ERR:ccess to XMLHttpRequest at 'http://localhost:3000/login' (redirected from 'http://localhost:7000/authYN') from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
       } else {
-        res.send(result);
-      }
-    }
-  );
+        conn.query(
+          "UPDATE users SET name=?, password=?, phone=? WHERE user_id=? ",
+          [name, password, phone, id],
+          (err, result) => {
+            if (err) {
+             console.log(err);
+            } else {
+              res.send(result);
+            }
+          }
+        );
+        // res.json({ auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
+        console.log("窩喔喔喔喔"+token);
+        console.log("窩喔喔喔喔"+id);
+        next();
+       }
+    });
+  }
+};
+
+app.put("/revise", verifyRevise,(req, res) => {
+});
+
+
+// 驗證+查詢評論資料
+const verifyShowComment = (req, res, next) => {
+  const token = req.body.headers["x-access-token"];
+  const id=req.body.id;
+  // console.log(token);
+  if (!token) {
+    res.send("Yo, we need a token, plz give it to FOX!");
+  } else {
+    jwt.verify(token, "jwtSecret", (err, decoded) => {
+      if (err) {
+        res.json({ auth: false, message: "U failed to authenticate" });
+        //  return res.redirect('http://localhost:3000/login');   //ERR:ccess to XMLHttpRequest at 'http://localhost:3000/login' (redirected from 'http://localhost:7000/authYN') from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+      } else {
+        conn.query(
+          "SELECT * FROM comment WHERE user_id=? ",
+          [id],
+          (err, result) => {
+            if (err) {
+             console.log(err);
+            } else {
+              res.send(result);
+            }
+          }
+        );
+        // res.json({ auth: true, message: "YA! U authenticated",id:id,decoded:decoded });
+        console.log("窩喔喔喔喔"+token);
+        console.log("窩喔喔喔喔評論論論"+id);
+        next();
+       }
+    });
+  }
+};
+
+app.post("/showUserComment", verifyShowComment,(req, res) => {
+
 });
 
 // 接登入前端資料
@@ -161,7 +248,7 @@ app.post("/login", (req, res) => {
         //遷移資料庫後可能要改id->user_id
         const id = result[0].id;
         const token = jwt.sign({ id }, "jwtSecret", {
-          expiresIn: 300, //about 5mins.
+          expiresIn: 300, //Time.5min.
         });
         // req.session.user = result;
         res.json({ auth: true, token: token, result: result });
