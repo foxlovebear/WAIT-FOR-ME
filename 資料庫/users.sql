@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-11-10 08:51:59
--- 伺服器版本： 10.4.20-MariaDB
--- PHP 版本： 8.0.9
+-- 產生時間： 2021 年 11 月 11 日 11:29
+-- 伺服器版本： 10.4.21-MariaDB
+-- PHP 版本： 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,7 +49,9 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `email_verified_at`, `password`
 (2, '狐狸2FOX2', 'fox2@gmail.com', '2021-10-09 16:00:00', '123', '狐狸星二號', '0999777888', '/userimg/1.jpg', '2021-10-07 16:00:00', '2021-10-08 16:00:00'),
 (3, '狐狸3FOX3', 'fox3@gmail.com', '0000-00-00 00:00:00', '123', '狐狸星3號', '0999878787', '/userimg/3.jpg', '2021-10-05 16:00:00', '2021-10-06 16:00:00'),
 (4, '大狐狸', 'Bigfox@gmail.com', NULL, '1111', NULL, NULL, NULL, NULL, NULL),
-(5, '123', '123@gmail.com', NULL, '123', NULL, NULL, NULL, NULL, NULL);
+(5, '123', '123@gmail.com', NULL, '123', NULL, NULL, NULL, NULL, NULL),
+(6, 'syuan', 'syuan@gmail.com', NULL, '1111', NULL, NULL, NULL, NULL, NULL),
+(7, 'abc', 'abc@gmail.com', NULL, '1111', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- 已傾印資料表的索引
@@ -69,7 +71,7 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
