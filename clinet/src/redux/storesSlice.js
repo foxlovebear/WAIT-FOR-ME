@@ -67,8 +67,46 @@ const storesSlice = createSlice({
     filterTag: (state, action) => {
       if (state.tagArray.includes(action.payload)) {
         state.tagArray = state.tagArray.filter((v) => v != action.payload);
+
         //有包含就扣掉
       } else {
+        switch (action.payload) {
+          case "平價美食":
+            console.log(state.tagArray);
+
+            state.tagArray = state.tagArray.filter(
+              (v) => v != "中等消費" && v != "高級餐廳"
+            );
+            state.tagArray.push(action.payload);
+
+            console.log(state.tagArray);
+
+            break;
+          case "中等消費":
+            console.log(state.tagArray);
+            state.tagArray = state.tagArray.filter(
+              (v) => v != "平價美食" && v != "高級餐廳"
+            );
+            state.tagArray.push(action.payload);
+
+            console.log(state.tagArray);
+            break;
+          case "高級餐廳":
+            console.log(state.tagArray);
+
+            state.tagArray = state.tagArray.filter(
+              (v) => v != "中等消費" && v != "平價美食"
+            );
+            state.tagArray.push(action.payload);
+
+            console.log(state.tagArray);
+
+            break;
+
+          default:
+            state.tagArray.push(action.payload);
+            break;
+        }
         state.tagArray.push(action.payload);
         //沒包含就新增
       }
@@ -78,31 +116,55 @@ const storesSlice = createSlice({
 
       let tempA = [state.data2]; //tempA = [data2,第1次篩選結果,第2次篩選結果...]
       for (let i = 0; i < state.tagArray.length; i++) {
-        if (state.tagArray[i] == "營業中") {
-          let tempB = tempA[i].filter((v) => {
-            const f = v.time1;
-            const f1 = f.substr(0, 2) + f.substr(2, 2);
-            const f2 = f.substr(5, 2) + f.substr(7, 2);
-            const s = v.time2;
-            const s1 = s.substr(0, 2) + s.substr(2, 2);
-            const s2 = s.substr(5, 2) + s.substr(7, 2);
-            return (
-              (state.now > f1 && state.now < f2) ||
-              (state.now > s1 && state.now < s2)
-            );
-          });
-          tempA.push(tempB);
-          state.newData = tempB;
-        } else {
-          let tempB = tempA[i].filter((v) => {
-            return (
-              v.tag1 === state.tagArray[i] ||
-              v.tag2 === state.tagArray[i] ||
-              v.tag3 === state.tagArray[i] //tag1,2,3有沒有其中一個===
-            );
-          });
-          tempA.push(tempB);
-          state.newData = tempB;
+        switch (state.tagArray[i]) {
+          case "營業中":
+            let tempB = tempA[i].filter((v) => {
+              const f = v.time1;
+              const f1 = f.substr(0, 2) + f.substr(2, 2);
+              const f2 = f.substr(5, 2) + f.substr(7, 2);
+              const s = v.time2;
+              const s1 = s.substr(0, 2) + s.substr(2, 2);
+              const s2 = s.substr(5, 2) + s.substr(7, 2);
+              return (
+                (state.now > f1 && state.now < f2) ||
+                (state.now > s1 && state.now < s2)
+              );
+            });
+            tempA.push(tempB);
+            state.newData = tempB;
+            break;
+          case "平價美食":
+            let tempC1 = tempA[i].filter((v) => {
+              return v.cost <= 200;
+            });
+            tempA.push(tempC1);
+            state.newData = tempC1;
+            break;
+          case "中等消費":
+            let tempC2 = tempA[i].filter((v) => {
+              return 200 < v.cost && v.cost <= 1000;
+            });
+            tempA.push(tempC2);
+            state.newData = tempC2;
+            break;
+          case "高級餐廳":
+            let tempC3 = tempA[i].filter((v) => {
+              return v.cost > 1000;
+            });
+            tempA.push(tempC3);
+            state.newData = tempC3;
+            break;
+          default:
+            let tempD = tempA[i].filter((v) => {
+              return (
+                v.tag1 === state.tagArray[i] ||
+                v.tag2 === state.tagArray[i] ||
+                v.tag3 === state.tagArray[i] //tag1,2,3有沒有其中一個===
+              );
+            });
+            tempA.push(tempD);
+            state.newData = tempD;
+            break;
         }
       }
       if (state.tagArray.length == 0) {

@@ -8,7 +8,7 @@ import "../Page2.css";
 //1.button onclick 兩個function
 //2.重設不會改顏色(要重新整理)
 
-function Tag({}) {
+function Tag({ }) {
   //取得資料
   const data = useSelector((state) => state.stores.data);
   const tagArray = useSelector((state) => state.stores.tagArray);
@@ -18,7 +18,7 @@ function Tag({}) {
   const tag1 = [...new Set(data.map((v) => v.tag1))];
   const tag2 = [...new Set(data.map((v) => v.tag2))];
   const tag3 = [...new Set(data.map((v) => v.tag3))];
-  const tag = ["平價美食", ...new Set(tag1.concat(tag2, tag3))];
+  const tag = ["營業中", ...new Set(tag1.concat(tag2, tag3))];
 
   var f = (id, tag) => {
     const temp = document.getElementById(id);
@@ -39,49 +39,8 @@ function Tag({}) {
         重設
       </button><br /> */}
 
-      <input
-        type="checkbox"
-        className="situtationinput"
-        id="營業中"
-        onClick={() => dispatch(filterTag("營業中"))}
-      />
-      <label for="營業中" className="situtationBtn btn situtationChoose">
-        營業中
-      </label>
-      <input
-        type="radio"
-        // className="situtationinput"
-        id="平價美食"
-        name="cost"
-        onClick={() => dispatch(filterTag("平價美食"))}
-      />
-      <label for="平價美食" className="situtationBtn btn situtationChoose">
-        平價美食
-      </label>
-      <input
-        type="radio"
-        // className="situtationinput"
-        id="中等消費"
-        name="cost"
-        onClick={() => dispatch(filterTag("中等消費"))}
-      />
-      <label for="中等消費" className="situtationBtn btn situtationChoose">
-        中等消費
-      </label>
-      <input
-        type="radio"
-        // className="situtationinput"
-        id="高級餐廳"
-        name="cost"
-        // onClick={() => dispatch(filterTag("高級餐廳"))}
-      />
-      <label
-        for="高級餐廳"
-        className="situtationBtn btn situtationChoose"
-        onClick={() => dispatch(filterTag("高級餐廳"))}
-      >
-        高級餐廳
-      </label>
+
+
       {tag.map((v, i) => {
         return (
           <div id="restaurantLeft" className="situtationChoose">
@@ -96,19 +55,12 @@ function Tag({}) {
             </button> */}
 
             <form action="" className="situtationChoose rwd999tag">
-              <input
-                type="checkbox"
-                className="situtationinput"
+              <input type="checkbox" className="situtationinput"
                 id={"btn" + i}
                 name={"btn" + i}
                 key={i}
-                onClick={() => dispatch(filterTag(v))}
-              />
-              <label
-                for={"btn" + i}
-                className="situtationBtn btn situtationChoose"
-                onClick={() => f("btn" + i, v)}
-              >
+                onClick={() => dispatch(filterTag(v))} />
+              <label for={"btn" + i} className="situtationBtn btn situtationChoose" onClick={() => f("btn" + i, v)}>
                 {v}
               </label>
             </form>
@@ -116,22 +68,16 @@ function Tag({}) {
             {/*---------------------- RWD版本 --------------------*/}
 
             <form action="" className="situtationChoose rwd300tag">
-              <input
-                type="checkbox"
-                className="situtationinput"
+              <input type="checkbox" className="situtationinput"
                 id={"btn" + i}
                 name={"btn" + i}
                 key={i}
-                onClick={() => dispatch(filterTag(v))}
-              />
-              <label
-                for={"btn" + i}
-                className="situtationBtn btn situtationChoose"
-                onClick={() => f("btn" + i, v)}
-              >
+                onClick={() => dispatch(filterTag(v))} />
+              <label for={"btn" + i} className="situtationBtn btn situtationChoose" onClick={() => f("btn" + i, v)}>
                 {v}
               </label>
             </form>
+
           </div>
         );
       })}
