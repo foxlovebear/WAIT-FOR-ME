@@ -49,8 +49,8 @@ function Create({ onHide, show }) {
         img: img,
       })
       .then((res) => {
-        console.table(res.data);
         toast.success("新增成功");
+        document.location.href = "/sdata";
       })
       .catch((error) => {
         console.error(error);

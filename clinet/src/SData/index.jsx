@@ -12,13 +12,16 @@ function SData() {
   if (role == "admin") {
     return (
       <>
-        <h1 className="line" style={{ textAlign: "left", fontSize: "50px" }}>
+        <h1
+          className="line"
+          style={{ margin: "10px", textAlign: "left", fontSize: "50px" }}
+        >
           後台系統
           <CreateButton />
         </h1>
-        <div>
+        <div style={{ width: "99%", margin: "0 auto" }}>
           <input
-            className="w-100 data-input"
+            className="data-input"
             type="text"
             // value={searchTerm}
             onChange={(e) => {

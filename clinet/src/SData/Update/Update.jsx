@@ -64,8 +64,8 @@ function Update({
         status: ostatus,
       })
       .then((res) => {
-        console.table(res.data);
         toast.success("更新成功");
+        document.location.href = "/sdata";
       })
       .catch((error) => {
         console.error(error);
@@ -98,7 +98,10 @@ function Update({
     if (temp == true) {
       axios
         .delete(`http://localhost:3001/sdata/delete/${id}`)
-        .then(() => toast.success("刪除成功"))
+        .then(() => {
+          toast.success("刪除成功");
+          document.location.href = "/sdata";
+        })
         .catch((err) => {
           alert(err);
         });
