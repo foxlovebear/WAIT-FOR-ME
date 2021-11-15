@@ -414,6 +414,7 @@ function Navbarr() {
                     to={"/"}
                     onClick={() => {
                       localStorage.clear();
+                      document.location.href = "/"; //登出後重新rander
                     }}
                     className="dropitems"
                   >
