@@ -119,7 +119,7 @@ function Tag({ }) {
   const tag1 = [...new Set(data.map((v) => v.tag1))];
   const tag2 = [...new Set(data.map((v) => v.tag2))];
   const tag3 = [...new Set(data.map((v) => v.tag3))];
-  const tag = ["營業中", ...new Set(tag1.concat(tag2, tag3))];
+  const tag = [...new Set(tag1.concat(tag2, tag3))];
 
   var f = (id, tag) => {
     const temp = document.getElementById(id);
