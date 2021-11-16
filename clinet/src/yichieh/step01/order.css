@@ -1,0 +1,19 @@
+input[type="radio"][name="time"] {
+    display: none;
+  }
+  label {
+    display: inline-block;
+    padding: 3px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    width: 10em;
+    text-align: center;
+  }
+  
+  /* Clicking a label will select its corresponding hidden radio button
+     We can select that radio buttons sibling label and style it. */
+  input[type="radio"][name="time"]:checked + label {
+    background-color: #a0a0a0;
+  }
+  
