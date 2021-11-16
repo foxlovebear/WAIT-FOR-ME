@@ -276,7 +276,7 @@ const storesSlice = createSlice({
       //第一次拿tempA[0]篩選(data2)
       //第二次tempA[1](tempA[0]filter回傳的新陣列.push變成陣列的第一項(也是陣列))
       //tempB為暫時的結果陣列，到最後一次迴圈即為目標陣列，放進newData
-
+      console.log(state.data2);
       let tempA = [state.data2]; //tempA = [data2,第1次篩選結果,第2次篩選結果...]
       for (let i = 0; i < state.tagArray.length; i++) {
         switch (state.tagArray[i]) {
@@ -355,6 +355,7 @@ const storesSlice = createSlice({
         );
       });
       localStorage.setItem("newData", JSON.stringify(state.newData));
+      state.data2 = state.newData;
     },
     //在第二頁重新整理<Page2>，清空tagArray newData=local
     load: (state, action) => {
