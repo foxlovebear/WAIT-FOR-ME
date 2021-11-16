@@ -149,8 +149,11 @@ function Tag({ }) {
         <label for="營業中" className="situtationBtn btn situtationChoose">
           營業中
         </label><br />
+
+      </form>
+      <form id="restaurantLeft" className="situtationChoose">
         <input
-          type="radio"
+          type="checkbox"
           // className="situtationinput"
           id="平價美食"
           name="cost"
@@ -161,7 +164,7 @@ function Tag({ }) {
           平價美食
         </label><br />
         <input
-          type="radio"
+          type="checkbox"
           // className="situtationinput"
           id="中等消費"
           name="cost"
@@ -172,7 +175,7 @@ function Tag({ }) {
           中等消費
         </label><br />
         <input
-          type="radio"
+          type="checkbox"
           // className="situtationinput"
           id="高級餐廳"
           name="cost"
