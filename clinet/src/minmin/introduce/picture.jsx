@@ -107,7 +107,7 @@ function Picture({ data }) {
                     </Col>
                   </Row>
                   <Row>
-                    <Col xs={12} xl={12}>
+                    {/* <Col xs={12} xl={12}>
                       <div className="textStar">
                         用戶平均星星數: &nbsp;
                         {[...Array(4)].map((star, i) => {
@@ -116,7 +116,7 @@ function Picture({ data }) {
                           return <FaStar className="icon" size={28} />;
                         })}
                       </div>
-                    </Col>
+                    </Col> */}
                   </Row>
                 </Col>
               </Route>
