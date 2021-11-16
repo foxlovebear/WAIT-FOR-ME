@@ -47,7 +47,7 @@
   position: relative;
   width: 90%;
   left: 9%;
-  top: -385px;
+  top: -544px;
   /* text-align: center; */
   /* background-color: blue; */
 }
@@ -137,7 +137,7 @@ opacity: 0.8;
     position: relative;
     /* position: fixed; */
     background-color: rgb(243, 243, 243);
-    width: 25%;
+    width: 22%;
     /* top: 450px; */
     margin: 5px;
     height: 100%;
@@ -147,19 +147,22 @@ opacity: 0.8;
     /* border: 1px solid black; */
   }
 
+  
+
   #restaurantRight {
     /* padding-left: 25px; */
     /* margin-left: 10px; */
     /* border: 1px solid black; */
     position: relative;
     width: 90%;
-    left: 25%;
-    top: -410px;
+    left: 22%;
+    top: -585px;
     display: inline;
     font-size: 10px;
     /* text-align: center; */
     /* background-color: blue; */
   }
+  
 
   .rwd999list{
     display: none;
@@ -186,7 +189,7 @@ opacity: 0.8;
     position: fixed;
     bottom: 30px;
     /* left: 94.4%; */
-    left: 88%;
+    left: 89%;
     padding-left: 7px;
     padding-top: 10px;
     /* height: 120px; */
