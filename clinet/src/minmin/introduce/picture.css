@@ -1,0 +1,68 @@
+.icon path{
+    stroke: rgb(229, 238, 98);
+}
+
+.textStar{
+    margin:20px;
+    text-indent: 80px;
+    font-size: 20px;
+}
+
+.pic2{
+    height: 450px;
+}
+
+.pic1 {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+   margin-top: 25px;
+    min-height: 200px;
+}
+
+.text1{
+    margin-top: 40px;
+    border: 2px 	#FFCBB3 ;
+    background-color: #FFFAF4;
+    width: 450px;
+    height: 250px;
+    min-height: 200px;
+    border-style: double;
+    padding: 10px;
+    margin-left: 30px;
+    font-size: 18px;}
+
+
+ .text2{
+    text-align: left;
+    text-indent: 90px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+  .text3{
+    text-align: left;
+    text-indent: 60px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+
+  
+  .displayText {
+    text-decoration: none;
+  }
+
+  .orderRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+.orderButton{
+    font-size: 1.5rem;
+    outline: rgb(255, 136, 68,0.8);
+    border: 2px rgb(255, 136, 68,0.8) solid ;
+    color: rgb(255, 136, 68,0.8);
+    background-color: white;
+  };

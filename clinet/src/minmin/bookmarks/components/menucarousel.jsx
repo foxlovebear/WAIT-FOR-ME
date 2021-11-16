@@ -2,49 +2,55 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Container,Carousel } from 'react-bootstrap';
 import Food from './icon/food.png';
+import Menu_1  from'../components/pic/menu/Menu_1.jpg';
+import Menu_2  from'../components/pic/menu/Menu_2.jpg';
+import Menu_3  from'../components/pic/menu/Menu_3.jpg';
+
+
 
 import  './user.css'
-class Carouselpic extends React.Component {
-    render() {
-        return <div  >
+
+const menuSize={
+    width:'450px',
+    height:'450px'
+}
+
+function Carouselpic( { data } ){
+    let temp = data[0].img;
+    let imgString = temp.substr(1, temp.length);
+    return(
+        <div style={ menuSize } >
             <Carousel variant="dark"  >
-                <Carousel.Item  >
+                <Carousel.Item style={ menuSize } >
                     <img
-                        className="d-block w-100  "
+                        className="d-block w-100   "
                         
-                        src={Food}
+                        src={ Menu_3}
                         alt="First slide"
                     />
-                    <Carousel.Caption>
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
+                   
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item style={ menuSize } >
                     <img
                         className="d-block w-100 "
-                        src={Food}
+                        src={Menu_1}
                         alt="Second slide"
                     />
-                    <Carousel.Caption>
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
+                   
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item style={ menuSize } >
                     <img className=''
                         className="d-block w-100 "
-                        src={Food}
+                        src={ Menu_2}
                         alt="Third slide"
                     />
-                    <Carousel.Caption>
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
+                   
                 </Carousel.Item>
             </Carousel>
-        </div>;
-    }
+        </div>
+    )
 }
+
+
 
 export default Carouselpic;

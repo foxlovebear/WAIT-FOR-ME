@@ -77,6 +77,7 @@ class Picture extends React.Component {
                     <div style={text2}>
                       餐廳名稱:{data[0].name}
                       定位電話:{data[0].phone}
+                      {data[0].lng}
                     </div>
                   </Col>
                 </Row>

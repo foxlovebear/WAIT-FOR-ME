@@ -1,16 +1,17 @@
-.Comment {
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  /* min-height: 100vh; */
+.Comment{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* min-height: 100vh; */
 }
 
-.star-radio {
-  display: none;
+input[type='radio']{
+    display: none;
 }
 
-.star {
-  cursor: pointer;
-  /* 當滑鼠靠近改變形狀 */
-  transform: color 200ms;
+.star  {
+    cursor: pointer;
+    /* 當滑鼠靠近改變形狀 */
+    transform: color 200ms;
+  
 }

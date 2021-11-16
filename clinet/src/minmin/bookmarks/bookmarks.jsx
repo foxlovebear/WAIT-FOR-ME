@@ -20,17 +20,18 @@ import Shop from './components/icon/Shop.png';
 import Writing from './components/icon/Writing.png';
 import Eating from './components/icon/Eating.png';
 
+function Bookmarks ( { data } ){
 
+    
 
-class Bookmarks extends React.Component {
-    render() {
-        return <Router>
+    return(
+        <Router>
             <div>
-            <Nav fill variant="tabs" defaultActiveKey="/home" >
+            <Nav fill variant="tabs" defaultActiveKey="/page3/2">
 
                 <Nav.Item   >
                     
-                    <Nav.Link as={Link} to={'/user-share'}>用戶分享
+                    <Nav.Link  as={Link} to={'/page3/2'}>用戶分享
                     &nbsp; 
                     <img src={ Person } alt="Person" />
                     </Nav.Link>
@@ -48,17 +49,17 @@ class Bookmarks extends React.Component {
                     </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link as={Link} to={'/menu'} >菜單
+                    <Nav.Link as={Link} to={'/menu'} >相關資訊
                     &nbsp; 
                     <img src={ Eating } alt="Eating" />
                     </Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                {/* <Nav.Item>
                     <Nav.Link as={Link} to={'/env'} >環境資訊
                     &nbsp; 
                     <img src={ Shop } alt="Shop" />
                     </Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
                 <Nav.Item>
                     <Nav.Link as={Link} to={'/comment'} >新增評論
                     &nbsp; 
@@ -78,29 +79,29 @@ class Bookmarks extends React.Component {
             {/* 引用各個導覽書籤路徑 */}
             
             <Switch>
-
-                <Route path='/user-share'>
-                    < Share />
+            
+                <Route path='/page3/2'>
+                    < Share data={data} />
                 </Route>
 
                 <Route path='/photo-album'>
-                    < Photo />
+                    < Photo data={data} />
                 </Route>
 
                 <Route path='/map'>
-                    < Map />
+                    < Map data={data} />
                 </Route>
 
                 <Route path='/menu'>
-                    < Menu />
+                    < Menu data={data} />
                 </Route>
-
+{/* 
                 <Route path='/env'>
-                    < Env />
-                </Route>
+                    < Env data={data} />
+                </Route> */}
 
                 <Route path='/comment'>
-                    < Comment />
+                    < Comment data={data}  />
                 </Route>
 
              
@@ -109,8 +110,10 @@ class Bookmarks extends React.Component {
         </div>
 
         </Router>
-
-    }
+    )
 }
+
+
+
 
 export default Bookmarks;

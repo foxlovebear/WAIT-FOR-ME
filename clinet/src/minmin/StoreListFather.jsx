@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Storelist from "./storelist";
+// import   Share  from "./bookmarks/components/user-share"
+
 
 function FakeDetail({ match }) {
   //match 要從<Route component{<>}進來才會有值
@@ -20,11 +22,13 @@ function FakeDetail({ match }) {
   };
   // console.log(data); //先空再有陣列
 
+
   if (data !== "") {
     //這裡不能用trycatch所以用這個方法
     return (
       <div>
         <Storelist data={data} />
+        
       </div>
     );
   } else {

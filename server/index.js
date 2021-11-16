@@ -21,6 +21,25 @@ const conn = mysql.createConnection({
   multipleStatements: true,
 });
 
+//================敏敏=================
+
+app.post("/comment", (req, res) => {
+  const review = req.body.Review;
+
+  const sqlInsert = "INSERT INTO comment_review (Review) VALUES (?)";
+  conn.query(sqlInsert, [review], (err, result) => {
+    console.log(err);
+  });
+});
+
+app.get("/api/get", (req, res) => {
+  const sqlInsert = "select * from comment_review";
+  conn.query(sqlInsert, (err, result) => {
+    res.send(result);
+    console.log(err);
+  });
+});
+
 // ----------------------------易軒-------------------------------
 
 //對應到storeSlice取得上架中的資料
