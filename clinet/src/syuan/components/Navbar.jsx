@@ -9,6 +9,7 @@ function Navbar() {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light navbarbackcolor">
+
         <Link to="/" className="navbar-brand navLogo">
           餵for me
         </Link>
