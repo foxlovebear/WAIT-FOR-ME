@@ -51,6 +51,7 @@ function Navbarr() {
         <Navbar bg="light" expand="lg" className="navheight">
           <Container fluid className="navbgc">
             <Navbar.Brand href="/" className="logoname">
+              <img src="/waitlogo.jpg" className="waitlogo" />
               餵for me
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
