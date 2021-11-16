@@ -119,7 +119,7 @@ function Tag({ }) {
   const tag1 = [...new Set(data.map((v) => v.tag1))];
   const tag2 = [...new Set(data.map((v) => v.tag2))];
   const tag3 = [...new Set(data.map((v) => v.tag3))];
-  const tag = ["營業中", ...new Set(tag1.concat(tag2, tag3))];
+  const tag = [...new Set(tag1.concat(tag2, tag3))];
 
   var f = (id, tag) => {
     const temp = document.getElementById(id);
@@ -149,8 +149,11 @@ function Tag({ }) {
         <label for="營業中" className="situtationBtn btn situtationChoose">
           營業中
         </label><br />
+
+      </form>
+      <form id="restaurantLeft" className="situtationChoose">
         <input
-          type="radio"
+          type="checkbox"
           // className="situtationinput"
           id="平價美食"
           name="cost"
@@ -161,7 +164,7 @@ function Tag({ }) {
           平價美食
         </label><br />
         <input
-          type="radio"
+          type="checkbox"
           // className="situtationinput"
           id="中等消費"
           name="cost"
@@ -172,7 +175,7 @@ function Tag({ }) {
           中等消費
         </label><br />
         <input
-          type="radio"
+          type="checkbox"
           // className="situtationinput"
           id="高級餐廳"
           name="cost"

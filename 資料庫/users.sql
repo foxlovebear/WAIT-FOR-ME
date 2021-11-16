@@ -52,7 +52,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `email_verified_at`, `password`
 (5, '123', '123@gmail.com', NULL, '123', NULL, NULL, NULL, NULL, NULL),
 (6, 'syuan', 'syuan@gmail.com', NULL, '1111', NULL, NULL, NULL, NULL, NULL),
 (7, 'abc', 'abc@gmail.com', NULL, '1111', NULL, NULL, NULL, NULL, NULL);
-(8, 'admin', 'tsaijason@icloud.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(8, 'admin', 'tsaijason@icloud.com', NULL, NULL, 'admin', NULL, NULL, NULL, NULL);
 
 --
 -- 已傾印資料表的索引
