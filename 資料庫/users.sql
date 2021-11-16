@@ -54,6 +54,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `email_verified_at`, `password`
 (6, 'syuan', 'syuan@gmail.com', NULL, '1111', NULL, NULL, NULL, NULL, NULL, 'user'),
 (13, 'admin', 'tsaijason@icloud.com', NULL, 'admin', NULL, NULL, NULL, NULL, NULL, 'admin');
 
+
 --
 -- 已傾印資料表的索引
 --
