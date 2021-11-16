@@ -18,6 +18,7 @@ function Update({
   phone,
   city,
   foodtype,
+  cost,
   f1,
   f2,
   s1,
@@ -34,6 +35,7 @@ function Update({
   const [oaddress, setaddress] = useState(address);
   const [ophone, setphone] = useState(phone);
   const [ocity, setcity] = useState(city);
+  const [ocost, setcost] = useState(cost);
   const [oft, setft] = useState(foodtype);
   const [of1, setf1] = useState(f1);
   const [of2, setf2] = useState(f2);
@@ -67,6 +69,7 @@ function Update({
         phone: ophone,
         city: ocity,
         ft: oft,
+        cost: ocost,
         time1: of1 + "-" + of2,
         time2: os1 + "-" + os2,
         tag1: otag1,
@@ -289,6 +292,18 @@ function Update({
             <option value="墨西哥">墨西哥</option>
             <option value="越南">越南</option>
           </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>平均花費</Form.Label>
+          <FormControl
+            id="cost"
+            type="text"
+            placeholder="$"
+            value={ocost}
+            onChange={(e) => {
+              setcost(e.target.value);
+            }}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3">

@@ -183,9 +183,9 @@ const initialState = {
     ? JSON.parse(localStorage.getItem("newData"))
     : [],
   tagArray: [],
-  now:
-    new Date().toString().substr(16, 2) + new Date().toString().substr(19, 2), //目前時間不會隨著元件改變而更新(除非重新整理)
-  // now: "2130", //測試用，高雄->營業中->剩梅塔
+  // now:
+  // new Date().toString().substr(16, 2) + new Date().toString().substr(19, 2), //目前時間不會隨著元件改變而更新(除非重新整理)
+  now: "1230", //測試用
 };
 //fetch data
 export const storesFetch = createAsyncThunk("stores/storesFetch", async () => {

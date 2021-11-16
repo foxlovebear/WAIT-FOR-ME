@@ -15,11 +15,12 @@ function Create({ onHide, show }) {
   const [address, setaddress] = useState("");
   const [phone, setphone] = useState("");
   const [city, setcity] = useState("臺北");
+  const [cost, setcost] = useState("");
   const [ft, setft] = useState("小吃");
   const [f1, setf1] = useState("11:00");
   const [f2, setf2] = useState("14:00");
-  const [s1, sets1] = useState("17:00");
-  const [s2, sets2] = useState("21:00");
+  const [s1, sets1] = useState("");
+  const [s2, sets2] = useState("");
   const [tag1, settag1] = useState("");
   const [tag2, settag2] = useState("");
   const [tag3, settag3] = useState("");
@@ -48,6 +49,7 @@ function Create({ onHide, show }) {
         phone: phone,
         city: city,
         ft: ft,
+        cost: cost,
         tag1: tag1,
         tag2: tag2,
         tag3: tag3,
@@ -249,6 +251,18 @@ function Create({ onHide, show }) {
             <option value="墨西哥">墨西哥</option>
             <option value="越南">越南</option>
           </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>平均花費</Form.Label>
+          <FormControl
+            id="cost"
+            type="text"
+            placeholder="$"
+            value={cost}
+            onChange={(e) => {
+              setcost(e.target.value);
+            }}
+          />
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>時段1</Form.Label>

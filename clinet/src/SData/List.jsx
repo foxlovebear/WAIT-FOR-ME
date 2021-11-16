@@ -20,6 +20,7 @@ function List({}) {
             <th>餐廳電話</th>
             <th>城市</th>
             <th>類型</th>
+            <th>平均花費</th>
             <th>標籤1</th>
             <th>標籤2</th>
             <th>標籤3</th>
@@ -37,6 +38,7 @@ function List({}) {
                 phone={v.phone}
                 city={v.city}
                 foodtype={v.foodtype}
+                cost={v.cost}
                 f1={v.time1.substr(0, 2) + ":" + v.time1.substr(3, 2)}
                 f2={v.time1.substr(6, 2) + ":" + v.time1.substr(9, 2)}
                 s1={v.time2.substr(0, 2) + ":" + v.time2.substr(3, 2)}
