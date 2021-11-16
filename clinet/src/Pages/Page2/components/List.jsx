@@ -93,10 +93,13 @@ function List() {
             <section className="rwdlistver">
               <Link to={`/page3/${v.id}`} className="page2list">
                 <Row className="topage3">
-                  <Col className="col-5">
-                    <Card.Img src={v.img} className="resterauntimg" />
+                  <Col className="col-12">
+                    <Card.Img
+                      src={"http://localhost:3001/" + v.img}
+                      className="resterauntimg"
+                    />
                   </Col>
-                  <Col className="col-7" className="resterauntlist">
+                  <Col className="col-12" className="resterauntlist">
                     <br />
                     <div className="resterauntlist">店名：{v.name}</div>
                     <div className="resterauntlist">電話：{v.phone}</div>
