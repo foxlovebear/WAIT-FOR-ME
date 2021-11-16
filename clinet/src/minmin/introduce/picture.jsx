@@ -91,7 +91,7 @@ function Picture({ data }) {
                 </Col>
               </Row>
 
-              <Row>
+              {/* <Row>
                 <Col xs={12} xl={12}>
                   <div className="textStar">
                     用戶平均星星數: &nbsp;
@@ -102,7 +102,7 @@ function Picture({ data }) {
                     })}
                   </div>
                 </Col>
-              </Row>
+              </Row> */}
             </Col>
           </Row>
         </Col>
