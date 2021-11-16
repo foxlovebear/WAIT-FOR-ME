@@ -36,6 +36,7 @@
 .situtationBtn{
   position: relative;
   left: -5px;
+  font-size: 13.5px;
   
 }
 
@@ -47,7 +48,7 @@
   position: relative;
   width: 90%;
   left: 9%;
-  top: -672px;
+  top: -475px;
   /* text-align: center; */
   /* background-color: blue; */
 }
@@ -157,7 +158,7 @@ opacity: 0.8;
     position: relative;
     width: 90%;
     left: 22%;
-    top: -682px;
+    top: -488px;
     display: inline;
     font-size: 10px;
     /* text-align: center; */
