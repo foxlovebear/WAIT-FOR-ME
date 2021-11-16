@@ -71,25 +71,49 @@ function FLoginPage() {
         localStorage.setItem("name", response.data.result[0].name);
         localStorage.setItem("email", response.data.result[0].email);
         localStorage.setItem("phone", response.data.result[0].phone);
+        localStorage.setItem("id", response.data.result[0].user_id);
         setLoginStatus(true);
         document.location.href = "/memberpage";
+                    // authShowComment();
+
       }
       console.log(response);
       // >>>>>>> main
     });
   };
 
-  const userAuthenticated = () => {
-    Axios.get("http://localhost:3001/authYN", {
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    }).then((response) => {
-      console.log(response);
-      alert("歡迎驗證");
-    });
-  };
+  // const userAuthenticated = () => {
+  //   Axios.get("http://localhost:3001/authYN", {
+  //     headers: {
+  //       "x-access-token": localStorage.getItem("token"),
+  //     },
+  //   }).then((response) => {
+  //     console.log(response);
+  //     alert("歡迎驗證");
+  //   });
+  // };
 
+  // 撈評論
+    const id = localStorage.getItem("id");
+    const authShowComment=()=>{  
+        console.log(id);
+        Axios.post('http://localhost:3001/showUserComment',{
+          headers:{"x-access-token":localStorage.getItem("token"),},
+          id:id,
+        }).then((response)=>{
+          if(response.data.auth == false){
+            document.location.href="/login";
+          }
+          console.log(response);
+          if(response.data.length>0){
+            for(var i =0 ; i<response.data.length ; i++){
+          localStorage.setItem("comment"+i,response.data[i].comment);
+          }
+          localStorage.setItem("commentMount",response.data.length);
+
+          }
+        })
+    }
   return (
     <Container>
       <br />
@@ -148,11 +172,10 @@ function FLoginPage() {
                 </Button>
               </Link>
               {/* <h1>{loginStatus}</h1> */}
-              {loginStatus && (
-                <button onClick={userAuthenticated}>
-                  Check if authenticated
-                </button>
-              )}
+            {loginStatus &&
+            // (<button onClick={userAuthenticated}>Check if authenticated</button>)
+            authShowComment()
+            }
             </Stack>
           </Form>
         </Col>
