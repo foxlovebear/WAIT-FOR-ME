@@ -11,7 +11,7 @@ function Order_information() {
       <Card style={{ width: '40rem' }}>
         <Card.Body>
           <Card.Title><h1>一笈壽司</h1></Card.Title>
-          <Card.Text>
+          <Card.Text className="orderLabelStyle">
             <p>電話:0423206368</p>
             <p>地址:台中市南屯區公益路二段25號</p>
             <DatePicker />
