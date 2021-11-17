@@ -18,7 +18,7 @@ function OrderCheck() {
                 </ListGroup>
                 <Card.Header>您的聯絡資訊</Card.Header>
                 <ListGroup variant="flush">
-                    <ListGroup.Item>
+                    <ListGroup.Item className="orderLabelStyle">
                         訂位人{` `}:{` `}
                         <input type="text" style={{ width: '3rem' }} />{` `}
                         <input type="radio" name="Gender" id="sir" value="men" />

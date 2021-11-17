@@ -1,7 +1,10 @@
-input[type="radio"][name="time"] {
+
+
+
+.orderLabelStyle input[type="radio"][name="time"] {
     display: none;
   }
-  label {
+.orderLabelStyle label {
     display: inline-block;
     padding: 3px;
     border: 1px solid #e0e0e0;
@@ -13,7 +16,7 @@ input[type="radio"][name="time"] {
   
   /* Clicking a label will select its corresponding hidden radio button
      We can select that radio buttons sibling label and style it. */
-  input[type="radio"][name="time"]:checked + label {
+ .orderLabelStyle input[type="radio"][name="time"]:checked + label {
     background-color: #a0a0a0;
   }
   
