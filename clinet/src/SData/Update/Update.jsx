@@ -307,7 +307,7 @@ function Update({
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>時段1</Form.Label>
+          <Form.Label>營業時段1</Form.Label>
           <FormControl
             style={{ marginBottom: "5px" }}
             type="time"
@@ -326,7 +326,7 @@ function Update({
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>時段2</Form.Label>
+          <Form.Label>營業時段2</Form.Label>
           <FormControl
             style={{ marginBottom: "5px" }}
             type="time"
