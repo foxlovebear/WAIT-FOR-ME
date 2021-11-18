@@ -8,11 +8,21 @@ import {Container,Row,Col,Stack,
  Button } from 'react-bootstrap';
 //使用圖片
 import female from '../img/female.png';
+import male from '../img/male.png';
 import EmptyHead from '../img/EmptyHead.jpg';
 
 function FMemberIcon(){
+  var showImg = () =>{
+    if(localStorage.getItem('name') == null)
+    {return(EmptyHead)}
+    else{
+      if(localStorage.getItem('name') == "admin"){
+        return(male)
+      }else{return(female)}
+    };
+  }
   return(
-    <img src={localStorage.getItem('name') == null?EmptyHead:female} alt="Me"className="rounded-circle w-50" />
+    <img src={showImg()} alt="頭貼"className="rounded-circle w-50" />
   )
 }
 
