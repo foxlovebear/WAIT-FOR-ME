@@ -58,9 +58,9 @@ class CUsersStoreComment extends React.Component{
 
               <Col lg={8} className="CommentStoreInfo">
                   <Stack>
-                    <Col><h6>2021/10/28 </h6></Col>
+                    <Col><h6>2021/10/{Math.floor(Math.random()*30)} </h6></Col>
                     <Col><h6>{value.name}</h6></Col>
-                    <Col><h6>評分:4.5</h6></Col>
+                    <Col><h6>評分:{Math.floor(Math.random()*3)+3}</h6></Col>
                     <div></div> 
                   </Stack>
               </Col>
