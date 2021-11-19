@@ -26,7 +26,7 @@ export const UpdateButton = ({
     <>
       <tr onClick={() => setEditingShow(true)}>
         <td>{id}</td>
-        <td>{name}</td>
+        <td>{name.length > 25 ? name.substr(0, 25) + "..." : name}</td>
         <td>{address}</td>
         <td>{phone}</td>
         <td>{city}</td>
