@@ -7,55 +7,97 @@ import {Container,Row,Col,Stack,
  Form,
  FormControl,
  Button } from 'react-bootstrap';
+ import FMemberIcon from './MemberIcon.js';
+
 //使用圖片
 //
-function FUsersStoreComment(){
-    const id = localStorage.getItem("id");
-    const authShowComment=()=>{  
+class CUsersStoreComment extends React.Component{
+  // 撈評論
+    constructor(props) {
+      super(props);
+      this.state={
+        FoxResponseDATA:""
+      }
+      this.authShowComment=this.authShowComment.bind(this); //綁定changePercent
+    }
+    componentDidMount(){
+        this.authShowComment();}
+    authShowComment = async()=>{  
+      try{
+        const id = localStorage.getItem("id");
         console.log(id);
-        Axios.post('http://localhost:3001/showUserComment',{
+        const foxResponse= await Axios.post('http://localhost:3001/showUserComment',{
           headers:{"x-access-token":localStorage.getItem("token"),},
           id:id,
-        }).then((response)=>{
-          if(response.data.auth == false){
-            document.location.href="/login";
-          }
-          console.log(response);
-          // if(response.data.length>0){
-          // localStorage.setItem("comment1",response.data[0].comment);
-          // }
         })
+          let foxResponseDATA = foxResponse.data;
+          this.setState({
+             FoxResponseDATA:foxResponseDATA
+          });
+          console.log(foxResponseDATA);
+
+      }catch(err){console.log(err);}
+
+          
+
     }
-    let commentList=[];
-    for (var n = 0; n<localStorage.getItem('commentMount') ; n++){
-      commentList.push(localStorage.getItem('comment'+n));
-    }
-    console.log(commentList);
-    let showCommentList = commentList.map(
-      function(x){
-        return(
-          <Container fluid className="CommentLine ">
-            <Row>
-              <Col lg={4}></Col>
-              <Col className="commentText">評論內容:{x}</Col>
+    
+    //從Response撈評論並用map塞到Array
+    //物件要轉為陣列才能render *用Object.entries
+        renderObject(){
+	        	return Object.entries(this.state.FoxResponseDATA).map(([key, value], i) => {
+	          	return (
+
+                  <Container fluid className="CommentLine ">
+            <Row id="commentUserInfo" >
+              {/* 用戶小標+用戶名 */}
+              <Col lg={4} > 
+                <Col lg={5} className="userIcon w-100"><FMemberIcon/></Col>
+                <Col className="commenterName"><h6>{localStorage.getItem('name')}</h6></Col>
+              </Col>  
+
+              <Col lg={8} className="CommentStoreInfo">
+                  <Stack>
+                    <Col><h6>2021/10/28 </h6></Col>
+                    <Col><h6>{value.name}</h6></Col>
+                    <Col><h6>評分:4.5</h6></Col>
+                    <div></div> 
+                  </Stack>
+              </Col>
             </Row>
+            {/* 評論內容 */}
+                      <Row>
+                        <Col lg={4}></Col>
+                                  <Col className="commentText">評論內容:{value.comment}</Col>
+                      </Row>
+          
+                      <Row>
+                        <Col lg={4}></Col>
+                        <Col lg={8} >圖片<img src="https://picsum.photos/id/102/250/150"/></Col>
+                      </Row>
+                     </Container >                  
+	          		)
+	          	})
+	       }
+        render () {
+          //this.state.FoxResponseDATA=長度為0的物件 所以不能用map 物件要轉為陣列才能render
+          console.log( this.state.FoxResponseDATA); 
+          return (
+               <div>
+                 {/* <ul className="list-group list-group-flush">
+                   {FoxResponseDATAKeys}
+                 </ul> */}
+                 {this.renderObject()}
+               </div>
+             );
+          // return(
+          //  <ul>
+          //    {this.authShowComment()}
+          //    {/* {showCommentList} */}
+          //  </ul>
 
-            <Row>
-              <Col lg={4}></Col>
-              <Col lg={8} >圖片<img src="https://picsum.photos/id/102/250/150"/></Col>
-            </Row>
-           </Container >
-        )
-           
-      }
-    )
-          return(
-           <ul>
-             {showCommentList}
-           </ul>
-
-          )
-
+          // )
+        }
 }
 
-export default FUsersStoreComment;
+export default CUsersStoreComment;
