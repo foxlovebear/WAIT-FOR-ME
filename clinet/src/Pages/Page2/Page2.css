@@ -12,7 +12,6 @@
   color: white;
 }
 
-
 /* 芷萱加的 */
 /* 左半部設定 */
 #restaurantLeft {
@@ -23,7 +22,7 @@
   /* top: 450px; */
   margin: 5px;
   height: 100%;
-  text-align:left;
+  text-align: left;
   /* text-align: center; */
   /* border: 1px solid black; */
 }
@@ -33,11 +32,10 @@
   /* left: 20px; */
   position: relative;
 }
-.situtationBtn{
+.situtationBtn {
   position: relative;
   left: -5px;
   font-size: 13.5px;
-  
 }
 
 /* 右半部設定 */
@@ -53,42 +51,39 @@
   /* background-color: blue; */
 }
 
-.pagecolmodle{
+.pagecolmodle {
   background-color: rgb(211, 211, 211);
 }
 
-.topage3{
+.topage3 {
   color: black;
   text-align: left;
   /* border: 1px solid rgb(255, 136, 68); */
 }
 
-.hrstyle{
+.hrstyle {
   border: 1.5px solid rgb(255, 136, 68);
-
 }
 
-.page2list{
+.page2list {
   text-decoration: none;
-
 }
 
-.page2comment{
+.page2comment {
   /* border: 1px solid rgb(255, 136, 68); */
   padding: 25px;
 }
 
-.resterauntimg:hover{
-opacity: 0.8;
+.resterauntimg:hover {
+  opacity: 0.8;
 }
 
-.resterauntlist:hover{
+.resterauntlist:hover {
   color: rgb(255, 136, 68);
 }
 
-
 /* 返回最上面快捷鈕----------------------- */
-.backtop{
+.backtop {
   /* border: 1px solid black; */
   background-color: rgb(255, 136, 68);
   /* color: white; */
@@ -105,34 +100,33 @@ opacity: 0.8;
   text-decoration: none;
 }
 
-.backtopa{
+.backtopa {
   text-decoration: none;
   font-size: 20px;
   /* position: relative; */
   /* text-align: center;/ */
-  color: rgb(122, 100, 87) ;
+  color: rgb(122, 100, 87);
 }
 
-.backtop p{
+.backtop p {
   font-size: 14px;
   /* border: 1px solid black; */
 }
 
-.backtop .backtopimg{
+.backtop .backtopimg {
   /* border: 1px solid red; */
   width: 30px;
 }
 
-.backtop a:hover{
+.backtop a:hover {
   color: white;
 }
 
-.rwd300tag{
+.rwd300tag {
   display: none;
 }
 
-
-@media only screen and (min-width: 300px) and (max-width: 999px)   {
+@media only screen and (min-width: 300px) and (max-width: 999px) {
   #restaurantLeft {
     /* position: fixed; */
     position: relative;
@@ -142,14 +136,12 @@ opacity: 0.8;
     /* top: 450px; */
     margin: 5px;
     height: 100%;
-    text-align:left;
-    font-size:10px;
+    text-align: left;
+    font-size: 10px;
     top: 15px;
     /* text-align: center; */
     /* border: 1px solid black; */
   }
-
-  
 
   #restaurantRight {
     /* padding-left: 25px; */
@@ -164,26 +156,25 @@ opacity: 0.8;
     /* text-align: center; */
     /* background-color: blue; */
   }
-  
 
-  .rwd999list{
+  .rwd999list {
     display: none;
   }
 
-  .rwdlistver{
-    display:block;
+  .rwdlistver {
+    display: block;
     /* background-color: blue; */
   }
 
-  .rwd300tag{
+  .rwd300tag {
     display: block;
   }
 
-  .rwd999tag{
+  .rwd999tag {
     display: none;
   }
 
-  .backtop{
+  .backtop {
     /* border: 1px solid black; */
     background-color: rgb(255, 136, 68);
     /* color: white; */
@@ -199,17 +190,48 @@ opacity: 0.8;
     z-index: 1;
     text-decoration: none;
   }
-
-
-
 }
 
-
-@media only screen and (min-width: 999px) and (max-width: 1599px)   {
-    
-  .rwdlistver{
+@media only screen and (min-width: 999px) and (max-width: 1599px) {
+  .rwdlistver {
     display: none;
   }
-  
-     
+}
+
+/* -----------易軒:tag元件修改後會跑掉，所以這邊有新增 */
+.alllistdiv {
+  width: 90%;
+}
+.alltagdiv {
+  width: 12%;
+  border: 1px solid #f1f1f1;
+  height: fit-content;
+  margin-top: 5px;
+}
+.tagdiv {
+  padding: 5px;
+  /* background-color: #f9f9f9; */
+  /* border: 1px solid #f1f1f1; */
+  /* border-radius: 3px; */
+}
+.listdiv:first-child {
+  padding-top: 5px;
+}
+
+.taglable {
+  width: max-content;
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+.tagdiv2 {
+  border-bottom: 1px solid #f1f1f1;
+  /* margin: 5px 0; */
+  border-radius: 3px 3px 0 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .alltagdiv {
+    width: 30%;
+  }
 }
