@@ -73,7 +73,7 @@ function FLoginPage() {
         localStorage.setItem("phone", response.data.result[0].phone);
         localStorage.setItem("id", response.data.result[0].user_id);
         setLoginStatus(true);
-        // document.location.href = "/memberpage";
+        document.location.href = "/memberpage";
                     // authShowComment();
 
       }
