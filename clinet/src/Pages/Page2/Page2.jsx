@@ -1,9 +1,10 @@
-import React from "react";
-import Search from "../components/Search";
+import React, { useEffect } from "react";
 import List from "./components/List";
 import Tag from "./components/Tag";
 import { useDispatch } from "react-redux";
-import { load } from "../../redux/storesSlice";
+import { load, now } from "../../redux/storesSlice";
+import { Col, Row } from "react-bootstrap";
+import "./Page2.css";
 
 function Page2() {
   const dispatch = useDispatch();
@@ -12,14 +13,23 @@ function Page2() {
   window.addEventListener("load", () => {
     dispatch(load());
   });
+  // useEffect(() => {
+  //   //1sec 跳一次修改now的時間
+  //   setInterval(() => {
+  //     dispatch(now());
+  //   }, 1000);
+  // }, []);
   return (
-    <div>
-      {/* <p>調整版面</p>
-      <p>調整版面</p> */}
-      <Tag />
-      {/* <Search /> */}
-      <List />
-    </div>
+    <>
+      <div className="page2div" style={{ display: "flex" }}>
+        <div className="alltagdiv">
+          <Tag />
+        </div>
+        <div className="alllistdiv">
+          <List />
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -183,11 +183,9 @@ const initialState = {
     ? JSON.parse(localStorage.getItem("newData"))
     : [],
   tagArray: [],
-  // now:
-  // new Date().toString().substr(16, 2) + new Date().toString().substr(19, 2), //目前時間不會隨著元件改變而更新(除非重新整理)
-  now: "1230", //大專demo錄製影片用
-  cost: "",
-  time: "",
+  now:
+    new Date().toString().substr(16, 2) + new Date().toString().substr(19, 2), //目前時間不會隨著元件改變而更新(除非重新整理)
+  // now: "1230", //測試用
 };
 //fetch data
 export const storesFetch = createAsyncThunk("stores/storesFetch", async () => {
@@ -211,12 +209,6 @@ const storesSlice = createSlice({
       state.now =
         new Date().toString().substr(16, 2) +
         new Date().toString().substr(19, 2); //目前時間不會隨著元件改變而更新(除非重新整理)
-    },
-    costF: (state, action) => {
-      state.cost = action.payload;
-    },
-    timeF: (state, action) => {
-      state.time = action.payload;
     },
 
     filterCity: (state, action) => {
@@ -252,47 +244,30 @@ const storesSlice = createSlice({
     },
     //11/7 filterTag目前有BUG(高雄->寵物友善->無低消)(高雄->有wifi->無服務費)(解決)
     filterTag: (state, action) => {
+      alert(action.payload);
       if (state.tagArray.includes(action.payload)) {
-        if (action.payload != "消費金額" && action.payload != "前往時段") {
-          state.tagArray = state.tagArray.filter((v) => v != action.payload);
-        }
+        state.tagArray = state.tagArray.filter((v) => v != action.payload);
+
         //有包含就扣掉
       } else {
-        switch (action.payload) {
-          case "營業中":
-            state.tagArray = state.tagArray.filter((v) => v != "前往時段");
-            state.tagArray.push(action.payload);
-
-            break;
-          case "前往時段":
-            state.tagArray = state.tagArray.filter((v) => v != "營業中");
-            state.tagArray.push(action.payload);
-
-            break;
-          case "消費金額":
-            state.tagArray = state.tagArray.filter(
-              (v) => v != "平價美食" && v != "中等消費" && v != "高級餐廳"
-            );
-            state.tagArray.push(action.payload);
-
-            break;
+        switch (action.payload[0]) {
           case "平價美食":
             state.tagArray = state.tagArray.filter(
-              (v) => v != "消費金額" && v != "中等消費" && v != "高級餐廳"
+              (v) => v != "中等消費" && v != "高級餐廳"
             );
             state.tagArray.push(action.payload);
 
             break;
           case "中等消費":
             state.tagArray = state.tagArray.filter(
-              (v) => v != "平價美食" && v != "消費金額" && v != "高級餐廳"
+              (v) => v != "平價美食" && v != "高級餐廳"
             );
             state.tagArray.push(action.payload);
 
             break;
           case "高級餐廳":
             state.tagArray = state.tagArray.filter(
-              (v) => v != "平價美食" && v != "中等消費" && v != "消費金額"
+              (v) => v != "中等消費" && v != "平價美食"
             );
             state.tagArray.push(action.payload);
 
@@ -301,18 +276,19 @@ const storesSlice = createSlice({
           default:
             state.tagArray.push(action.payload);
             break;
-          //沒包含就新增
         }
+        state.tagArray.push(action.payload);
+        //沒包含就新增
       }
       //第一次拿tempA[0]篩選(data2)
       //第二次tempA[1](tempA[0]filter回傳的新陣列.push變成陣列的第一項(也是陣列))
       //tempB為暫時的結果陣列，到最後一次迴圈即為目標陣列，放進newData
+      console.log(state.data2);
       let tempA = [state.data2]; //tempA = [data2,第1次篩選結果,第2次篩選結果...]
       for (let i = 0; i < state.tagArray.length; i++) {
         switch (state.tagArray[i]) {
           case "營業中":
-            state.time = "";
-            let tempB0 = tempA[i].filter((v) => {
+            let tempB = tempA[i].filter((v) => {
               const f = v.time1;
               const f1 = f.substr(0, 2) + f.substr(3, 2);
               const f2 = f.substr(6, 2) + f.substr(9, 2);
@@ -324,35 +300,11 @@ const storesSlice = createSlice({
                 (state.now > s1 && state.now < s2)
               );
             });
-            tempA.push(tempB0);
-            state.newData = tempB0;
+            tempA.push(tempB);
+            state.newData = tempB;
             break;
-          case "前往時段":
-            let timeTemp = state.time.substr(0, 2) + state.time.substr(3, 2);
-            let tempB1 = tempA[i].filter((v) => {
-              const f = v.time1;
-              const f1 = f.substr(0, 2) + f.substr(3, 2);
-              const f2 = f.substr(6, 2) + f.substr(9, 2);
-              const s = v.time2;
-              const s1 = s.substr(0, 2) + s.substr(3, 2);
-              const s2 = s.substr(6, 2) + s.substr(9, 2);
-              return (
-                (timeTemp > f1 && timeTemp < f2) ||
-                (timeTemp > s1 && timeTemp < s2)
-              );
-            });
-            tempA.push(tempB1);
-            state.newData = tempB1;
-            break;
-          case "消費金額":
-            let tempC0 = tempA[i].filter((v) => {
-              return v.cost <= parseInt(state.cost);
-            });
-            tempA.push(tempC0);
-            state.newData = tempC0;
-            break;
+
           case "平價美食":
-            state.cost = "";
             let tempC1 = tempA[i].filter((v) => {
               return v.cost <= 200;
             });
@@ -360,17 +312,15 @@ const storesSlice = createSlice({
             state.newData = tempC1;
             break;
           case "中等消費":
-            state.cost = "";
             let tempC2 = tempA[i].filter((v) => {
-              return 200 < v.cost && v.cost < 1000;
+              return 200 < v.cost && v.cost <= 1000;
             });
             tempA.push(tempC2);
             state.newData = tempC2;
             break;
           case "高級餐廳":
-            state.cost = "";
             let tempC3 = tempA[i].filter((v) => {
-              return v.cost >= 1000;
+              return v.cost > 1000;
             });
             tempA.push(tempC3);
             state.newData = tempC3;
@@ -446,8 +396,6 @@ export const {
   load,
   filterAllFromTag,
   now,
-  costF,
-  timeF,
 } = storesSlice.actions;
 
 export default storesSlice.reducer;
