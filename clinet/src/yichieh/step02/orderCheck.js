@@ -14,7 +14,7 @@ function OrderCheck() {
                     <ListGroup.Item>餐廳名稱{` `}:{` `}一笈壽司</ListGroup.Item>
                     <ListGroup.Item>訂位日期{` `}:{` `}2021年11月28日</ListGroup.Item>
                     <ListGroup.Item>預訂人數{` `}:{` `}3位</ListGroup.Item>
-                    <ListGroup.Item>選擇時段{` `}:{` `}下午15點</ListGroup.Item>
+                    <ListGroup.Item>選擇時段{` `}:{` `}下午17點</ListGroup.Item>
                 </ListGroup>
                 <Card.Header>您的聯絡資訊</Card.Header>
                 <ListGroup variant="flush">
