@@ -14,7 +14,7 @@ import Me from './img/Me.jpg';
 import FMemberIcon from './conponents/MemberIcon.js';
 
 //PersonalIfo List
-import FList from './conponents/List.js';
+import CList from './conponents/List1122.js';
 //CommemtList
 import CUsersStoreComment from './conponents/UsersStoreComment';
 // -----------------------Import End----------------
@@ -40,7 +40,7 @@ function FMemberPage(){
                   <FMemberIcon />
                   </div>
                 <div className=" w-50">
-                  <FList/>
+                  <CList/>
                 </div>
               </Stack>
             </div>

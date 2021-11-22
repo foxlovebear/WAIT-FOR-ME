@@ -36,8 +36,8 @@ function FLoginPage() {
         localStorage.setItem("token", response.data.token);
         // localStorage.setItem("result",response.data.result[0].name);
         localStorage.setItem("name", response.data.result[0].name);
-        localStorage.setItem("email", response.data.result[0].email);
-        localStorage.setItem("phone", response.data.result[0].phone);
+        // localStorage.setItem("email", response.data.result[0].email);
+        // localStorage.setItem("phone", response.data.result[0].phone);
         localStorage.setItem("id", response.data.result[0].user_id);
         setLoginStatus(true);
         document.location.href = "/memberpage";

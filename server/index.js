@@ -15,7 +15,7 @@ app.listen(port, () => {
 const mysql = require("mysql");
 const conn = mysql.createConnection({
   user: "root",
-  password: "root",
+  password: "",
   host: "localhost",
   database: "foodie",
   multipleStatements: true,
@@ -172,6 +172,42 @@ app.post("/authYN", verifyJWT, (req, res) => {
   //verifyJWT:middleware 中介軟體
   // res.send("Yo, u r authenticated!!");
 });
+
+
+
+// 驗證+查詢使用者個人資料
+const verifyShowUserInfo = (req, res, next) => {
+  const token = req.body.headers["x-access-token"];
+  const id = req.body.id;
+  // console.log(token);
+  if (!token) {
+    res.send("Yo, we need a token, plz give it to FOX!");
+  } else {
+    jwt.verify(token, "jwtSecret", (err, decoded) => {
+      if (err) {
+        res.json({ auth: false, message: "U failed to authenticate" });
+        //  return res.redirect('http://localhost:3000/login');   //ERR:ccess to XMLHttpRequest at 'http://localhost:3000/login' (redirected from 'http://localhost:7000/authYN') from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+      } else {
+        conn.query(
+          "SELECT * FROM users WHERE user_id=? ",
+          [id],
+          (err, result) => {
+            if (err) {
+              console.log(err);
+            } else {
+              res.send(result);
+            }
+          }
+        );
+        next();
+      }
+    });
+  }
+};
+
+app.post("/showUserInfo", verifyShowUserInfo, (req, res) => {});
+
+
 
 // 接修改前端資料
 const verifyRevise = (req, res, next) => {
