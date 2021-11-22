@@ -37,7 +37,7 @@ function FRevisePage(){
         console.log("Revised!!!"+response);
         alert("修改成功!!跳轉回會員頁。");
         localStorage.setItem("name",userNameRev);
-        localStorage.setItem("phone",userPhoneRev);
+        // localStorage.setItem("phone",userPhoneRev);
 
         document.location.href="/memberpage";
       });
