@@ -24,8 +24,7 @@ function FLoginPage() {
       mailLog: mailLog,
       passwordLog: passwordLog,
     }).then((response) => {
-      // if(response.data.message){ //沒登入成功的話
-      if (!response.data.auth) {
+      if (!response.data.auth) { //沒登入成功的話
         // setLoginStatus(response.data.message);
         // alert(response.data.message);
         setLoginStatus(false);
@@ -34,52 +33,15 @@ function FLoginPage() {
         console.log(response.data);
         alert(response.data.result[0].name + "，歡迎回來");
         localStorage.setItem("token", response.data.token);
-        // localStorage.setItem("result",response.data.result[0].name);
         localStorage.setItem("name", response.data.result[0].name);
-        // localStorage.setItem("email", response.data.result[0].email);
-        // localStorage.setItem("phone", response.data.result[0].phone);
         localStorage.setItem("id", response.data.result[0].user_id);
         setLoginStatus(true);
         document.location.href = "/memberpage";
-        // authShowComment();
-
       }
       console.log(response);
     });
   };
 
-  // const userAuthenticated = () => {
-  //   Axios.get("http://localhost:3001/authYN", {
-  //     headers: {
-  //       "x-access-token": localStorage.getItem("token"),
-  //     },
-  //   }).then((response) => {
-  //     console.log(response);
-  //     alert("歡迎驗證");
-  //   });
-  // };
-
-  // 撈評論
-  // const id = localStorage.getItem("id");
-  // const authShowComment=()=>{  
-  //     console.log(id);
-  //     Axios.post('http://localhost:3001/showUserComment',{
-  //       headers:{"x-access-token":localStorage.getItem("token"),},
-  //       id:id,
-  //     }).then((response)=>{
-  //       if(response.data.auth == false){
-  //         document.location.href="/login";
-  //       }
-  //       console.log(response);
-  //       if(response.data.length>0){
-  //         for(var i =0 ; i<response.data.length ; i++){
-  //       localStorage.setItem("comment"+i,response.data[i].comment);
-  //       }
-  //       localStorage.setItem("commentMount",response.data.length);
-
-  //       }
-  //     })
-  // }
   return (
     <Container>
       <br />
@@ -123,7 +85,6 @@ function FLoginPage() {
                 variant=""
                 type=""
                 className=" buttonStyle"
-                //onClick={showInfo}
                 onClick={loginFoodWeb}
               >
                 登入
@@ -138,6 +99,7 @@ function FLoginPage() {
                   回首頁
                 </Button>
               </Link>
+              {/* 測試登入狀態 */}
               {/* <h1>{loginStatus}</h1> */}
               {/* {loginStatus &&
             // (<button onClick={userAuthenticated}>Check if authenticated</button>)

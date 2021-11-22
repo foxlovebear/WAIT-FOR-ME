@@ -10,7 +10,6 @@ import {Container,Row,Col,Stack,
  FormControl,
  Button } from 'react-bootstrap';
 //使用圖片
-import Me from './img/Me.jpg';
 import FMemberIcon from './conponents/MemberIcon.js';
 
 //PersonalIfo List
