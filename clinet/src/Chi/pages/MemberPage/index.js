@@ -16,7 +16,7 @@ import FMemberIcon from './conponents/MemberIcon.js';
 //PersonalIfo List
 import FList from './conponents/List.js';
 //CommemtList
-import FCommemtList from './conponents/CommemtList.js';
+import CUsersStoreComment from './conponents/UsersStoreComment';
 // -----------------------Import End----------------
 
 
@@ -51,7 +51,7 @@ function FMemberPage(){
                   <h1>我的評論</h1>
                   </div>
                 <div className=" w-50 mx-auto">
-                  <FCommemtList/>
+                  <CUsersStoreComment/>
                 </div>
               </Stack>
           </div>

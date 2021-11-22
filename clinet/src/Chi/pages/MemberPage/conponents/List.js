@@ -30,6 +30,9 @@ function FList(){
           console.log(response);
         })
     }
+    // const getPasswordLength=()=>{
+    //   localStorage.getItem('name')
+    // }
 
   return( 
             <table className="userInfoTable">
