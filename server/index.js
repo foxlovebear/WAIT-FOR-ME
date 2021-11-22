@@ -261,7 +261,7 @@ const verifyShowComment = (req, res, next) => {
         //  return res.redirect('http://localhost:3000/login');   //ERR:ccess to XMLHttpRequest at 'http://localhost:3000/login' (redirected from 'http://localhost:7000/authYN') from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
       } else {
         conn.query(
-          "SELECT comment,name FROM comment INNER JOIN stores ON comment.sid = stores.id WHERE user_id=? ",
+          "SELECT comment,name,score,substring_index(created_at,' ',1) as 'time' FROM comment INNER JOIN stores ON comment.sid = stores.id WHERE user_id=? ORDER BY cid DESC ",
           [id],
           (err, result) => {
             if (err) {

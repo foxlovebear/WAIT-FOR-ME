@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- 主機： localhost:8889
--- 產生時間： 2021 年 11 月 19 日 14:10
--- 伺服器版本： 5.7.34
--- PHP 版本： 7.4.21
+-- 主機： 127.0.0.1
+-- 產生時間： 2021-11-22 08:57:52
+-- 伺服器版本： 10.4.20-MariaDB
+-- PHP 版本： 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,9 +32,9 @@ CREATE TABLE `comment` (
   `user_id` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
   `comment` text NOT NULL,
-  `score` tinyint(5) NOT NULL DEFAULT '5',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `upgrated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `score` tinyint(5) NOT NULL DEFAULT 5,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `upgrated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
