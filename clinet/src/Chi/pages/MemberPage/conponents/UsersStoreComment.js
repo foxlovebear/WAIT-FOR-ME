@@ -80,23 +80,49 @@ class CUsersStoreComment extends React.Component{
 	          	})
 	       }
         render () {
-          //this.state.FoxResponseDATA=長度為0的物件 所以不能用map 物件要轉為陣列才能render
-          console.log( this.state.FoxResponseDATA); 
-          return (
-               <div>
-                 {/* <ul className="list-group list-group-flush">
-                   {FoxResponseDATAKeys}
-                 </ul> */}
-                 {this.renderObject()}
-               </div>
-             );
-          // return(
-          //  <ul>
-          //    {this.authShowComment()}
-          //    {/* {showCommentList} */}
-          //  </ul>
+          if (localStorage.getItem('id')){
+            //this.state.FoxResponseDATA=長度為0的物件 所以不能用map 物件要轉為陣列才能render
+            console.log( this.state.FoxResponseDATA); 
+            return (
+                <div>
+                     {/* <ul className="list-group list-group-flush">
+                    {FoxResponseDATAKeys}
+                  </ul> */}
+                  {this.renderObject()}
+                </div>
+              );
+          }else{
+            return(
+            <Container fluid >
+            <Row id="commentUserInfo" >
+              {/* 用戶小標+用戶名 */}
+              <Col lg={4} > 
+                <Col lg={5} className="userIcon w-100"><FMemberIcon/></Col>
+                <Col className="commenterName"></Col>
+              </Col>  
 
-          // )
+              <Col lg={8} className="CommentStoreInfo">
+                  <Stack>
+                    <Col></Col>
+                    <Col>請登入查看過往評論</Col>
+                    <Col></Col>
+                  </Stack>
+              </Col>
+            </Row>
+            {/* 評論內容 */}
+                      <Row>
+                        <Col lg={4}></Col>
+                                  <Col className="commentText">評論內容:目前無資料</Col>
+                      </Row>
+          
+                      <Row>
+                        <Col lg={4}></Col>
+                        <Col lg={8} ></Col>
+                      </Row>
+                     </Container >   
+            )
+          }
+
         }
 }
 

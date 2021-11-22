@@ -14,39 +14,6 @@ import {
 import Axios from "axios"; //處理POST
 //  -----------------------IMPORT結束-------------------
 
-// <<<<<<< main
-
-// function FLoginPage(){
-//   const [mailLog,setMailLog]=useState('');
-//   const [passwordLog,setPasswordLog]=useState('');
-//   // const showInfo = () =>{console.log(mailLog,passwordLog);}; //測試1.
-//   const [loginStatus,setLoginStatus]=useState(false);
-//   const loginFoodWeb =()=>{
-//    Axios.post('http://localhost:3001/login',
-//     {
-//       mailLog:mailLog,
-//       passwordLog:passwordLog,
-//     }).then((response)=>{
-//       // if(response.data.message){ //沒登入成功的話
-//       if(!response.data.auth){
-//         // setLoginStatus(response.data.message);
-//         // alert(response.data.message);
-//         setLoginStatus(false);
-//       }else{
-//         // setLoginStatus(response.data[0].name);
-//         console.log(response.data);
-//         alert(response.data.result[0].name+"，歡迎回來");
-//         localStorage.setItem("token",response.data.token);
-//         // localStorage.setItem("result",response.data.result[0].name);
-//       localStorage.setItem("id",response.data.result[0].user_id);
-//       localStorage.setItem("name",response.data.result[0].name);
-//       localStorage.setItem("email",response.data.result[0].email);
-//       localStorage.setItem("phone",response.data.result[0].phone);
-//         setLoginStatus(true);
-//         // document.location.href="/memberpage";
-//       }
-//       console.log(response);
-
 function FLoginPage() {
   const [mailLog, setMailLog] = useState("");
   const [passwordLog, setPasswordLog] = useState("");
@@ -78,7 +45,6 @@ function FLoginPage() {
 
       }
       console.log(response);
-      // >>>>>>> main
     });
   };
 
