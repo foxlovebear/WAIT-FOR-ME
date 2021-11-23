@@ -30,7 +30,7 @@ function FMemberPage(){
           {/* 封面圖片 */}
           <div className="mt-5">
                  <img className="w-100 coverImg"
-                 src="http://picsum.photos/id/163/800/200"alt="new" />
+                 src="http://picsum.photos/id/429/800/200"alt="new" />
             </div>
           {/* 個人資料 */}
           <div className="PersonalInfo">

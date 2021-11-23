@@ -27,7 +27,7 @@ class CList extends React.Component{
     authShowUserInfo = async()=>{  
       try{
         const id = localStorage.getItem("id");
-        console.log(id);
+        // console.log(id);
         const UserInfoResponse= await Axios.post('http://localhost:3001/showUserInfo',{
           headers:{"x-access-token":localStorage.getItem("token"),},
           id:id,
@@ -36,7 +36,7 @@ class CList extends React.Component{
           this.setState({
              UserInfoResponseDATA:UserInfoResponseDATA
           });
-          console.log(UserInfoResponseDATA);
+          // console.log(UserInfoResponseDATA);
           if(UserInfoResponse.data.auth === false){
             document.location.href="/login";
           }
@@ -51,6 +51,10 @@ class CList extends React.Component{
     //物件要轉為陣列才能render *用Object.entries
         renderObject(){
 	        	return Object.entries(this.state.UserInfoResponseDATA).map(([key, value], i) => {
+              var passwordL = '';
+              for(var a=0; a<value.password.length;a++){
+                     passwordL += '*';
+                    }
 	          	return (
                 <table className="userInfoTable">
                 <tr>
@@ -66,7 +70,7 @@ class CList extends React.Component{
                 </tr>
                 <tr>
                     <td className="userInfoTitle">我的密碼:</td>
-                    <td className="userInfoContent">*******</td>
+                    <td className="userInfoContent">{passwordL}</td>
                 </tr>
                 <tr>
                     <td className="userInfoTitle">行動電話:</td>
@@ -88,7 +92,7 @@ class CList extends React.Component{
         render () {
           if (localStorage.getItem('id')){
             //this.state.UserInfoResponseDATA=長度為0的物件 所以不能用map 物件要轉為陣列才能render
-            console.log( this.state.UserInfoResponseDATA); 
+            // console.log( this.state.UserInfoResponseDATA); 
             return (
                 <div>
                      {/* <ul className="list-group list-group-flush">

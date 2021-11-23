@@ -25,7 +25,7 @@ class CUsersStoreComment extends React.Component{
     authShowComment = async()=>{  
       try{
         const id = localStorage.getItem("id");
-        console.log(id);
+        // console.log(id);
         const foxResponse= await Axios.post('http://localhost:3001/showUserComment',{
           headers:{"x-access-token":localStorage.getItem("token"),},
           id:id,
@@ -34,7 +34,7 @@ class CUsersStoreComment extends React.Component{
           this.setState({
              FoxResponseDATA:foxResponseDATA
           });
-          console.log(foxResponseDATA);
+          // console.log(foxResponseDATA);
 
       }catch(err){console.log(err);}
 
@@ -51,9 +51,9 @@ class CUsersStoreComment extends React.Component{
                   <Container fluid className="CommentLine ">
             <Row id="commentUserInfo" >
               {/* 用戶小標+用戶名 */}
-              <Col lg={4} > 
+              <Col lg={4} className="text-center"> 
                 <Col lg={5} className="userIcon w-100"><FMemberIcon/></Col>
-                <Col className="commenterName"><h6>{localStorage.getItem('name')}</h6></Col>
+                <Col className="commenterName "><h6>{localStorage.getItem('name')}</h6></Col>
               </Col>  
 
               <Col lg={8} className="CommentStoreInfo">
@@ -66,12 +66,15 @@ class CUsersStoreComment extends React.Component{
               </Col>
             </Row>
             {/* 評論內容 */}
-                      <Row>
+                      <Row className="mt-3">
                         <Col lg={4}></Col>
-                                  <Col className="commentText">評論內容:{value.comment}</Col>
+                        <Col className="commentText">評論內容:</Col>
                       </Row>
-          
-                      <Row>
+                      <Row className="">
+                        <Col lg={4}></Col>
+                        <Col className="commentText">{value.comment}</Col>
+                      </Row>
+                      <Row className="mt-3">
                         <Col lg={4}></Col>
                         <Col lg={8} >圖片<img src="https://picsum.photos/id/102/250/150"/></Col>
                       </Row>
@@ -82,12 +85,8 @@ class CUsersStoreComment extends React.Component{
         render () {
           if (localStorage.getItem('id')){
             //this.state.FoxResponseDATA=長度為0的物件 所以不能用map 物件要轉為陣列才能render
-            console.log( this.state.FoxResponseDATA); 
             return (
                 <div>
-                     {/* <ul className="list-group list-group-flush">
-                    {FoxResponseDATAKeys}
-                  </ul> */}
                   {this.renderObject()}
                 </div>
               );

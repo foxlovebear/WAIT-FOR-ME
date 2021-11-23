@@ -36,6 +36,7 @@
 /* UsersStoreComment原件使用CommentLine */
 .CommentLine {
   padding-bottom: 30px;
+  margin-bottom: 2rem;
   border-bottom: 1.5px solid rgb(122, 100, 87);
   width: 100%;
 }
