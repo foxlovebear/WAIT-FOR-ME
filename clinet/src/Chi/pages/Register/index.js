@@ -72,10 +72,6 @@ function FRegisterPage(){
                           />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-
             <Stack gap={2} className="col-md-6 mx-auto">
             <Button variant="" type="" className=" buttonStyle"
                     // onClick={showInfo} //測試1.
