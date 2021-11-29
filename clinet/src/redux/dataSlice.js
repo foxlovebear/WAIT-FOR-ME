@@ -1,6 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+//本slice掌管數據
+//data:axios 從資料庫
+//newData:後台搜尋後
+
 //給初值
 const initialState = {
   data: [],

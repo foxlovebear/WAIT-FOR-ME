@@ -6,6 +6,9 @@ import axios from "axios";
 // 2.store的reducer放屬性進去(=slice的name)
 // 3.最外部的index檔執行commentFetch
 
+//本slice for 評論資料
+//data:axios 從資料庫
+
 //給初值
 const initialState = {
   data: [],
@@ -13,17 +16,14 @@ const initialState = {
 };
 
 //fetch data
-export const commentFetch = createAsyncThunk(
-  "comment/commentFetch",
-  async () => {
-    try {
-      const rep = await axios.get("http://localhost:3001/comment");
-      return rep.data;
-    } catch (error) {
-      console.log(error);
-    }
+export const commentFetch = createAsyncThunk("comment/commentFetch", async () => {
+  try {
+    const rep = await axios.get("http://localhost:3001/comment");
+    return rep.data;
+  } catch (error) {
+    console.log(error);
   }
-);
+});
 
 const commentSlice = createSlice({
   name: "comment",
