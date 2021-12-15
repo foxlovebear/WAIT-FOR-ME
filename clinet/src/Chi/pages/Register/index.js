@@ -34,7 +34,12 @@ function FRegisterPage(){
         console.log("Registered!!!");
         alert("註冊成功!!跳轉登入頁登入。");
         document.location.href="/login";
-      });
+      }).catch(
+        (e) => {
+          if (e.response.status === 500) {
+            alert("註冊失敗！此帳號已存在，請嘗試新的帳號！");
+          }}
+      );
   };
   return (
   <Container>

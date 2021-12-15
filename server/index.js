@@ -124,6 +124,9 @@ app.post("/create", (req, res) => {
       } else {
         res.send("FOXValues Inserted");
       }
+      if (err.code == "ER_DUP_ENTRY") {
+        return res.status(500).send("Account already exists!");
+      };
     }
   );
 });
