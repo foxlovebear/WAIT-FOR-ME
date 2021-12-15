@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/WAIT-FOR-ME/static/css/main.a8e54576.chunk.css",
+    "main.js": "/WAIT-FOR-ME/static/js/main.b132176c.chunk.js",
+    "main.js.map": "/WAIT-FOR-ME/static/js/main.b132176c.chunk.js.map",
+    "runtime-main.js": "/WAIT-FOR-ME/static/js/runtime-main.effcaa04.js",
+    "runtime-main.js.map": "/WAIT-FOR-ME/static/js/runtime-main.effcaa04.js.map",
+    "static/css/2.b07dedbd.chunk.css": "/WAIT-FOR-ME/static/css/2.b07dedbd.chunk.css",
+    "static/js/2.55a2028a.chunk.js": "/WAIT-FOR-ME/static/js/2.55a2028a.chunk.js",
+    "static/js/2.55a2028a.chunk.js.map": "/WAIT-FOR-ME/static/js/2.55a2028a.chunk.js.map",
+    "index.html": "/WAIT-FOR-ME/index.html",
+    "static/css/2.b07dedbd.chunk.css.map": "/WAIT-FOR-ME/static/css/2.b07dedbd.chunk.css.map",
+    "static/css/main.a8e54576.chunk.css.map": "/WAIT-FOR-ME/static/css/main.a8e54576.chunk.css.map",
+    "static/js/2.55a2028a.chunk.js.LICENSE.txt": "/WAIT-FOR-ME/static/js/2.55a2028a.chunk.js.LICENSE.txt",
+    "static/media/A.b09bb25a.jpg": "/WAIT-FOR-ME/static/media/A.b09bb25a.jpg",
+    "static/media/B.29df4cb0.jpg": "/WAIT-FOR-ME/static/media/B.29df4cb0.jpg",
+    "static/media/C.84c36f75.jpg": "/WAIT-FOR-ME/static/media/C.84c36f75.jpg",
+    "static/media/D.3936fd78.jpg": "/WAIT-FOR-ME/static/media/D.3936fd78.jpg",
+    "static/media/E.8c4f6dfd.jpg": "/WAIT-FOR-ME/static/media/E.8c4f6dfd.jpg",
+    "static/media/F.48463bcc.jpg": "/WAIT-FOR-ME/static/media/F.48463bcc.jpg",
+    "static/media/G.2c6f8859.jpg": "/WAIT-FOR-ME/static/media/G.2c6f8859.jpg",
+    "static/media/H.9f01ec2b.jpg": "/WAIT-FOR-ME/static/media/H.9f01ec2b.jpg",
+    "static/media/I.39cd46a2.jpg": "/WAIT-FOR-ME/static/media/I.39cd46a2.jpg",
+    "static/media/J.b864cd84.jpg": "/WAIT-FOR-ME/static/media/J.b864cd84.jpg",
+    "static/media/K.dd785861.jpg": "/WAIT-FOR-ME/static/media/K.dd785861.jpg",
+    "static/media/L.9767b2d5.jpg": "/WAIT-FOR-ME/static/media/L.9767b2d5.jpg",
+    "static/media/Menu_1.c19d1b49.jpg": "/WAIT-FOR-ME/static/media/Menu_1.c19d1b49.jpg",
+    "static/media/Menu_2.0606a37c.jpg": "/WAIT-FOR-ME/static/media/Menu_2.0606a37c.jpg",
+    "static/media/Menu_3.4d0939c5.jpg": "/WAIT-FOR-ME/static/media/Menu_3.4d0939c5.jpg",
+    "static/media/female.712f03bf.png": "/WAIT-FOR-ME/static/media/female.712f03bf.png",
+    "static/media/food.ebd8aa3a.png": "/WAIT-FOR-ME/static/media/food.ebd8aa3a.png",
+    "static/media/male.7ebf2f5a.png": "/WAIT-FOR-ME/static/media/male.7ebf2f5a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.effcaa04.js",
+    "static/css/2.b07dedbd.chunk.css",
+    "static/js/2.55a2028a.chunk.js",
+    "static/css/main.a8e54576.chunk.css",
+    "static/js/main.b132176c.chunk.js"
+  ]
+}
